@@ -5,9 +5,16 @@ const logger = require('../../../helpers/logger');
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
+// Pemetaan seluruh alias ke subcommand inti secara akurat
+const aliasMap = {
+    'add': 'add', 'addrole': 'add', 'giverole': 'add',
+    'remove': 'remove', 'removerole': 'remove', 'derole': 'remove', 'revokerole': 'remove', 'cabutrole': 'remove',
+    'all': 'all', 'roleall': 'all', 'massrole': 'all', 'ra': 'all'
+};
+
 module.exports = {
     name: 'role',
-    aliases: ['addrole', 'removerole', 'roleall', 'giverole', 'derole', 'revokerole', 'cabutrole', 'massrole', 'ra'],
+    aliases: Object.keys(aliasMap),
     data: new SlashCommandBuilder()
         .setName('role')
         .setDescription('Sistem manajemen kontrol role server.')
@@ -70,48 +77,89 @@ module.exports = {
             reason = context.options.getString('alasan') || 'Tidak ada alasan';
             if (subcommand === 'all') massAction = context.options.getString('aksi');
         } else {
-            // Dapatkan prefix bot dari setelan guild atau gunakan default
-            const guildSettings = await GuildSettings.findOne({ guildId: context.guild.id });
-            const prefix = guildSettings?.prefix || client.prefix || '!';
+            // --- 🛠️ RESOLUSI TOKEN SUBCOMMAND BERBASIS TEKS PREFIX ---
+            const tokens = context.content.toLowerCase().split(/ +/);
+            const firstToken = tokens[0] || '';  
+            const secondToken = tokens[1] || ''; 
+            const thirdToken = tokens[2] || '';  
 
-            // Ekstrak nama panggilan murni, abaikan prefix
-            let commandCalled = context.content.split(' ')[0];
-            if (commandCalled.toLowerCase().startsWith(prefix.toLowerCase())) {
-                commandCalled = commandCalled.slice(prefix.length);
-            }
-            commandCalled = commandCalled.toLowerCase();
-            
-            // Penguncian Jalur Subcommand Berdasarkan Kata Kunci Command Teks
-            if (['addrole', 'giverole'].includes(commandCalled) || (commandCalled === 'role' && args[0] === 'add')) {
-                subcommand = 'add';
-                if (commandCalled === 'role') args.shift(); 
-            } else if (['removerole', 'derole', 'revokerole', 'cabutrole'].includes(commandCalled) || (commandCalled === 'role' && args[0] === 'remove')) {
-                subcommand = 'remove';
-                if (commandCalled === 'role') args.shift();
-            } else if (['roleall', 'massrole', 'ra'].includes(commandCalled) || (commandCalled === 'role' && args[0] === 'all')) {
-                subcommand = 'all';
-                if (commandCalled === 'role') args.shift();
-                massAction = args[0] ? args[0].toLowerCase() : null;
-                if (massAction) args.shift(); 
-            } else {
-                subcommand = 'add'; // Default fallback
-            }
-
-            // Parsing Parameter data Mentions & ID (Prefix Mode)
-            if (subcommand === 'all') {
-                const roleMention = context.mentions.roles.first();
-                role = roleMention || (args && args[0] ? await context.guild.roles.fetch(args[0]).catch(() => null) : null);
-            } else {
-                targetUser = context.mentions.users.first() || (args && args[0] ? await client.users.fetch(args[0].replace(/[^0-9]/g, '')).catch(() => null) : null);
-                const roleMention = context.mentions.roles.first();
-                role = roleMention || (args && args[1] ? await context.guild.roles.fetch(args[1].replace(/[^0-9]/g, '')).catch(() => null) : null);
-                
-                // Mengambil sisa argumen teks di bagian akhir kalimat sebagai Alasan (Reason)
-                if (args && args.length > 2) {
-                    // Jika argumen diinput menggunakan format tag/mention, saring sisa teksnya
-                    const cleanArgs = args.slice(2).join(' ').trim();
-                    if (cleanArgs) reason = cleanArgs;
+            // 1. Deteksi format terpisah spasi (Contoh: ln derole, ln cabutrole)
+            if (aliasMap[secondToken]) {
+                subcommand = aliasMap[secondToken];
+                // Penanganan jika menggunakan format: ln role remove @user @role
+                if (secondToken === 'role' && aliasMap[thirdToken]) {
+                    subcommand = aliasMap[thirdToken];
                 }
+            } 
+            // 2. Deteksi jika perintah menempel pada prefix (Contoh: lnderole, lnaddrole)
+            else {
+                const sortedAliases = Object.keys(aliasMap).sort((a, b) => b.length - a.length);
+                for (const alias of sortedAliases) {
+                    if (firstToken.endsWith(alias)) {
+                        subcommand = aliasMap[alias];
+                        break;
+                    }
+                }
+            }
+
+            // Fallback tradisional menggunakan argumen pertama
+            if (!subcommand && args && args[0]) {
+                const possibleSub = args[0].toLowerCase();
+                if (aliasMap[possibleSub]) {
+                    subcommand = aliasMap[possibleSub];
+                }
+            }
+
+            // Jika benar-benar tidak terdeteksi, berikan fallback default keamanan
+            if (!subcommand) subcommand = 'add';
+
+            // Resolusi massAction otomatis untuk subcommand 'all'
+            if (subcommand === 'all') {
+                const fullText = context.content.toLowerCase();
+                if (fullText.includes('add') || fullText.includes('tambah') || fullText.includes('give')) {
+                    massAction = 'add';
+                } else if (fullText.includes('remove') || fullText.includes('cabut') || fullText.includes('hapus') || fullText.includes('derole') || fullText.includes('revoke')) {
+                    massAction = 'remove';
+                } else if (args && args[0]) {
+                    massAction = args[0].toLowerCase();
+                }
+            }
+
+            // --- 🛠️ EKSTRAKSI PASANGAN TARGET & ROLE SECARA DINAMIS ---
+            targetUser = context.mentions.users.first();
+            const roleMention = context.mentions.roles.first();
+
+            if (args && args.length > 0) {
+                for (const arg of args) {
+                    const cleanId = arg.replace(/[^0-9]/g, '');
+                    if (!cleanId) continue;
+
+                    if (!targetUser) {
+                        const isRole = context.guild.roles.cache.has(cleanId);
+                        if (!isRole) {
+                            targetUser = await client.users.fetch(cleanId).catch(() => null);
+                            continue;
+                        }
+                    }
+                    if (!role) {
+                        const guildRole = context.guild.roles.cache.get(cleanId);
+                        if (guildRole) role = guildRole;
+                    }
+                }
+            }
+            if (roleMention) role = roleMention;
+
+            // Memisahkan sisa argumen teks murni untuk dijadikan alasan (Reason)
+            if (args && args.length > 0) {
+                const excludedWords = [...Object.keys(aliasMap), 'role'];
+                const cleanArgs = args.filter(arg => {
+                    const cleanStr = arg.replace(/[^0-9]/g, '');
+                    if (cleanStr === targetUser?.id || cleanStr === role?.id) return false;
+                    if (excludedWords.includes(arg.toLowerCase())) return false;
+                    return true;
+                }).join(' ').trim();
+                
+                if (cleanArgs) reason = cleanArgs;
             }
         }
 
@@ -152,7 +200,6 @@ module.exports = {
             });
         }
 
-        // Fetching konfigurasi channel log server dari Database MongoDB
         const guildData = await GuildSettings.findOne({ guildId: context.guild.id });
 
         // ==========================================
@@ -171,16 +218,13 @@ module.exports = {
                 try {
                     await targetMember.roles.add(role);
                     
-                    // =========================================================
-                    // 🎨 DESAIN LOG PREMIUM GRID 2 KOLOM (SEPERTI IMAGE_B1AC72.PNG)
-                    // =========================================================
                     if (guildData && guildData.logChannel) {
                         const logChan = context.guild.channels.cache.get(guildData.logChannel);
                         if (logChan) {
                             const logEmbed = new EmbedBuilder()
                                 .setAuthor({ name: context.guild.name, iconURL: context.guild.iconURL({ dynamic: true }) })
                                 .setTitle('📥 Role Berhasil Diberikan')
-                                .setThumbnail(context.client.user.displayAvatarURL({ dynamic: true })) // Ganti dengan profil bot sebagai visual pendamping
+                                .setThumbnail(context.client.user.displayAvatarURL({ dynamic: true }))
                                 .setColor('#2ecc71')
                                 .setDescription(`Role **${role.name}** telah berhasil diberikan kepada member berikut:`)
                                 .addFields(
@@ -206,17 +250,14 @@ module.exports = {
                 try {
                     await targetMember.roles.remove(role);
 
-                    // =========================================================
-                    // 🎨 DESAIN LOG PREMIUM GRID 2 KOLOM (SEPERTI IMAGE_B1AC72.PNG)
-                    // =========================================================
                     if (guildData && guildData.logChannel) {
                         const logChan = context.guild.channels.cache.get(guildData.logChannel);
                         if (logChan) {
                             const logEmbed = new EmbedBuilder()
                                 .setAuthor({ name: context.guild.name, iconURL: context.guild.iconURL({ dynamic: true }) })
                                 .setTitle('🗑️ Role Berhasil Dihapus')
-                                .setThumbnail(context.client.user.displayAvatarURL({ dynamic: true })) // Profil bot sebagai pendamping kanan
-                                .setColor('#3498db') // Biru cerah premium sesuai gambar referensi Anda
+                                .setThumbnail(context.client.user.displayAvatarURL({ dynamic: true }))
+                                .setColor('#3498db') 
                                 .setDescription(`Role **${role.name}** telah berhasil dihapus dari member berikut:`)
                                 .addFields(
                                     { name: '👤 Target', value: `${targetUser}\n\`${targetUser.username}\``, inline: true },
