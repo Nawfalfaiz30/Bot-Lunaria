@@ -1,0 +1,137 @@
+{
+  "area_1": {
+    "monsters": [
+      { "id": "green_slime", "name": "🟢 Green Slime", "hp": 45, "atk": 8, "def": 2, "isBoss": false, "loot_table_id": "lt_slime" },
+      { "id": "goblin_scout", "name": "👺 Goblin Scout", "hp": 60, "atk": 11, "def": 3, "isBoss": false, "loot_table_id": "lt_goblin" }
+    ],
+    "boss": {
+      "id": "goblin_king", "name": "👑 Goblin King (BOSS)", "hp": 220, "atk": 20, "def": 8, "isBoss": true, "loot_table_id": "lt_boss_area_1"
+    }
+  },
+  "area_2": {
+    "monsters": [
+      { "id": "crystal_spider", "name": "🕷️ Crystal Spider", "hp": 75, "atk": 15, "def": 5, "isBoss": false, "loot_table_id": "lt_crystal_spider" },
+      { "id": "rock_golem", "name": "🗿 Rock Golem", "hp": 100, "atk": 19, "def": 7, "isBoss": false, "loot_table_id": "lt_golem" }
+    ],
+    "boss": {
+      "id": "gemstone_colossus", "name": "💎 Gemstone Colossus (BOSS)", "hp": 360, "atk": 28, "def": 12, "isBoss": true, "loot_table_id": "lt_boss_area_2"
+    }
+  },
+  "area_3": {
+    "monsters": [
+      { "id": "crimson_wolf", "name": "🐺 Crimson Wolf", "hp": 140, "atk": 25, "def": 10, "isBoss": false, "loot_table_id": "lt_wolf" },
+      { "id": "blood_cultist", "name": "🧙‍♂️ Blood Cultist", "hp": 175, "atk": 30, "def": 12, "isBoss": false, "loot_table_id": "lt_cultist" }
+    ],
+    "boss": {
+      "id": "vampire_lord", "name": "🧛‍♂️ Vampire Lord (BOSS)", "hp": 580, "atk": 42, "def": 18, "isBoss": true, "loot_table_id": "lt_boss_area_3"
+    }
+  },
+  "area_4": {
+    "monsters": [
+      { "id": "drowned_soldier", "name": "🧜‍♂️ Drowned Soldier", "hp": 220, "atk": 36, "def": 15, "isBoss": false, "loot_table_id": "lt_drowned" },
+      { "id": "abyssal_eel", "name": "🐍 Abyssal Eel", "hp": 260, "atk": 41, "def": 18, "isBoss": false, "loot_table_id": "lt_eel" }
+    ],
+    "boss": {
+      "id": "kraken_spawn", "name": "🦑 Kraken Spawn (BOSS)", "hp": 820, "atk": 58, "def": 26, "isBoss": true, "loot_table_id": "lt_boss_area_4"
+    }
+  },
+  "area_5": {
+    "monsters": [
+      { "id": "sand_stalker", "name": "🦂 Sand Stalker", "hp": 310, "atk": 49, "def": 22, "isBoss": false, "loot_table_id": "lt_desert" },
+      { "id": "dune_phantom", "name": "👻 Dune Phantom", "hp": 360, "atk": 54, "def": 25, "isBoss": false, "loot_table_id": "lt_phantom" }
+    ],
+    "boss": {
+      "id": "desert_sphinx", "name": "🦁 Cursed Sphinx (BOSS)", "hp": 1100, "atk": 76, "def": 36, "isBoss": true, "loot_table_id": "lt_boss_area_5"
+    }
+  },
+  "area_6": {
+    "monsters": [
+      { "id": "frost_wight", "name": "🥶 Frost Wight", "hp": 430, "atk": 63, "def": 30, "isBoss": false, "loot_table_id": "lt_tundra" },
+      { "id": "yeti_brawler", "name": "🧌 Ice Yeti", "hp": 490, "atk": 70, "def": 34, "isBoss": false, "loot_table_id": "lt_yeti" }
+    ],
+    "boss": {
+      "id": "glacier_hydra", "name": "🐉 Glacier Hydra (BOSS)", "hp": 1450, "atk": 98, "def": 48, "isBoss": true, "loot_table_id": "lt_boss_area_6"
+    }
+  },
+  "area_7": {
+    "monsters": [
+      { "id": "mist_weaver", "name": "🕷️ Mist Weaver", "hp": 560, "atk": 80, "def": 39, "isBoss": false, "loot_table_id": "lt_highlands" },
+      { "id": "griffin_hunter", "name": "🦅 Mist Griffin", "hp": 630, "atk": 89, "def": 43, "isBoss": false, "loot_table_id": "lt_griffin" }
+    ],
+    "boss": {
+      "id": "valkyrie_corrupted", "name": "🛡️ Fallen Valkyrie (BOSS)", "hp": 1850, "atk": 125, "def": 62, "isBoss": true, "loot_table_id": "lt_boss_area_7"
+    }
+  },
+  "area_8": {
+    "monsters": [
+      { "id": "magma_slime", "name": "🔥 Magma Slime", "hp": 720, "atk": 100, "def": 50, "isBoss": false, "loot_table_id": "lt_volcano" },
+      { "id": "hellhound", "name": "🐕 Hellhound", "hp": 810, "atk": 110, "def": 55, "isBoss": false, "loot_table_id": "lt_hound" }
+    ],
+    "boss": {
+      "id": "infernal_efreet", "name": "😈 Infernal Efreet (BOSS)", "hp": 2300, "atk": 155, "def": 80, "isBoss": true, "loot_table_id": "lt_boss_area_8"
+    }
+  },
+  "area_9": {
+    "monsters": [
+      { "id": "sky_serpent", "name": "🐉 Sky Serpent", "hp": 920, "atk": 124, "def": 62, "isBoss": false, "loot_table_id": "lt_sky" },
+      { "id": "cloud_archmage", "name": "🧙‍♂️ Cloud Archmage", "hp": 1020, "atk": 136, "def": 68, "isBoss": false, "loot_table_id": "lt_cloud" }
+    ],
+    "boss": {
+      "id": "thunder_zeus", "name": "⚡ Avatar of Thunder (BOSS)", "hp": 2800, "atk": 190, "def": 98, "isBoss": true, "loot_table_id": "lt_boss_area_9"
+    }
+  },
+  "area_10": {
+    "monsters": [
+      { "id": "abyss_watcher", "name": "👁️ Abyss Watcher", "hp": 1140, "atk": 152, "def": 78, "isBoss": false, "loot_table_id": "lt_abyss" },
+      { "id": "shadow_fiend", "name": "👥 Shadow Fiend", "hp": 1260, "atk": 166, "def": 85, "isBoss": false, "loot_table_id": "lt_fiend" }
+    ],
+    "boss": {
+      "id": "demon_lord", "name": "👑 Abyssal Demon Lord (BOSS)", "hp": 3400, "atk": 235, "def": 120, "isBoss": true, "loot_table_id": "lt_boss_area_10"
+    }
+  },
+  "area_11": {
+    "monsters": [
+      { "id": "eldritch_eye", "name": "👁️👁️ Eldritch Eye", "hp": 1390, "atk": 184, "def": 95, "isBoss": false, "loot_table_id": "lt_eldritch" },
+      { "id": "tentacle_horror", "name": "🦑 Faceless Horror", "hp": 1520, "atk": 200, "def": 104, "isBoss": false, "loot_table_id": "lt_horror" }
+    ],
+    "boss": {
+      "id": "cthulhu_spawn", "name": "🐙 Herald of Madness (BOSS)", "hp": 4100, "atk": 280, "def": 145, "isBoss": true, "loot_table_id": "lt_boss_area_11"
+    }
+  },
+  "area_12": {
+    "monsters": [
+      { "id": "aether_sprite", "name": "🧚‍♀️ Aether Sprite", "hp": 1660, "atk": 220, "def": 115, "isBoss": false, "loot_table_id": "lt_aether" },
+      { "id": "crystal_pegasus", "name": "🦄 Crystal Pegasus", "hp": 1800, "atk": 238, "def": 125, "isBoss": false, "loot_table_id": "lt_pegasus" }
+    ],
+    "boss": {
+      "id": "seraphim_prime", "name": "👼 Archangel Seraphim (BOSS)", "hp": 4900, "atk": 335, "def": 175, "isBoss": true, "loot_table_id": "lt_boss_area_12"
+    }
+  },
+  "area_13": {
+    "monsters": [
+      { "id": "void_walker", "name": "🚶‍♂️ Void Walker", "hp": 1960, "atk": 260, "def": 138, "isBoss": false, "loot_table_id": "lt_void" },
+      { "id": "cosmic_wraith", "name": "🌌 Cosmic Wraith", "hp": 2120, "atk": 282, "def": 150, "isBoss": false, "loot_table_id": "lt_wraith" }
+    ],
+    "boss": {
+      "id": "void_singularity", "name": "🌀 Singularity Core (BOSS)", "hp": 5800, "atk": 395, "def": 210, "isBoss": true, "loot_table_id": "lt_boss_area_13"
+    }
+  },
+  "area_14": {
+    "monsters": [
+      { "id": "dragon_kin", "name": "🦎 Draconic Soldier", "hp": 2300, "atk": 308, "def": 165, "isBoss": false, "loot_table_id": "lt_dragonkin" },
+      { "id": "wyvern_scout", "name": "🐉 Armored Wyvern", "hp": 2480, "atk": 332, "def": 178, "isBoss": false, "loot_table_id": "lt_wyvern" }
+    ],
+    "boss": {
+      "id": "bahamut_ancient", "name": "🌋 Ancient Dragon Bahamut (BOSS)", "hp": 6800, "atk": 465, "def": 250, "isBoss": true, "loot_table_id": "lt_boss_area_14"
+    }
+  },
+  "area_15": {
+    "monsters": [
+      { "id": "time_anomaly", "name": "⏳ Time Anomaly", "hp": 2680, "atk": 360, "def": 195, "isBoss": false, "loot_table_id": "lt_anomaly" },
+      { "id": "nexus_guardian", "name": "🤖 Chrono Golem", "hp": 2880, "atk": 388, "def": 210, "isBoss": false, "loot_table_id": "lt_nexus_guard" }
+    ],
+    "boss": {
+      "id": "chronos_prime", "name": "⌛ Chronos, Lord of Time (FINAL BOSS)", "hp": 8000, "atk": 550, "def": 300, "isBoss": true, "loot_table_id": "lt_final_boss"
+    }
+  }
+}

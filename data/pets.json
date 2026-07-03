@@ -1,0 +1,114 @@
+{
+  "pet_slime": {
+    "name": "Slime Pelacak",
+    "icon": "💧",
+    "rarity": "Common",
+    "bonusAtt": 2,
+    "bonusDef": 5,
+    "ability": "Scavenger",
+    "description": "Peliharaan pemula. Kadang-kadang memungut item rongsokan yang jatuh ke tanah."
+  },
+  "pet_cat": {
+    "name": "Kucing Pencuri",
+    "icon": "🐈",
+    "rarity": "Common",
+    "bonusAtt": 3,
+    "bonusDef": 3,
+    "ability": "Coin Snatcher",
+    "description": "Sangat imut tapi nakal. Memberikan bonus drop koin saat melawan monster."
+  },
+  "pet_dog": {
+    "name": "Anjing Pemburu",
+    "icon": "🐕",
+    "rarity": "Common",
+    "bonusAtt": 5,
+    "bonusDef": 2,
+    "ability": "Loyal Companion",
+    "description": "Sahabat terbaik manusia. Setia menemanimu menjelajah hutan."
+  },
+
+  "pet_wolf": {
+    "name": "Serigala Malam",
+    "icon": "🐺",
+    "rarity": "Uncommon",
+    "bonusAtt": 15,
+    "bonusDef": 5,
+    "ability": "Bloodlust",
+    "description": "Sangat buas. Menambah daya serangmu secara signifikan."
+  },
+  "pet_boar": {
+    "name": "Babi Hutan Berbaja",
+    "icon": "🐗",
+    "rarity": "Uncommon",
+    "bonusAtt": 8,
+    "bonusDef": 15,
+    "ability": "Tough Skin",
+    "description": "Memiliki kulit yang keras. Sangat bagus untuk menahan serangan musuh (Bonus Defense)."
+  },
+
+  "pet_eagle": {
+    "name": "Elang Peninjau",
+    "icon": "🦅",
+    "rarity": "Rare",
+    "bonusAtt": 25,
+    "bonusDef": 10,
+    "ability": "Eagle Eye",
+    "description": "Terbang tinggi untuk mengintai kelemahan musuh. Meningkatkan peluang serangan kritikal."
+  },
+  "pet_bear": {
+    "name": "Beruang Perang",
+    "icon": "🐻",
+    "rarity": "Rare",
+    "bonusAtt": 20,
+    "bonusDef": 30,
+    "ability": "Intimidation",
+    "description": "Ukurannya yang raksasa membuat monster level rendah ketakutan."
+  },
+
+  "pet_fox": {
+    "name": "Rubah Ekor Sembilan",
+    "icon": "🦊",
+    "rarity": "Epic",
+    "bonusAtt": 45,
+    "bonusDef": 20,
+    "ability": "Mystic Aura",
+    "description": "Rubah mistis dari legenda. Memancarkan aura yang mempercepat perolehan XP pemain."
+  },
+  "pet_griffin": {
+    "name": "Griffin Penjaga",
+    "icon": "🦅",
+    "rarity": "Epic",
+    "bonusAtt": 50,
+    "bonusDef": 40,
+    "ability": "Wind Gust",
+    "description": "Kombinasi singa dan elang. Mampu menghempaskan musuh dengan kepakan sayapnya."
+  },
+
+  "pet_phoenix": {
+    "name": "Burung Phoenix",
+    "icon": "🔥",
+    "rarity": "Legendary",
+    "bonusAtt": 100,
+    "bonusDef": 80,
+    "ability": "Rebirth",
+    "description": "Burung abadi yang terlahir dari abu. Mampu menyelamatkan pemain dari kematian fatal saat melawan Boss."
+  },
+  "pet_dragon": {
+    "name": "Anak Naga Kuno",
+    "icon": "🐉",
+    "rarity": "Legendary",
+    "bonusAtt": 150,
+    "bonusDef": 100,
+    "ability": "Dragon's Breath",
+    "description": "Makhluk paling kuat di daratan. Semburan apinya akan menghanguskan area manapun."
+  },
+  "pet_cerberus": {
+    "name": "Cerberus (Anjing Neraka)",
+    "icon": "🐕‍🦺",
+    "rarity": "Legendary",
+    "bonusAtt": 120,
+    "bonusDef": 120,
+    "ability": "Hellfire Guard",
+    "description": "Anjing berkepala tiga penjaga gerbang bawah dunia. Mustahil untuk ditembus oleh musuh."
+  }
+}

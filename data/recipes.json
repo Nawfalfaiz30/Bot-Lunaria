@@ -1,0 +1,39 @@
+{
+  "cooking": {
+    "goblin_stew": { "result_id": "goblin_stew", "ingredients": { "goblin_ear": 3, "oak_wood": 2, "carp": 3 } },
+    "cave_mushroom_soup": { "result_id": "cave_mushroom_soup", "ingredients": { "golem_core": 2, "birch_wood": 3, "trout": 2 } },
+    "crimson_wolf_steak": { "result_id": "crimson_wolf_steak", "ingredients": { "wolf_pelt": 2, "pine_wood": 4, "salmon": 3 } },
+    "kraken_delight": { "result_id": "kraken_delight", "ingredients": { "kraken_tentacle": 1, "mangrove_wood": 5, "catfish": 4 } },
+    "sphinx_desert_feast": { "result_id": "sphinx_desert_feast", "ingredients": { "sphinx_eye": 1, "cactus_bark": 5, "sand_eel": 5 } },
+    "hydra_glacier_soup": { "result_id": "hydra_glacier_soup", "ingredients": { "hydra_scale": 2, "frost_wood": 6, "ice_fish": 4 } }
+  },
+  "alchemy": {
+    "potion_haste_tier1": { "result_id": "potion_haste_tier1", "ingredients": { "slime_ball": 5, "acidic_mutate_gel": 3, "copper_ore": 2 } },
+    "golem_skin_potion": { "result_id": "golem_skin_potion", "ingredients": { "spider_fang": 4, "weaver_venom_sac": 2, "iron_ore": 3 } },
+    "vampiric_brew": { "result_id": "vampiric_brew", "ingredients": { "vampire_fang": 2, "forbidden_blood_ritual": 1, "coal_ore": 5 } },
+    "bioluminescent_elixir": { "result_id": "bioluminescent_elixir", "ingredients": { "bio_luminescent_gland": 3, "silver_ore": 4, "mangrove_wood": 2 } },
+    "phantom_shroud_elixir": { "result_id": "phantom_shroud_elixir", "ingredients": { "phantom_dust": 4, "gold_ore": 3, "cactus_bark": 3 } },
+    "titanium_shield_elixir": { "result_id": "titanium_shield_elixir", "ingredients": { "zeus_lightning_shard": 1, "titanium_ore": 5, "yggdrasil_branch": 2 } }
+  },
+  
+  "smith": {
+    "// WEAPONS RESEP": "================== ⚔️ PERSENJATAAN METEORIT ==================",
+    "novice_sword": { "material_id": "copper_ore", "gold_multiplier": 1.0, "ore_multiplier": 1.0 },
+    "vanguard_lance": { "material_id": "iron_ore", "gold_multiplier": 1.3, "ore_multiplier": 1.0 },
+    "knight_greatsword": { "material_id": "coal_ore", "gold_multiplier": 1.6, "ore_multiplier": 1.2 },
+    "assassin_stiletto": { "material_id": "silver_ore", "gold_multiplier": 1.9, "ore_multiplier": 1.2 },
+    "shadow_dagger": { "material_id": "vampire_fang", "gold_multiplier": 2.2, "ore_multiplier": 1.5 },
+    "elven_composite_bow": { "material_id": "gold_ore", "gold_multiplier": 2.6, "ore_multiplier": 1.5 },
+    "archmage_nexus_staff": { "material_id": "platinum_ore", "gold_multiplier": 3.2, "ore_multiplier": 2.0 },
+    "phoenix_flame_bow": { "material_id": "obsidian_shard", "gold_multiplier": 4.0, "ore_multiplier": 2.0 },
+    "ragnarok_blade": { "material_id": "draconium_ore", "gold_multiplier": 5.5, "ore_multiplier": 2.5 },
+    "chronos_nexus_staff": { "material_id": "chronos_quartz", "gold_multiplier": 7.0, "ore_multiplier": 3.0 },
+
+    "// ARMORS RESEP": "================== 🛡️ DEFENSITAS PELINDUNG ==================",
+    "cloth_tunic": { "material_id": "copper_ore", "gold_multiplier": 0.8, "ore_multiplier": 1.0 },
+    "reinforced_leather": { "material_id": "golem_core", "gold_multiplier": 1.2, "ore_multiplier": 1.0 },
+    "iron_plate_mail": { "material_id": "coal_ore", "gold_multiplier": 1.5, "ore_multiplier": 1.3 },
+    "crystal_paladin_armor": { "material_id": "mithril_ore", "gold_multiplier": 3.0, "ore_multiplier": 1.8 },
+    "dragon_scale_plate": { "material_id": "draconium_ore", "gold_multiplier": 5.0, "ore_multiplier": 2.2 }
+  }
+}

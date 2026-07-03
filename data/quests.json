@@ -1,0 +1,134 @@
+{
+  "quest_woodcutter_1": {
+    "name": "Penebang Pemula",
+    "description": "Desa sedang membangun pagar baru untuk menahan serangan Goblin. Bawakan 50 Kayu Biasa.",
+    "reqItem": "wood",
+    "reqAmount": 50,
+    "rewards": {
+      "xp": 150,
+      "coin": 250,
+      "items": [ { "itemId": "minor_health_potion", "amount": 2 } ]
+    }
+  },
+  "quest_miner_1": {
+    "name": "Pekerja Tambang",
+    "description": "Pandai besi kehabisan bahan bakar. Kumpulkan 50 Batu Biasa dari area pertambangan.",
+    "reqItem": "stone",
+    "reqAmount": 50,
+    "rewards": {
+      "xp": 150,
+      "coin": 250,
+      "items": [ { "itemId": "iron_pickaxe", "amount": 1 } ]
+    }
+  },
+  "quest_slime_hunter": {
+    "name": "Pembasmi Hama Lengket",
+    "description": "Slime Hijau merusak ladang gandum warga! Buktikan kau telah membasmi mereka dengan membawa 20 Gel Slime.",
+    "reqItem": "slime_gel",
+    "reqAmount": 20,
+    "rewards": {
+      "xp": 300,
+      "coin": 500,
+      "items": [ { "itemId": "iron_sword", "amount": 1 } ]
+    }
+  },
+  "quest_goblin_menace": {
+    "name": "Ancaman Goblin",
+    "description": "Kalahkan gerombolan Goblin Pengintai dan bawa pulang 15 Telinga Goblin sebagai bukti.",
+    "reqItem": "goblin_ear",
+    "reqAmount": 15,
+    "rewards": {
+      "xp": 450,
+      "coin": 800,
+      "items": [ { "itemId": "major_health_potion", "amount": 2 } ]
+    }
+  },
+  "quest_iron_baron": {
+    "name": "Pesanan Besi Kerajaan",
+    "description": "Pasukan kerajaan membutuhkan banyak besi untuk membuat pedang. Serahkan 30 Biji Besi.",
+    "reqItem": "iron_ore",
+    "reqAmount": 30,
+    "rewards": {
+      "xp": 600,
+      "coin": 1200,
+      "items": [ { "itemId": "diamond", "amount": 1 } ]
+    }
+  },
+  "quest_orc_war": {
+    "name": "Perang Melawan Orc",
+    "description": "Para Orc mulai turun dari gunung. Bawa 10 Gigi Orc untuk membuktikan keberanianmu.",
+    "reqItem": "orc_tooth",
+    "reqAmount": 10,
+    "rewards": {
+      "xp": 800,
+      "coin": 1500,
+      "items": [ { "itemId": "silver_ore", "amount": 5 } ]
+    }
+  },
+  "quest_fisherman_1": {
+    "name": "Festival Panen Ikan",
+    "description": "Bantu nelayan lokal memenuhi kuota tangkapan festival. Serahkan 20 Ikan Kecil.",
+    "reqItem": "small_fish",
+    "reqAmount": 20,
+    "rewards": {
+      "xp": 300,
+      "coin": 600,
+      "items": [ { "itemId": "fiberglass_rod", "amount": 1 } ]
+    }
+  },
+  "quest_alchemist_need": {
+    "name": "Penelitian Alkimia",
+    "description": "Penyihir agung membutuhkan bahan langka. Serahkan 15 Rumput Ajaib kepadanya.",
+    "reqItem": "magic_weed",
+    "reqAmount": 15,
+    "rewards": {
+      "xp": 1000,
+      "coin": 2000,
+      "items": [ { "itemId": "mana_potion", "amount": 5 } ]
+    }
+  },
+  "quest_vampire_slayer": {
+    "name": "Pemburu Malam",
+    "description": "Hentikan teror makhluk penghisap darah di Area 6. Bawa 5 Taring Vampir.",
+    "reqItem": "vampire_fang",
+    "reqAmount": 5,
+    "rewards": {
+      "xp": 2500,
+      "coin": 5000,
+      "items": [ { "itemId": "platinum_shield", "amount": 1 } ]
+    }
+  },
+  "quest_chef_special": {
+    "name": "Pesta Bangsawan",
+    "description": "Seorang bangsawan mengadakan pesta mewah. Serahkan 5 Babi Hutan Panggang hasil masakanmu.",
+    "reqItem": "roasted_boar",
+    "reqAmount": 5,
+    "rewards": {
+      "xp": 3500,
+      "coin": 8000,
+      "items": [ { "itemId": "elixir_of_life", "amount": 1 } ]
+    }
+  },
+  "quest_demon_hunter": {
+    "name": "Pengusir Iblis",
+    "description": "Kalahkan Iblis di Area 13 dan bawa 3 Jantung Iblis. Berhati-hatilah, mereka sangat kuat.",
+    "reqItem": "demon_heart",
+    "reqAmount": 3,
+    "rewards": {
+      "xp": 8000,
+      "coin": 15000,
+      "items": [ { "itemId": "void_crystal", "amount": 2 } ]
+    }
+  },
+  "quest_dragon_slayer": {
+    "name": "LEGENDA: Pembunuh Naga",
+    "description": "Kalahkan naga legendaris dan bawa setidaknya 1 Sisik Naga. Hadiahnya akan sepadan.",
+    "reqItem": "dragon_scale",
+    "reqAmount": 1,
+    "rewards": {
+      "xp": 20000,
+      "coin": 50000,
+      "items": [ { "itemId": "dragon_egg", "amount": 1 } ]
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "fishing_common_passive": {
+    "name": "Steady Grip",
+    "type": "fish_yield",
+    "value": 0.10,
+    "description": "Meningkatkan jumlah ikan yang didapat sebesar +10%."
+  },
+  "fishing_epic_passive": {
+    "name": "Ocean Whisperer",
+    "type": "fish_rare_chance",
+    "value": 0.20,
+    "description": "Meningkatkan peluang mendapatkan ikan langka sebesar +20%."
+  },
+  "fishing_mythic_passive": {
+    "name": "Poseidon's Blessing",
+    "type": "fish_double_catch",
+    "value": 0.15,
+    "description": "Memberikan 15% peluang untuk menangkap dua ikan sekaligus."
+  },
+  "fishing_god_passive": {
+    "name": "Dimensional Pull",
+    "type": "fish_cosmic_chance",
+    "value": 0.30,
+    "description": "Meningkatkan peluang memikat dan menarik makhluk mistis dari retakan dimensi sebesar +30%."
+  },
+  "mining_common_passive": {
+    "name": "Heavy Swing",
+    "type": "mine_yield",
+    "value": 0.10,
+    "description": "Meningkatkan jumlah bijih mineral yang didapat sebesar +10%."
+  },
+  "mining_epic_passive": {
+    "name": "Geologist Sight",
+    "type": "mine_rare_chance",
+    "value": 0.20,
+    "description": "Meningkatkan peluang menemukan batu permata/mineral langka sebesar +20%."
+  },
+  "mining_mythic_passive": {
+    "name": "Dwarven Efficiency",
+    "type": "mine_double_yield",
+    "value": 0.15,
+    "description": "Memberikan 15% peluang untuk menggandakan hasil tambang."
+  },
+  "mining_god_passive": {
+    "name": "Void Obliteration",
+    "type": "mine_cosmic_yield",
+    "value": 0.30,
+    "description": "Menghancurkan formasi batu sekeras apa pun secara instan dan meningkatkan hasil tambang sebesar +30%."
+  },
+  "chopping_common_passive": {
+    "name": "Sharp Edge",
+    "type": "chop_yield",
+    "value": 0.10,
+    "description": "Meningkatkan hasil tebangan kayu sebesar +10%."
+  },
+  "chopping_epic_passive": {
+    "name": "Lumberjack Rhythm",
+    "type": "chop_rare_chance",
+    "value": 0.20,
+    "description": "Meningkatkan peluang mendapatkan kayu langka/kuno sebesar +20%."
+  },
+  "chopping_mythic_passive": {
+    "name": "Forest Symphony",
+    "type": "chop_stamina_save",
+    "value": 0.15,
+    "description": "Memberikan 15% peluang untuk tidak mengurangi HP/Stamina saat menebang."
+  },
+  "chopping_god_passive": {
+    "name": "Eclipse Singularity",
+    "type": "chop_cosmic_yield",
+    "value": 0.30,
+    "description": "Menebang pohon purba dalam satu kedipan mata dan meningkatkan hasil tebangan sebesar +30%."
+  },
+  "hunting_sharpness_1": {
+    "name": "Razor Blade I",
+    "type": "hunt_atk_percent",
+    "value": 0.05,
+    "description": "Meningkatkan total Physical ATK sebesar +5% saat berburu."
+  },
+  "hunting_sharpness_2": {
+    "name": "Razor Blade II",
+    "type": "hunt_atk_percent",
+    "value": 0.12,
+    "description": "Meningkatkan total Physical ATK sebesar +12% saat berburu."
+  },
+  "hunting_vampiric": {
+    "name": "Bloodthirst",
+    "type": "hunt_lifesteal",
+    "value": 0.15,
+    "description": "Memulihkan HP sebesar 15% dari damage yang diberikan ke monster."
+  },
+  "hunting_scavenger": {
+    "name": "Treasure Hunter",
+    "type": "hunt_loot_chance",
+    "value": 0.15,
+    "description": "Meningkatkan peluang drop rate item langka dari monster sebesar +15%."
+  },
+  "combat_guardian": {
+    "name": "Iron Wall",
+    "type": "def_percent",
+    "value": 0.10,
+    "description": "Meningkatkan total DEF sebesar +10% di Dungeon maupun Hunt."
+  },
+  "combat_scholar": {
+    "name": "Enlightenment",
+    "type": "xp_gain_percent",
+    "value": 0.05,
+    "description": "Meningkatkan perolehan XP dari segala aktivitas RPG sebesar +5%."
+  }
+}

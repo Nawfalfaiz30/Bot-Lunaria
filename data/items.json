@@ -1,0 +1,1087 @@
+{
+    "// SECTION": "============= 1. EQUIPMENT: GATHERING TOOLS =============",
+    
+    "old_fishing_rod": {
+      "name": "Old Fishing Rod",
+      "type": "equipment",
+      "slot": "fishing_rod",
+      "emoji": "🎣",
+      "description": "Alat pancing tua berbahan bambu rakitan. Sangat rapuh namun cukup untuk memulai.",
+      "passive_id": null,
+      "stats": {},
+      "sell_price": 50
+    },
+    "reinforced_fishing_rod": {
+      "name": "Reinforced Fishing Rod",
+      "type": "equipment",
+      "slot": "fishing_rod",
+      "emoji": "🦾",
+      "description": "Pancingan kayu yang diperkuat lilitan kawat tembaga. Tarikannya lebih stabil.",
+      "passive_id": "fishing_common_passive",
+      "stats": {},
+      "sell_price": 16000
+    },
+    "epic_fishing_rod": {
+      "name": "Ocean Whisperer Rod",
+      "type": "equipment",
+      "slot": "fishing_rod",
+      "emoji": "🔱",
+      "description": "Pancingan magis bergaya pesisir. Mengalirkan getaran yang memikat ikan langka.",
+      "passive_id": "fishing_epic_passive",
+      "stats": {},
+      "sell_price": 12000
+    },
+    "poseidon_fishing_rod": {
+      "name": "Poseidon's Tidebringer",
+      "type": "equipment",
+      "slot": "fishing_rod",
+      "emoji": "🌊",
+      "description": "Pancingan pusaka samudera. Diberkati oleh kekuatan laut untuk hasil tangkapan ganda.",
+      "passive_id": "fishing_mythic_passive",
+      "stats": {},
+      "sell_price": 60000   
+    },
+
+    "rusty_pickaxe": {
+      "name": "Rusty Pickaxe",
+      "type": "equipment",
+      "slot": "pickaxe",
+      "emoji": "⛏️",
+      "description": "Beliung tua berkarat. Kurang tajam tetapi mampu memecahkan batu area awal.",
+      "passive_id": null,
+      "stats": {},
+      "sell_price": 120
+    },
+    "heavy_iron_pickaxe": {
+      "name": "Heavy Iron Pickaxe",
+      "type": "equipment",
+      "slot": "pickaxe",
+      "emoji": "🛠️",
+      "description": "Beliung besi tempa berbobot mantap. Menghancurkan batu dengan serpihan lebih banyak.",
+      "passive_id": "mining_common_passive",
+      "stats": {},
+      "sell_price": 1600
+    },
+    "geologist_pickaxe": {
+      "name": "Geologist Crystal Pickaxe",
+      "type": "equipment",
+      "slot": "pickaxe",
+      "emoji": "💎",
+      "description": "Ujung beliung dilapisi serbuk berlian. Memiliki kepekaan tinggi mencari celah permata.",
+      "passive_id": "mining_epic_passive",
+      "stats": {},
+      "sell_price": 12000
+    },
+    "dwarven_demolisher": {
+      "name": "Dwarven Demolisher",
+      "type": "equipment",
+      "slot": "pickaxe",
+      "emoji": "🌋",
+      "description": "Beliung legendaris bangsa kurcaci. Mampu membelah formasi batu terkeras dalam sekejap.",
+      "passive_id": "mining_mythic_passive",
+      "stats": {},
+      "sell_price": 60000
+    },
+
+    "worn_axe": {
+      "name": "Worn Axe",
+      "type": "equipment",
+      "slot": "axe",
+      "emoji": "🪓",
+      "description": "Kapak penebang kayu berpunggung tumpul. Membutuhkan tenaga ekstra saat mengayun.",
+      "passive_id": null,
+      "stats": {},
+      "sell_price": 120
+    },
+    "steel_lumber_axe": {
+      "name": "Steel Lumber Axe",
+      "type": "equipment",
+      "slot": "axe",
+      "emoji": "🪚",
+      "description": "Kapak baja berkilau yang diasah tajam. Memotong serat kayu dengan rapi.",
+      "passive_id": "chopping_common_passive",
+      "stats": {},
+      "sell_price": 1600
+    },
+    "druid_leaf_axe": {
+      "name": "Druid's Leaf Axe",
+      "type": "equipment",
+      "slot": "axe",
+      "emoji": "🍃",
+      "description": "Kapak organik yang diselimuti sihir hutan. Membantu menemukan serat kayu langka.",
+      "passive_id": "chopping_epic_passive",
+      "stats": {},
+      "sell_price": 1200
+    },
+    "yggdrasil_feller": {
+      "name": "Yggdrasil Feller",
+      "type": "equipment",
+      "slot": "axe",
+      "emoji": "✨",
+      "description": "Kapak mistis berlapis kosmik. Energi alamnya melindungimu dari kelelahan fisik.",
+      "passive_id": "chopping_mythic_passive",
+      "stats": {},
+      "sell_price": 60000
+    },
+    "nebula_fishing_rod": {
+      "name": "Nebula Chrono Reel", 
+      "type": "equipment",
+      "slot": "fishing_rod",
+      "emoji": "🌀",
+      "description": "Joran pamungkas yang benangnya ditenun dari debu galaksi. Mampu menarik makhluk mistis dari retakan dimensi.",
+      "passive_id": "fishing_god_passive",
+      "stats": {},
+      "sell_price": 80000
+    },
+    "cosmic_void_pickaxe": {
+      "name": "Cosmic Void Pickaxe",
+      "type": "equipment",
+      "slot": "pickaxe",
+      "emoji": "🌌",
+      "description": "Beliung hitam yang matanya terbuat dari pecahan meteorit murni. Menghancurkan batu sekeras apa pun seperti remah roti.",
+      "passive_id": "mining_god_passive",
+      "stats": {},
+      "sell_price": 86000
+    },
+    "infinity_eclipse_axe": {
+      "name": "Infinity Eclipse Axe",
+      "type": "equipment",
+      "slot": "axe",
+      "emoji": "☀️",
+      "description": "Kapak kosmik yang memancarkan aura gerhana abadi. Menebang pohon purba dalam satu kedipan mata.",
+      "passive_id": "chopping_god_passive",
+      "stats": {},
+      "sell_price": 10000
+    },
+
+
+    "// SECTION_2": "============= 2. EQUIPMENT: WEAPONS =============",
+
+    "novice_sword": {
+      "name": "Novice Sword",
+      "type": "equipment",
+      "slot": "weapon",
+      "emoji": "⚔️",
+      "description": "Pedang pendek standar untuk melatih rekrutan baru kerajaan.",
+      "passive_id": "hunting_sharpness_1",
+      "stats": { "atk": 10, "def": 0 },
+      "sell_price": 240
+    },
+    "knight_greatsword": {
+      "name": "Knight Grand Greatsword",
+      "type": "equipment",
+      "slot": "weapon",
+      "emoji": "🛡️",
+      "description": "Pedang dua tangan yang berat. Memberikan perlindungan ekstra bagi penggunanya.",
+      "passive_id": "combat_guardian",
+      "stats": { "atk": 35, "def": 25 },
+      "sell_price": 6000
+    },
+    "shadow_dagger": {
+      "name": "Shadow Dagger",
+      "type": "equipment",
+      "slot": "weapon",
+      "emoji": "🗡️",
+      "description": "Belati gelap berlumur darah monster. Mengisap esensi kehidupan musuh menjadi HP.",
+      "passive_id": "hunting_vampiric",
+      "stats": { "atk": 70, "agi": 20 },
+      "sell_price": 20000
+    },
+    "elven_composite_bow": {
+      "name": "Elven Composite Bow",
+      "type": "equipment",
+      "slot": "weapon",
+      "emoji": "🏹",
+      "description": "Busur fleksibel dari kayu peri. Meningkatkan kejelian mata untuk berburu harta karun.",
+      "passive_id": "hunting_scavenger",
+      "stats": { "atk": 80, "def": 20, "agi": 25 },
+      "sell_price": 32000
+    },
+    "archmage_nexus_staff": {
+      "name": "Archmage Nexus Staff",
+      "type": "equipment",
+      "slot": "weapon",
+      "emoji": "🔮",
+      "description": "Tongkat pusaka penyalur energi kehampaan. Memberikan tambahan XP berkat berkah pengetahuan.",
+      "passive_id": "combat_scholar",
+      "stats": { "atk": 100, "int": 60 },
+      "sell_price": 79200
+    },
+    "vanguard_lance": {
+      "name": "Vanguard Steel Lance",
+      "type": "equipment",
+      "slot": "weapon",
+      "emoji": "🔱",
+      "description": "Tombak panjang pasukan garis depan kerajaan. Ujungnya yang runcing memberikan bonus pertahanan saat bertahan.",
+      "passive_id": "combat_guardian",
+      "stats": { "atk": 45, "def": 35 },
+      "sell_price": 10000
+    },
+    "assassin_stiletto": {
+      "name": "Vipertooth Stiletto",
+      "type": "equipment",
+      "slot": "weapon",
+      "emoji": "🗡️",
+      "description": "Belati tipis beracun kesukaan para pembunuh bayaran shadow abyss. Sangat ringan.",
+      "passive_id": "hunting_sharpness_1",
+      "stats": { "atk": 55, "agi": 20 },
+      "sell_price": 8000
+    },
+    "phoenix_flame_bow": {
+      "name": "Phoenix Flame Bow",
+      "type": "equipment",
+      "slot": "weapon",
+      "emoji": "🏹",
+      "description": "Busur mistis yang talinya terbuat dari helai bulu burung legendaris. Anak panahnya membakar udara.",
+      "passive_id": "hunting_scavenger",
+      "stats": { "atk": 110, "agi": 40, "def": 55 },
+      "sell_price": 100000
+    },
+    "ragnarok_blade": {
+      "name": "Ragnarok Divine Blade",
+      "type": "equipment",
+      "slot": "weapon",
+      "emoji": "⚔️",
+      "description": "Pedang legendaris peruntuh takdir raksasa purba. Bilahnya memancarkan energi kehancuran mutlak.",
+      "passive_id": "hunting_vampiric",
+      "stats": { "atk": 280, "hp": 500, "def": 80 },
+      "sell_price": 188000
+    },
+    "chronos_nexus_staff": {
+      "name": "Chronos Eternity Staff",
+      "type": "equipment",
+      "slot": "weapon",
+      "emoji": "🪄",
+      "description": "Tongkat penguasa lini masa yang ditenun langsung dari inti Chrono Nexus. Memanipulasi ruang pertarungan.",
+      "passive_id": "combat_scholar",
+      "stats": { "atk": 120, "int": 180, "mana": 300 },
+      "sell_price": 168000  
+    },
+
+    "// SECTION_ARMOR": "============= EQUIPMENT: ARMORS =============",
+
+    "cloth_tunic": {
+      "name": "Cloth Tunic",
+      "type": "equipment",
+      "slot": "armor",
+      "emoji": "👕",
+      "description": "Jubah kain tipis rajutan warga desa. Setidaknya lebih baik daripada telanjang dada.",
+      "passive_id": null,
+      "stats": { "def": 5, "hp": 20 },
+      "sell_price": 200
+    },
+    "reinforced_leather": {
+      "name": "Reinforced Leather Armor",
+      "type": "equipment",
+      "slot": "armor",
+      "emoji": "🦺",
+      "description": "armor dari kulit monster tebal yang dikeraskan. Ringan dan elastis.",
+      "passive_id": null,
+      "stats": { "def": 18, "hp": 80 },
+      "sell_price": 2800
+    },
+    "iron_plate_mail": {
+      "name": "Iron Plate Mail",
+      "type": "equipment",
+      "slot": "armor",
+      "emoji": "🛡️",
+      "description": "armor lempeng besi tempa padat. Sangat kokoh untuk meredam hantaman keras.",
+      "passive_id": "combat_guardian",
+      "stats": { "def": 45, "hp": 250 },
+      "sell_price": 14600 
+    },
+    "crystal_paladin_armor": {
+      "name": "Crystal Paladin Armor",
+      "type": "equipment",
+      "slot": "armor",
+      "emoji": "🔮",
+      "description": "armor berlapis kristal magis penolak kutukan. Memiliki struktur molekul sangat rapat.",
+      "passive_id": "combat_guardian",
+      "stats": { "def": 110, "hp": 750 },
+      "sell_price": 5200
+    },
+    "dragon_scale_plate": {
+      "name": "Dragon Scale Plate Mail",
+      "type": "equipment",
+      "slot": "armor",
+      "emoji": "🐉",
+      "description": "armor legendaris yang ditempa dari sisik naga purba. Kebal terhadap panas lava ekstrem.",
+      "passive_id": "combat_guardian",
+      "stats": { "def": 320, "hp": 2500 },
+      "sell_price": 146000
+    },
+
+    "// SECTION_3": "============= 3. CONSUMABLES (POTIONS) =============",
+
+    "potion_hp_small": {
+      "name": "Small HP Potion",
+      "type": "consumable",
+      "emoji": "🧪",
+      "description": "Ramuan merah skala kecil. Memulihkan 50 HP secara instan.",
+      "effects": { "heal_hp": 50, "heal_mana": 0 },
+      "sell_price": 100
+    },
+    "potion_hp_medium": {
+      "name": "Medium HP Potion",
+      "type": "consumable",
+      "emoji": "🏺",
+      "description": "Ramuan merah racikan herbal kental. Memulihkan 200 HP.",
+      "effects": { "heal_hp": 250, "heal_mana": 0 },
+      "sell_price": 400
+    },
+    "potion_hp_large": {
+      "name": "Elixir of Life",
+      "type": "consumable",
+      "emoji": "🧪",
+      "description": "Cairan suci yang memulihkan 1000 HP secara penuh.",
+      "effects": { "heal_hp": 750, "heal_mana": 0 },
+      "sell_price": 800
+    },
+    "potion_mana_small": {
+      "name": "Small Mana Potion",
+      "type": "consumable",
+      "emoji": "💧",
+      "description": "Ekstrak energi biru ringan. Memulihkan 30 Mana.",
+      "effects": { "heal_hp": 0, "heal_mana": 30 },
+      "sell_price": 600
+    },
+    "potion_mana_large": {
+      "name": "Elixir of Mind",
+      "type": "consumable",
+      "emoji": "🌌",
+      "description": "Esensi bintang cair. Memulihkan 100 Mana demi kelancaran penggunaan skill.",
+      "effects": { "heal_hp": 0, "heal_mana": 100 },
+      "sell_price": 1600
+    },
+    "potion_hybrid_medium": {
+      "name": "Rejuvenation Elixir",
+      "type": "consumable",
+      "emoji": "🧪",
+      "description": "Ramuan hibrida berwarna ungu kental. Memulihkan vitalitas tubuh dan pikiran sekaligus.",
+      "effects": { "heal_hp": 350, "heal_mana": 50 },
+      "sell_price": 1200
+    },
+    "roasted_wild_meat": {
+      "name": "Roasted Wild Meat",
+      "type": "consumable",
+      "emoji": "🍖",
+      "description": "Daging hasil buruan yang dibakar di atas api perkemahan. Lezat dan memulihkan kesehatan darurat.",
+      "effects": { "heal_hp": 175, "heal_mana": 0 },
+      "sell_price": 300
+    },
+    "golden_apple": {
+      "name": "Blessed Golden Apple",
+      "type": "consumable",
+      "emoji": "🍎",
+      "description": "Apel emas suci dari puncak pegunungan celestial. Memberikan kesegaran jiwa yang masif pasca sekarat.",
+      "effects": { "heal_hp": 500, "heal_mana": 200 },
+      "sell_price": 4400
+    },
+    "elixir_god_omega": {
+      "name": "Amrita Tears (Omega Potion)",
+      "type": "consumable",
+      "emoji": "🍶",
+      "description": "Setetes air mata dewa waktu. Memulihkan seluruh kondisi kesehatan dan energi magis ke kondisi prima tanpa celah.",
+      "effects": { "heal_hp": 5000, "heal_mana": 2000 },
+      "sell_price": 4200
+
+    },
+    "potion_berserk_tier3": {
+      "name": "Berserker Potion",
+      "type": "consumable",
+      "emoji": "🍷",
+      "description": "Cairan merah menyala yang memicu adrenalin bertarung masif.",
+      "effects": { "heal_hp": 0, "heal_mana": 0 },
+      "buff": {
+        "statTarget": "atk_pct",
+        "value": 0.25,
+        "type": "percent",
+        "duration": 1800000
+      },
+      "sell_price": 18000
+    },
+    "omega_fish_stew": {
+      "name": "Omega Fish Stew",
+      "type": "consumable",
+      "emoji": "🍲",
+      "description": "Sup ikan legendaris. Menambahkan status pertahanan +5 VIT secara permanen.",
+      "effects": { "heal_hp": 100, "heal_mana": 0 },
+      "permanent_stat": { "target": "vit", "value": 5 },
+      "sell_price": 600
+    },
+    "goblin_stew": {
+      "name": "Goblin Ears Stew",
+      "type": "consumable",
+      "emoji": "🍲",
+      "description": "Sup kental rebusan kuping goblin. Baunya aneh namun meningkatkan kekuatan fisik otot lengan.",
+      "effects": { "heal_hp": 80, "heal_mana": 0 },
+      "permanent_stat": { "target": "str", "value": 1 },
+      "sell_price": 60
+    },
+    "cave_mushroom_soup": {
+      "name": "Cave Mushroom Soup",
+      "type": "consumable",
+      "emoji": "🥣",
+      "description": "Sup jamur gua bertabur remah magis golem. Mengeraskan struktur tulang rusuk.",
+      "effects": { "heal_hp": 150, "heal_mana": 20 },
+      "permanent_stat": { "target": "vit", "value": 1 },
+      "sell_price": 110
+    },
+    "crimson_wolf_steak": {
+      "name": "Crimson Wolf Steak",
+      "type": "consumable",
+      "emoji": "🥩",
+      "description": "Daging empuk serigala merah lembah yang dibakar matang. Membuat pergerakan kaki lebih lincah.",
+      "effects": { "heal_hp": 300, "heal_mana": 0 },
+      "permanent_stat": { "target": "agi", "value": 2 },
+      "sell_price": 220
+    },
+    "kraken_delight": {
+      "name": "Kraken Spawn Delight",
+      "type": "consumable",
+      "emoji": "🐙",
+      "description": "Hidangan premium dari potongan tentakel kraken rawa. Loncatan kekuatan fisik masif.",
+      "effects": { "heal_hp": 1200, "heal_mana": 100 },
+      "permanent_stat": { "target": "str", "value": 3 },
+      "sell_price": 420
+    },
+    "sphinx_desert_feast": {
+      "name": "Sphinx Desert Feast",
+      "type": "consumable",
+      "emoji": "🍲",
+      "description": "Pesta jamuan kutukan gurun pasir. Membuka tabir pengetahuan mistis batin spiritual.",
+      "effects": { "heal_hp": 2500, "heal_mana": 500 },
+      "permanent_stat": { "target": "int", "value": 4 },
+      "sell_price": 850
+    },
+    "hydra_glacier_soup": {
+      "name": "Hydra Glacier Soup",
+      "type": "consumable",
+      "emoji": "🍲",
+      "description": "Sup kaldu naga es purba. Memberikan tambahan vitalitas hidup tanpa batas paling mutakhir.",
+      "effects": { "heal_hp": 5000, "heal_mana": 1000 },
+      "permanent_stat": { "target": "vit", "value": 5 },
+      "sell_price": 1200
+    },
+    "potion_haste_tier1": {
+      "name": "Swift Haste Potion",
+      "type": "consumable",
+      "emoji": "🧪",
+      "description": "Cairan encer pemicu kelincahan instan. Meningkatkan AGI dasar secara temporal.",
+      "effects": { "heal_hp": 0, "heal_mana": 0 },
+      "buff": {
+        "statTarget": "agi",
+        "value": 15,
+        "type": "flat",
+        "duration": 900000
+      },
+      "sell_price": 30
+    },
+    "golem_skin_potion": {
+      "name": "Iron Golem Skin Potion",
+      "type": "consumable",
+      "emoji": "🫙",
+      "description": "Cairan abu-abu kental berlapis partikel besi. armor kulit menebal menahan serangan monster.",
+      "effects": { "heal_hp": 0, "heal_mana": 0 },
+      "buff": {
+        "statTarget": "def_pct",
+        "value": 0.15,
+        "type": "percent",
+        "duration": 1200000
+      },
+      "sell_price": 75
+    },
+    "vampiric_brew": {
+      "name": "Lord Vampiric Brew",
+      "type": "consumable",
+      "emoji": "🍷",
+      "description": "Reaksi darah bangsawan malam. Memberikan pasif kutukan lifesteal saat menyerang monster.",
+      "effects": { "heal_hp": 200, "heal_mana": 50 },
+      "buff": {
+        "statTarget": "hunt_lifesteal_pct",
+        "value": 0.15,
+        "type": "percent",
+        "duration": 1800000
+      },
+      "sell_price": 180
+    },
+    "bioluminescent_elixir": {
+      "name": "Bioluminescent Elixir",
+      "type": "consumable",
+      "emoji": "🧪",
+      "description": "Ekstrak kilau kelenjar laut dalam. Meningkatkan konsentrasi kecerdasan sihir pikiran.",
+      "effects": { "heal_hp": 0, "heal_mana": 400 },
+      "buff": {
+        "statTarget": "int",
+        "value": 25,
+        "type": "flat",
+        "duration": 1800000
+      },
+      "sell_price": 350
+    },
+    "phantom_shroud_elixir": {
+      "name": "Phantom Shroud Elixir",
+      "type": "consumable",
+      "emoji": "🧪",
+      "description": "Ramuan transparan hantu gurun. Tubuh petualang menjadi kabur membuat monster sulit memukulmu.",
+      "effects": { "heal_hp": 500, "heal_mana": 200 },
+      "buff": {
+        "statTarget": "evasionRate",
+        "value": 15,
+        "type": "flat",
+        "duration": 1800000
+      },
+      "sell_price": 460
+    },
+    "titanium_shield_elixir": {
+      "name": "Titanium Shield Elixir",
+      "type": "consumable",
+      "emoji": "🧪",
+      "description": "Ramuan alkimia tingkat tinggi. Menambahkan total kapasitas HP dan daya serang FLAT secara sementara.",
+      "effects": { "heal_hp": 0, "heal_mana": 0 },
+      "buff": {
+        "statTarget": "hp",
+        "value": 500,
+        "type": "flat",
+        "duration": 1800000
+      },
+      "sell_price": 490
+    },
+    
+
+    "// SECTION_4": "============= 4. MATERIALS: GATHERING (WOOD) =============",
+
+    "oak_wood": { "name": "Oak Wood", "type": "material", "emoji": "🪵", "description": "Kayu standar dari Whispering Woods (Area 1).", "sell_price": 15 },
+    "birch_wood": { "name": "Birch Wood", "type": "material", "emoji": "🪵", "description": "Kayu putih halus dari Crystal Caves (Area 2).", "sell_price": 35 },
+    "pine_wood": { "name": "Pine Wood", "type": "material", "emoji": "🪵", "description": "Kayu pinus kering dari Crimson Valley (Area 3).", "sell_price": 75 },
+    "mangrove_wood": { "name": "Mangrove Wood", "type": "material", "emoji": "🪵", "description": "Kayu rawa asin dari Sunken Shallows (Area 4).", "sell_price": 140 },
+    "cactus_bark": { "name": "Cactus Bark", "type": "material", "emoji": "🌵", "description": "Kulit kaktus tebal dari Scorched Desert (Area 5).", "sell_price": 260 },
+    "frost_wood": { "name": "Frost Wood", "type": "material", "emoji": "❄️", "description": "Batang pohon beku dari Frozen Tundra (Area 6).", "sell_price": 480 },
+    "maple_wood": { "name": "Maple Wood", "type": "material", "emoji": "🍁", "description": "Kayu jingga tebal dari Misty Highlands (Area 7).", "sell_price": 850 },
+    "charred_wood": { "name": "Charred Wood", "type": "material", "emoji": "🔥", "description": "Kayu hangang bara dari Obsidian Crags (Area 8).", "sell_price": 1450 },
+    "yggdrasil_branch": { "name": "Yggdrasil Branch", "type": "material", "emoji": "🌿", "description": "Ranting pohon dunia dari Celestial Peaks (Area 9).", "sell_price": 2400 },
+    "abyssal_stalk": { "name": "Abyssal Stalk", "type": "material", "emoji": "👁️", "description": "Serat tanaman gelap dari Shadow Abyss (Area 10).", "sell_price": 3900 },
+    "warped_stem": { "name": "Warped Stem", "type": "material", "emoji": "🍄", "description": "Batang jamur aneh dari Eldritch Ruins (Area 11).", "sell_price": 6200 },
+    "aether_wood": { "name": "Aether Wood", "type": "material", "emoji": "🌸", "description": "Patahan dahan suci dari Aetherial Gardens (Area 12).", "sell_price": 9800 },
+    "void_tendril": { "name": "Void Tendril", "type": "material", "emoji": "🌀", "description": "Akar kosmik pekat dari Void Rift (Area 13).", "sell_price": 15500 },
+    "dragon_bone_wood": { "name": "Dragon Bone Wood", "type": "material", "emoji": "🦴", "description": "Pohon fosil purba dari Dragon's Sanctum (Area 14).", "sell_price": 24500 },
+    "eternal_log": { "name": "Eternal Log", "type": "material", "emoji": "⏳", "description": "Batang kayu pembengkok waktu dari Chrono Nexus (Area 15).", "sell_price": 42000 },
+
+    "// SECTION_5": "============= 5. MATERIALS: GATHERING (ORES) =============",
+
+    "copper_ore": { "name": "Copper Ore", "type": "material", "emoji": "🟫", "description": "Bijih tembaga mentah dari Area 1.", "sell_price": 18 },
+    "iron_ore": { "name": "Iron Ore", "type": "material", "emoji": "⬜", "description": "Bongkahan besi murni dari Area 2.", "sell_price": 42 },
+    "coal_ore": { "name": "Coal Ore", "type": "material", "emoji": "⬛", "description": "Batu bara pemantik api dari Area 3.", "sell_price": 85 },
+    "silver_ore": { "name": "Silver Ore", "type": "material", "emoji": "🪙", "description": "Bijih perak berkilau dari Area 4.", "sell_price": 165 },
+    "gold_ore": { "name": "Gold Ore", "type": "material", "emoji": "👑", "description": "Emas murni mengkilap dari Area 5.", "sell_price": 310 },
+    "mithril_ore": { "name": "Mithril Ore", "type": "material", "emoji": "💠", "description": "Logam peri berkilau perak dari Area 6.", "sell_price": 560 },
+    "platinum_ore": { "name": "Platinum Ore", "type": "material", "emoji": "💎", "description": "Logam mulia berdaya tahan tinggi dari Area 7.", "sell_price": 980 },
+    "obsidian_shard": { "name": "Obsidian Shard", "type": "material", "emoji": "🖤", "description": "Patahan kaca vulkanik tajam dari Area 8.", "sell_price": 1650 },
+    "titanium_ore": { "name": "Titanium Ore", "type": "material", "emoji": "🔩", "description": "Bahan armor para jenderal langit dari Area 9.", "sell_price": 2750 },
+    "dark_matter_ore": { "name": "Dark Matter Ore", "type": "material", "emoji": "🌑", "description": "Batu padat pengisap cahaya dari Area 10.", "sell_price": 4400 },
+    "ancient_debris": { "name": "Ancient Debris", "type": "material", "emoji": "🏺", "description": "Puing logam purba terlupakan dari Area 11.", "sell_price": 7000 },
+    "lumen_crystal": { "name": "Lumen Crystal", "type": "material", "emoji": "🔮", "description": "Kristal pemancar cahaya abadi dari Area 12.", "sell_price": 11000 },
+    "cosmic_dust": { "name": "Cosmic Dust", "type": "material", "emoji": "✨", "description": "Debu pembentuk rasi bintang dari Area 13.", "sell_price": 17500 },
+    "draconium_ore": { "name": "Draconium Ore", "type": "material", "emoji": "🐉", "description": "Batu berselimut esensi naga dari Area 14.", "sell_price": 28000 },
+    "chronos_quartz": { "name": "Chronos Quartz", "type": "material", "emoji": "💎", "description": "Kuarsa pembeku jarum jam dari Area 15.", "sell_price": 48000 },
+
+    "// SECTION_6": "============= 6. MATERIALS: FISH (CONSUMABLE FISH) =============",
+
+    "carp": { "name": "Carp", "type": "consumable", "emoji": "🐟", "description": "Ikan mas biasa. Memulihkan 15 HP.", "effects": { "heal_hp": 15, "heal_mana": 0 }, "sell_price": 12 },
+    "trout": { "name": "Trout", "type": "consumable", "emoji": "🐟", "description": "Ikan gua berenang lincah. Memulihkan 30 HP.", "effects": { "heal_hp": 30, "heal_mana": 0 }, "sell_price": 28 },
+    "salmon": { "name": "Salmon", "type": "consumable", "emoji": "🐟", "description": "Ikan bergizi tinggi dari lembah. Memulihkan 55 HP.", "effects": { "heal_hp": 55, "heal_mana": 5 }, "sell_price": 60 },
+    "catfish": { "name": "Catfish", "type": "consumable", "emoji": "🐟", "description": "Ikan berkumis dari dasar reruntuhan. Memulihkan 90 HP.", "effects": { "heal_hp": 90, "heal_mana": 10 }, "sell_price": 110 },
+    "sand_eel": { "name": "Sand Eel", "type": "consumable", "emoji": "🐍", "description": "Belut gurun berstamina tinggi. Memulihkan 130 HP.", "effects": { "heal_hp": 130, "heal_mana": 15 }, "sell_price": 210 },
+    "ice_fish": { "name": "Ice Fish", "type": "consumable", "emoji": "🧊", "description": "Tubuhnya bening seperti es. Memulihkan 180 HP.", "effects": { "heal_hp": 180, "heal_mana": 20 }, "sell_price": 380 },
+    "rainbow_trout": { "name": "Rainbow Trout", "type": "consumable", "emoji": "🐠", "description": "Ikan bersisik spektrum pelangi. Memulihkan 250 HP.", "effects": { "heal_hp": 250, "heal_mana": 25 }, "sell_price": 680 },
+    "lava_magma_fish": { "name": "Lava Magma Fish", "type": "consumable", "emoji": "🌋", "description": "Ikan bersisik batu bara panas. Memulihkan 350 HP.", "effects": { "heal_hp": 350, "heal_mana": 30 }, "sell_price": 1150 },
+    "sky_ray": { "name": "Sky Ray", "type": "consumable", "emoji": "🦅", "description": "Pari terbang penghuni awan tinggi. Memulihkan 500 HP.", "effects": { "heal_hp": 500, "heal_mana": 35 }, "sell_price": 1950 },
+    "void_aberration": { "name": "Void Aberration Fish", "type": "consumable", "emoji": "🦑", "description": "Bentuk kehidupan aneh dari kegelapan. Memulihkan 700 HP.", "effects": { "heal_hp": 700, "heal_mana": 50 }, "sell_price": 3200 },
+    "eldritch_squid": { "name": "Eldritch Squid", "type": "consumable", "emoji": "🐙", "description": "Cumi bertentakel banyak penuh misteri. Memulihkan 900 HP.", "effects": { "heal_hp": 900, "heal_mana": 75 }, "sell_price": 5100 },
+    "angel_fish": { "name": "Aether Angel Fish", "type": "consumable", "emoji": "👼", "description": "Membawa aura ketenangan rohani. Memulihkan 1200 HP.", "effects": { "heal_hp": 1200, "heal_mana": 100 }, "sell_price": 8200 },
+    "nebula_whale": { "name": "Nebula Whale Shard", "type": "consumable", "emoji": "🐋", "description": "Serpihan paus kosmik pelindung bintang. Memulihkan 1600 HP.", "effects": { "heal_hp": 1600, "heal_mana": 150 }, "sell_price": 13000 },
+    "dragon_carp": { "name": "Ancient Dragon Carp", "type": "consumable", "emoji": "🐲", "description": "Ikan legendaris yang lolos gerbang naga. Memulihkan 2200 HP.", "effects": { "heal_hp": 2200, "heal_mana": 220 }, "sell_price": 21000 },
+    "time_weaver": { "name": "Chrono Time Weaver", "type": "consumable", "emoji": "⏳", "description": "Ikan berenang melintasi benang waktu. Memulihkan 3000 HP & 400 Mana.", "effects": { "heal_hp": 3000, "heal_mana": 400 }, "sell_price": 34000 },
+
+    "// SECTION_MONSTER_DROPS_CONSUMABLE": "============= 7. CONSUMABLES: MONSTER & BOSS DROPS (AREA 1-15) =============",
+    
+    "// AREA 1 - WHISPERING WOODS": "=========================================",
+    "slime_ball": { 
+      "name": "Slime Ball", "type": "consumable", "emoji": "🟢", "sell_price": 20,
+      "description": "Gumpalan lendir hijau kenyal. Sedikit pahit namun memulihkan vitalitas dasar.", 
+      "effects": { "heal_hp": 25, "heal_mana": 0 }
+    },
+    "acidic_mutate_gel": { 
+      "name": "Acidic Mutate Gel", "type": "consumable", "emoji": "🧪", "sell_price": 25,
+      "description": "Gel mutasi asam. Memberikan sensasi menyengat yang memicu regenerasi energi.", 
+      "effects": { "heal_hp": 15, "heal_mana": 15 }
+    },
+    "goblin_ear": { 
+      "name": "Goblin Ear", "type": "consumable", "emoji": "👂", "sell_price": 35,
+      "description": "Telinga runcing goblin. Dikeringkan untuk dijadikan bahan ramuan penambah stamina.", 
+      "effects": { "heal_hp": 40, "heal_mana": 0 }
+    },
+    "scout_stolen_ring": { 
+      "name": "Scout's Stolen Ring", "type": "consumable", "emoji": "💍", "sell_price": 90,
+      "description": "Cincin perak curian. Mengandung sisa berkah pemilik aslinya saat dihancurkan.", 
+      "effects": { "heal_hp": 50, "heal_mana": 10 }
+    },
+    "goblin_king_crown": { 
+      "name": "Goblin King Crown", "type": "consumable", "emoji": "👑", "sell_price": 350,
+      "description": "Mahkota kuningan Raja Goblin. Menyerap sisa kepemimpinan untuk memulihkan tubuh.", 
+      "effects": { "heal_hp": 150, "heal_mana": 20 }
+    },
+    "royal_goblin_scepter": { 
+      "name": "Royal Goblin Scepter", "type": "consumable", "emoji": "🔱", "sell_price": 420,
+      "description": "Tongkat komando zamrud suku goblin. Melepaskan gelombang energi murni saat dikonsumsi.", 
+      "effects": { "heal_hp": 100, "heal_mana": 50 }
+    },
+
+    "// AREA 2 - CRYSTAL CAVES": "=========================================",
+    "spider_fang": { 
+      "name": "Crystal Spider Fang", "type": "consumable", "emoji": "🦷", "sell_price": 50,
+      "description": "Taring laba-laba kristal. Ekstrak cairannya berkhasiat memulihkan cedera ringan.", 
+      "effects": { "heal_hp": 80, "heal_mana": 0 }
+    },
+    "weaver_venom_sac": { 
+      "name": "Weaver Venom Sac", "type": "consumable", "emoji": "🤢", "sell_price": 65,
+      "description": "Kantung bisa pekat. Dengan takaran pas, bisa menstimulasi aliran mana internal.", 
+      "effects": { "heal_hp": 0, "heal_mana": 45 }
+    },
+    "golem_core": { 
+      "name": "Golem Core Shard", "type": "consumable", "emoji": "🪨", "sell_price": 95,
+      "description": "Pecahan inti sihir golem batu. Mengonsumsinya mengeraskan tekad dan memulihkan HP.", 
+      "effects": { "heal_hp": 120, "heal_mana": 10 }
+    },
+    "resonating_rune_stone": { 
+      "name": "Resonating Rune Stone", "type": "consumable", "emoji": "🪨✨", "sell_price": 180,
+      "description": "Batu bertatahkan rune yang beresonansi kuat dengan energi spiritual pengguna.", 
+      "effects": { "heal_hp": 60, "heal_mana": 60 }
+    },
+    "colossus_heart": { 
+      "name": "Gemstone Colossus Heart", "type": "consumable", "emoji": "💎", "sell_price": 750,
+      "description": "Inti permata raksasa Colossus. Menyimpan esensi bumi yang memulihkan vitalitas besar.", 
+      "effects": { "heal_hp": 400, "heal_mana": 50 }
+    },
+    "geode_matrix_crystal": { 
+      "name": "Geode Matrix Crystal", "type": "consumable", "emoji": "🔮", "sell_price": 880,
+      "description": "Kristal induk purba. Menyerap hancurannya untuk pengisian instan cadangan energi magis.", 
+      "effects": { "heal_hp": 100, "heal_mana": 250 }
+    },
+
+    "// AREA 3 - CRIMSON VALLEY": "=========================================",
+    "wolf_pelt": { 
+      "name": "Crimson Wolf Pelt", "type": "consumable", "emoji": "🐺", "sell_price": 110,
+      "description": "Bulu tebal serigala merah. Dapat dikonsumsi menjadi ekstrak penghangat tubuh darurat.", 
+      "effects": { "heal_hp": 180, "heal_mana": 0 }
+    },
+    "alpha_leader_fang": { 
+      "name": "Alpha Leader Fang", "type": "consumable", "emoji": "🦷", "sell_price": 140,
+      "description": "Taring pemimpin alpha. Mengalirkan kekuatan bertarung yang memulihkan darah.", 
+      "effects": { "heal_hp": 250, "heal_mana": 20 }
+    },
+    "cultist_hood": { 
+      "name": "Cultist Hood Rag", "type": "consumable", "emoji": "🧥", "sell_price": 190,
+      "description": "Kain jubah pengikut sekte. Mengandung sisa berkah sesat pemulih mana.", 
+      "effects": { "heal_hp": 50, "heal_mana": 120 }
+    },
+    "forbidden_blood_ritual": { 
+      "name": "Forbidden Blood Ritual Script", "type": "consumable", "emoji": "📜", "sell_price": 320,
+      "description": "Naskah ritual terlarang. Membakar baris kalimatnya memulihkan energi spiritual masif.", 
+      "effects": { "heal_hp": 150, "heal_mana": 200 }
+    },
+    "vampire_fang": { 
+      "name": "Vampire Lord Fang", "type": "consumable", "emoji": "🧛", "sell_price": 1500,
+      "description": "Taring bangsawan vampir. Menyedot sisa esensinya memberikan pemulihan instan.", 
+      "effects": { "heal_hp": 800, "heal_mana": 100 }
+    },
+    "pure_vampiric_blood": { 
+      "name": "Pure Vampiric Bloodstone", "type": "consumable", "emoji": "🩸", "sell_price": 1850,
+      "description": "Batu darah murni Sang Lord. Menghancurkannya mengembalikan kondisi tubuh ke titik prima.", 
+      "effects": { "heal_hp": 600, "heal_mana": 400 }
+    },
+
+    "// AREA 4 - SUNKEN SHALLOWS": "=========================================",
+    "drowned_talisman": { 
+      "name": "Drowned Talisman", "type": "consumable", "emoji": "🪙", "sell_price": 220,
+      "description": "Jimat maritim kuno berlumut. Menyimpan sisa keajaiban laut pelindung nyawa.", 
+      "effects": { "heal_hp": 350, "heal_mana": 50 }
+    },
+    "rusted_navy_insignia": { 
+      "name": "Rusted Navy Insignia", "type": "consumable", "emoji": "🎖️", "sell_price": 280,
+      "description": "Lencana komando angkatan laut kuno. Mengembalikan wibawa jiwa dan mana pikiran.", 
+      "effects": { "heal_hp": 200, "heal_mana": 200 }
+    },
+    "eel_scale": { 
+      "name": "Abyssal Eel Scale", "type": "consumable", "emoji": "🐟", "sell_price": 340,
+      "description": "Sisik belut laut dalam yang licin. Mengandung protein laut pembantu pemulihan fisik.", 
+      "effects": { "heal_hp": 450, "heal_mana": 0 }
+    },
+    "bio_luminescent_gland": { 
+      "name": "Bioluminescent Gland", "type": "consumable", "emoji": "💡", "sell_price": 490,
+      "description": "Kelenjar cahaya belut laut. Menyala terang di dalam tubuh untuk mengisi tangki mana.", 
+      "effects": { "heal_hp": 100, "heal_mana": 300 }
+    },
+    "kraken_tentacle": { 
+      "name": "Kraken Spawn Tentacle", "type": "consumable", "emoji": "🦑", "sell_price": 3100,
+      "description": "Potongan gurita raksasa purba. Sangat kenyal dan memulihkan porsi darah sangat besar.", 
+      "effects": { "heal_hp": 1500, "heal_mana": 150 }
+    },
+    "abyssal_black_ink": { 
+      "name": "Abyssal Black Ink Sac", "type": "consumable", "emoji": "🖤", "sell_price": 3800,
+      "description": "Kantung tinta hitam pekat kraken. Dikonsumsi untuk ketenangan fokus mana yang dalam.", 
+      "effects": { "heal_hp": 500, "heal_mana": 800 }
+    },
+
+    "// AREA 5 - SCORCHED DESERT": "=========================================",
+    "scorpion_stinger": { 
+      "name": "Stalker Stinger", "type": "consumable", "emoji": "🦂", "sell_price": 410,
+      "description": "Sengat kalajengking gurun. Penawar racun internalnya memulihkan kekuatan fisik.", 
+      "effects": { "heal_hp": 700, "heal_mana": 50 }
+    },
+    "neurotoxin_extract": { 
+      "name": "Neurotoxin Extract", "type": "consumable", "emoji": "🧪", "sell_price": 490,
+      "description": "Ekstrak cairan saraf. Mempercepat detak jantung untuk mengalirkan mana instan.", 
+      "effects": { "heal_hp": 200, "heal_mana": 450 }
+    },
+    "phantom_dust": { 
+      "name": "Dune Phantom Dust", "type": "consumable", "emoji": "💨", "sell_price": 580,
+      "description": "Sisa ektoplasma hantu gurun. Memberikan sensasi melayang penenang jiwa.", 
+      "effects": { "heal_hp": 600, "heal_mana": 300 }
+    },
+    "ancient_burial_urn": { 
+      "name": "Ancient Burial Shard", "type": "consumable", "emoji": "🏺", "sell_price": 680,
+      "description": "Pecahan guci pemakaman firaun kuno. Mengalirkan energi spiritual masa lalu.", 
+      "effects": { "heal_hp": 400, "heal_mana": 500 }
+    },
+    "sphinx_eye": { 
+      "name": "Cursed Sphinx Eye", "type": "consumable", "emoji": "👁️", "sell_price": 5500,
+      "description": "Mata patung Sphinx penjaga kutukan. Menghancurkannya memulihkan kesehatan masif.", 
+      "effects": { "heal_hp": 3000, "heal_mana": 350 }
+    },
+    "riddle_stone_tablet": { 
+      "name": "Riddle Stone Tablet", "type": "consumable", "emoji": "🧱", "sell_price": 6400,
+      "description": "Prasasti batu teka-teki kuno. Membaca naskahnya menjernihkan fokus pikiran secara mutlak.", 
+      "effects": { "heal_hp": 1000, "heal_mana": 1200 }
+    },
+
+    "// AREA 6 - FROZEN TUNDRA": "=========================================",
+    "wight_bone": { 
+      "name": "Frost Wight Bone", "type": "consumable", "emoji": "🦴", "sell_price": 690,
+      "description": "Tulang membeku pembawa hawa dingin. Meleburkannya ke dalam ramuan pemulih luka.", 
+      "effects": { "heal_hp": 1200, "heal_mana": 100 }
+    },
+    "permafrost_ice_shard": { 
+      "name": "Permafrost Ice Shard", "type": "consumable", "emoji": "🧊", "sell_price": 820,
+      "description": "Serpihan es abadi ribuan tahun. Menurunkan demam bertarung dan memulihkan mana.", 
+      "effects": { "heal_hp": 500, "heal_mana": 700 }
+    },
+    "yeti_fur": { 
+      "name": "Ice Yeti Fur", "type": "consumable", "emoji": "🦧", "sell_price": 980,
+      "description": "Gumpalan bulu putih tebal penahan badai. Diperas untuk diambil esensi staminanya.", 
+      "effects": { "heal_hp": 1500, "heal_mana": 0 }
+    },
+    "yeti_crushed_skull": { 
+      "name": "Yeti Crushed Horn", "type": "consumable", "emoji": "🦣", "sell_price": 1200,
+      "description": "Patahan tanduk kokoh sisa pertarungan. Bubuk gilingannya memicu regenerasi energi kuat.", 
+      "effects": { "heal_hp": 1000, "heal_mana": 600 }
+    },
+    "hydra_scale": { 
+      "name": "Glacier Hydra Scale", "type": "consumable", "emoji": "🐉", "sell_price": 9500,
+      "description": "Sisik tebal berkepala banyak dari naga gletser. Sangat efektif meregenerasi sel tubuh hancur.", 
+      "effects": { "heal_hp": 5000, "heal_mana": 500 }
+    },
+    "frozen_hydra_brain": { 
+      "name": "Frozen Hydra Core", "type": "consumable", "emoji": "🔮", "sell_price": 11500,
+      "description": "Inti regenerasi sihir dari kepala utama Hydra. Memulihkan seluruh sumur sihir internal.", 
+      "effects": { "heal_hp": 2000, "mana": 2500 }
+    },
+
+    "// AREA 7 - MISTY HIGHLANDS": "=========================================",
+    "weaver_silk": { 
+      "name": "Mist Weaver Silk", "type": "consumable", "emoji": "🕸️", "sell_price": 1250,
+      "description": "Sutra jaring laba-laba kabut. Digunakan sebagai perban darurat penutup luka parah.", 
+      "effects": { "heal_hp": 2200, "heal_mana": 200 }
+    },
+    "steel_web_filament": { 
+      "name": "Steel-Web Filament", "type": "consumable", "emoji": "🧵", "sell_price": 1480,
+      "description": "Benang penenun kabut sekeras baja. Membantu memulihkan jalinan energi mana yang retak.", 
+      "effects": { "heal_hp": 800, "heal_mana": 1200 }
+    },
+    "griffin_feather": { 
+      "name": "Mist Griffin Feather", "type": "consumable", "emoji": "🪶", "sell_price": 1750,
+      "description": "Bulu halus berkilau perak. Dihancurkan menjadi bubuk teh penenang pikiran bertarung.", 
+      "effects": { "heal_hp": 2600, "heal_mana": 300 }
+    },
+    "griffin_talon": { 
+      "name": "Sharp Griffin Talon", "type": "consumable", "emoji": "🦅", "sell_price": 2100,
+      "description": "Cakar elang raksasa tajam. Memberikan pasokan energi adrenalin instan.", 
+      "effects": { "heal_hp": 2000, "heal_mana": 800 }
+    },
+    "valkyrie_feather": { 
+      "name": "Corrupted Valkyrie Feather", "type": "consumable", "emoji": "🪶", "sell_price": 14500,
+      "description": "Bulu sayap legendaris milik Fallen Valkyrie. Memulihkan esensi hidup pejuang surga.", 
+      "effects": { "heal_hp": 8000, "heal_mana": 1000 }
+    },
+    "broken_valkyrie_spear": { 
+      "name": "Broken Valkyrie Spear Tip", "type": "consumable", "emoji": "🗡️", "sell_price": 17500,
+      "description": "Patahan ujung tombak suci Valhalla. Melepaskan gelombang kekuatan pemulih aura perang.", 
+      "effects": { "heal_hp": 4000, "heal_mana": 4000 }
+    },
+
+    "// AREA 8 - OBSIDIAN CRAGS": "=========================================",
+    "magma_slime_core": { 
+      "name": "Magma Slime Core", "type": "consumable", "emoji": "☄️", "sell_price": 1950,
+      "description": "Inti api kecil magma cair. Memberikan ledakan vitalitas panas dalam tubuh sekarat.", 
+      "effects": { "heal_hp": 4000, "heal_mana": 400 }
+    },
+    "condensed_sulfur_rock": { 
+      "name": "Condensed Sulfur Rock", "type": "consumable", "emoji": "🟨", "sell_price": 2350,
+      "description": "Batuan belerang padat kawah gunung berapi. Menyebarkan hawa stimulan pemulih mana.", 
+      "effects": { "heal_hp": 1500, "heal_mana": 2500 }
+    },
+    "hellhound_fang": { 
+      "name": "Hellhound Fiery Fang", "type": "consumable", "emoji": "🦷", "sell_price": 2800,
+      "description": "Taring anjing neraka berhawa panas bara. Mengekstrak energinya mengisi ulang kekuatan fisik.", 
+      "effects": { "heal_hp": 5000, "heal_mana": 500 }
+    },
+    "scorched_collar_chain": { 
+      "name": "Scorched Collar Chain", "type": "consumable", "emoji": "⛓️", "sell_price": 3400,
+      "description": "Rantai leher besi hitam hangus. Menghancurkannya melepas pasokan energi spiritual murni.", 
+      "effects": { "heal_hp": 3000, "heal_mana": 3000 }
+    },
+    "efreet_heart": { 
+      "name": "Heart of Efreet", "type": "consumable", "emoji": "❤️‍🔥", "sell_price": 22500,
+      "description": "Inti api abadi dada raksasa lava. Mengonsumsi apinya memulihkan kesehatan tingkat tinggi.", 
+      "effects": { "heal_hp": 15000, "heal_mana": 2000 }
+    },
+    "infernal_ember_eye": { 
+      "name": "Infernal Ember Eye", "type": "consumable", "emoji": "👁️‍🔥", "sell_price": 26000,
+      "description": "Mata api menyala Raja Efreet. Energi kehancurannya dikonversi menjadi kolam mana tak terbatas.", 
+      "effects": { "heal_hp": 5000, "heal_mana": 10000 }
+    },
+
+    "// AREA 9 - CELESTIAL PEAKS": "=========================================",
+    "serpent_tooth": { 
+      "name": "Sky Serpent Tooth", "type": "consumable", "emoji": "🦷", "sell_price": 3100,
+      "description": "Taring naga langit pemecah badai topan. Mengalirkan kesegaran angin celestial.", 
+      "effects": { "heal_hp": 8000, "heal_mana": 1000 }
+    },
+    "gale_force_membrane": { 
+      "name": "Gale Force Membrane", "type": "consumable", "emoji": "💨", "sell_price": 3750,
+      "description": "Selaput tipis sayap naga awan. Menelan sarinya mempercepat regenerasi fokus mana langit.", 
+      "effects": { "heal_hp": 3000, "heal_mana": 6000 }
+    },
+    "archmage_scroll": { 
+      "name": "Cloud Archmage Scroll", "type": "consumable", "emoji": "📜", "sell_price": 4500,
+      "description": "Mantra sihir pengendali awan. Menyerap tulisan gaibnya mengisi ulang cadangan pengetahuan.", 
+      "effects": { "heal_hp": 2000, "heal_mana": 8000 }
+    },
+    "astral_focus_lens": { 
+      "name": "Astral Focus Lens", "type": "consumable", "emoji": "💎", "sell_price": 5400,
+      "description": "Kristal penyerap rasi bintang penyihir langit. Melepaskan partikel bintang penyembuh tubuh.", 
+      "effects": { "heal_hp": 6000, "heal_mana": 6000 }
+    },
+    "zeus_lightning_shard": { 
+      "name": "Zeus Lightning Shard", "type": "consumable", "emoji": "⚡", "sell_price": 32000,
+      "description": "Pecahan petir murni Avatar petir. Mengalirkan kejut vitalitas masif langsung ke jantung.", 
+      "effects": { "heal_hp": 30000, "heal_mana": 4000 }
+    },
+    "storm_god_thunderstone": { 
+      "name": "Storm God Thunderstone", "type": "consumable", "emoji": "🪨⚡", "sell_price": 38000,
+      "description": "Batu bermuatan statis pemanggil petir dewa. Menetralkan seluruh keletihan pikiran magis.", 
+      "effects": { "heal_hp": 10000, "heal_mana": 20000 }
+    },
+
+    "// AREA 10 - SHADOW ABYSS": "=========================================",
+    "watcher_lens": { 
+      "name": "Abyss Watcher Lens", "type": "consumable", "emoji": "👁️", "sell_price": 4900,
+      "description": "Kornea mata mahluk pengintai labirin kegelapan. Memberikan visi ketahanan tubuh instan.", 
+      "effects": { "heal_hp": 15000, "heal_mana": 2000 }
+    },
+    "parasitic_shadow_larva": { 
+      "name": "Parasitic Shadow Larva", "type": "consumable", "emoji": "🐛", "sell_price": 5800,
+      "description": "Larva pembawa energi emosi gelap. Diolah ulang untuk memulihkan kapasitas mana kritis.", 
+      "effects": { "heal_hp": 5000, "heal_mana": 12000 }
+    },
+    "fiend_shadow": { 
+      "name": "Shadow Fiend Residue", "type": "consumable", "emoji": "👥", "sell_price": 6900,
+      "description": "Sisa energi bayangan mahluk perusak jiwa. Mengembalikan vitalitas lewat kegelapan murni.", 
+      "effects": { "heal_hp": 18000, "heal_mana": 3000 }
+    },
+    "corrupted_soul_crystal": { 
+      "name": "Corrupted Soul Crystal", "type": "consumable", "emoji": "🔮", "sell_price": 8200,
+      "description": "Kristal gelap jiwa terperangkap. Memecahkannya mengasimilasi energi spiritual murni.", 
+      "effects": { "heal_hp": 10000, "heal_mana": 15000 }
+    },
+    "demon_horn": { 
+      "name": "Abyssal Demon Horn", "type": "consumable", "emoji": "😈", "sell_price": 48000,
+      "description": "Tanduk kokoh Demon Lord. Menghancurkannya mengembalikan kekuatan fisik ke tingkat tertinggi.", 
+      "effects": { "heal_hp": 60000, "heal_mana": 8000 }
+    },
+    "apocalypse_demonic_seal": { 
+      "name": "Apocalypse Demonic Seal", "type": "consumable", "emoji": "🔱", "sell_price": 56000,
+      "description": "Segel pakta terlarang penguasa neraka terdalam. Membuka segelnya mengisi ulang sumur kekuatan abadi.", 
+      "effects": { "heal_hp": 25000, "heal_mana": 40000 }
+    },
+
+    "// AREA 11 - ELDRITCH RUINS": "=========================================",
+    "eldritch_fluid": { 
+      "name": "Eldritch Eye Fluid", "type": "consumable", "emoji": "🧪", "sell_price": 7500,
+      "description": "Cairan pekat bola mata kosmik kuno. Meregenerasi jaringan sel tubuh luar dalam.", 
+      "effects": { "heal_hp": 30000, "heal_mana": 5000 }
+    },
+    "unholy_aberration_brain": { 
+      "name": "Aberration Brain Tissue", "type": "consumable", "emoji": "🧠", "sell_price": 8900,
+      "description": "Jaringan saraf kosmik pembawa bisikan gaib. Menggila dan mengisi ulang mana dimensi luar.", 
+      "effects": { "heal_hp": 10000, "heal_mana": 25000 }
+    },
+    "horror_tentacle": { 
+      "name": "Faceless Horror Tentacle", "type": "consumable", "emoji": "🦑", "sell_price": 10500,
+      "description": "Potongan tentakel berlendir mahluk kegelapan. Mengandung gizi purba raksasa pembangun tubuh.", 
+      "effects": { "heal_hp": 35000, "heal_mana": 6000 }
+    },
+    "void_slime_ooze": { 
+      "name": "Void Slime Ooze", "type": "consumable", "emoji": "🧫", "sell_price": 12500,
+      "description": "Cairan karat bintang dimensi hampa. Menyuntikkan esensi energi sihir kosmik.", 
+      "effects": { "heal_hp": 15000, "heal_mana": 30000 }
+    },
+    "madness_eye": { 
+      "name": "Eye of Madness", "type": "consumable", "emoji": "👁️‍🗨️", "sell_price": 72000,
+      "description": "Mata purba Herald of Madness. Menyerap tatapannya memulihkan kesehatan mutlak.", 
+      "effects": { "heal_hp": 120000, "heal_mana": 15000 }
+    },
+    "cosmic_cthulhu_beak": { 
+      "name": "Cosmic Cthulhu Beak", "type": "consumable", "emoji": "🦚", "sell_price": 85000,
+      "description": "Paruh tajam penghancur planet milik utusan kegerapan kosmik. Melepaskan batas energi mana.", 
+      "effects": { "heal_hp": 50000, "heal_mana": 75000 }
+    },
+
+    "// AREA 12 - AETHERIAL GARDENS": "=========================================",
+    "sprite_wing": { 
+      "name": "Aether Sprite Wing", "type": "consumable", "emoji": "🦋", "sell_price": 11500,
+      "description": "Sayap peri kebun suci khayangan. Menelan serpihannya memberikan ketenangan penyembuh total.", 
+      "effects": { "heal_hp": 60000, "heal_mana": 10000 }
+    },
+    "divine_nectar_drop": { 
+      "name": "Divine Nectar Drop", "type": "consumable", "emoji": "🍯", "sell_price": 13500,
+      "description": "Setetes madu suci khayangan. Menyembuhkan luka batin dan memulihkan pasokan mana masif.", 
+      "effects": { "heal_hp": 20000, "heal_mana": 50000 }
+    },
+    "pegasus_hoof": { 
+      "name": "Crystal Pegasus Hoof", "type": "consumable", "emoji": "🦄", "sell_price": 16000,
+      "description": "Kuku Pegasus berlapis kristal magis. Diolah menjadi ramuan pemulih vitalitas dewa.", 
+      "effects": { "heal_hp": 70000, "heal_mana": 15000 }
+    },
+    "pure_unicorn_horn": { 
+      "name": "Pure Celestia Horn", "type": "consumable", "emoji": "🦏", "sell_price": 19500,
+      "description": "Tanduk lancip murni pembawa berkah penyucian. Mengembalikan kondisi energi magis dari nol.", 
+      "effects": { "heal_hp": 30000, "heal_mana": 65000 }
+    },
+    "seraphim_halo_shard": { 
+      "name": "Seraphim Halo Shard", "type": "consumable", "emoji": "😇", "sell_price": 110000,
+      "description": "Pecahan lingkaran cahaya Archangel. Mengonsumsi serpihannya memulihkan nyawa skala masif.", 
+      "effects": { "heal_hp": 250000, "heal_mana": 30000 }
+    },
+    "archangel_judgment_feather": { 
+      "name": "Judgment White Feather", "type": "consumable", "emoji": "🪶✨", "sell_price": 135000,
+      "description": "Bulu sayap murni sakral pelindung surga. Menyucikan ingatan pikiran dan mengisi ulang seluruh mana.", 
+      "effects": { "heal_hp": 100000, "heal_mana": 150000 }
+    },
+
+    "// AREA 13 - VOID RIFT": "=========================================",
+    "walker_core": { 
+      "name": "Void Walker Core", "type": "consumable", "emoji": "🔮", "sell_price": 17500,
+      "description": "Inti mahluk hampa dimensi. Menyerap dayanya menutup luka robek pada fisik pengguna.", 
+      "effects": { "heal_hp": 120000, "heal_mana": 25000 }
+    },
+    "anti_matter_particle": { 
+      "name": "Anti-Matter Particle", "type": "consumable", "emoji": "⚛️", "sell_price": 21000,
+      "description": "Partikel antimateri tidak stabil. Mengubah reaksinya memicu asimilasi mana hampa masif.", 
+      "effects": { "heal_hp": 40000, "heal_mana": 100000 }
+    },
+    "wraith_essence": { 
+      "name": "Cosmic Wraith Essence", "type": "consumable", "emoji": "🌌", "sell_price": 25500,
+      "description": "Kabut energi dingin dari hantu rasi bintang hancur. Mengembalikan ketegaran jiwa kombatan.", 
+      "effects": { "heal_hp": 150000, "heal_mana": 30000 }
+    },
+    "dark_nebula_condensate": { 
+      "name": "Dark Nebula Condensate", "type": "consumable", "emoji": "🌀", "sell_price": 31000,
+      "description": "Kondensasi debu galaksi hitam pekat. Menyerap zatnya memicu pengisian ulang kapasitas energi kosmik.", 
+      "effects": { "heal_hp": 60000, "heal_mana": 120000 }
+    },
+    "singularity_fragment": { 
+      "name": "Singularity Fragment", "type": "consumable", "emoji": "🌀", "sell_price": 165000,
+      "description": "Pecahan ruang tak berdimensi lubang hitam kosmik. Memberikan pasokan pemulihan nyawa absolut.", 
+      "effects": { "heal_hp": 500000, "heal_mana": 60000 }
+    },
+    "event_horizon_core": { 
+      "name": "Event Horizon Core", "type": "consumable", "emoji": "🌌✨", "sell_price": 195000,
+      "description": "Inti batas mutlak lubang hitam. Membuka dayanya memenuhi seluruh sumur sihir linear lini masa semesta.", 
+      "effects": { "heal_hp": 200000, "heal_mana": 300000 }
+    },
+
+    "// AREA 14 - DRAGON'S SANCTUM": "=========================================",
+    "dragon_kin_blood": { 
+      "name": "Draconic Soldier Blood", "type": "consumable", "emoji": "🩸", "sell_price": 26000,
+      "description": "Darah kental naga purba yang bergejolak. Meminumnya memicu regenerasi darah sangat masif.", 
+      "effects": { "heal_hp": 300000, "heal_mana": 50000 }
+    },
+    "hardened_dragon_claw": { 
+      "name": "Hardened Dragon Claw", "type": "consumable", "emoji": "💅", "sell_price": 31500,
+      "description": "Kuku cakar naga berstruktur padat. Ditumbuk halus sebagai obat pemulih daya tahan.", 
+      "effects": { "heal_hp": 200000, "heal_mana": 150000 }
+    },
+    "wyvern_membrane": { 
+      "name": "Armored Wyvern Membrane", "type": "consumable", "emoji": "🦇", "sell_price": 38000,
+      "description": "Selaput sayap keras wyvern lapis baja. Diperas untuk mengekstrak esensi stamina naga.", 
+      "effects": { "heal_hp": 350000, "heal_mana": 60000 }
+    },
+    "wyvern_tail_stinger": { 
+      "name": "Wyvern Tail Stinger", "type": "consumable", "emoji": "🗡️", "sell_price": 46000,
+      "description": "Ujung ekor berduri tajam wyvern. Mengonversi bisa penawarnya menjadi sumur energi spiritual.", 
+      "effects": { "heal_hp": 150000, "heal_mana": 250000 }
+    },
+    "bahamut_calamity_scale": { 
+      "name": "Bahamut Calamity Scale", "type": "consumable", "emoji": "💥", "sell_price": 240000,
+      "description": "Sisik terkuat naga legendaris kehancuran mutlak. Memberikan pemulihan nyawa puncak makhluk purba.", 
+      "effects": { "heal_hp": 1000000, "heal_mana": 150000 }
+    },
+    "heart_of_the_dragon_emperor": { 
+      "name": "Dragon Emperor Heart", "type": "consumable", "emoji": "❤️‍🔥", "sell_price": 290000,
+      "description": "Jantung magma abadi milik raja segala ras naga purba. Memulihkan seluruh sumur magis tanpa batas.", 
+      "effects": { "heal_hp": 500000, "heal_mana": 600000 }
+    },
+
+    "// AREA 15 - CHRONO NEXUS": "=========================================",
+    "time_sand": { 
+      "name": "Chrono Anomaly Sand", "type": "consumable", "emoji": "⏳", "sell_price": 39000,
+      "description": "Pasir waktu penentang garis takdir linear. Membalikkan kondisi luka fisik ke beberapa detik sebelumnya.", 
+      "effects": { "heal_hp": 800000, "heal_mana": 200000 }
+    },
+    "paradox_timeline_rift": { 
+      "name": "Paradox Timeline Rift", "type": "consumable", "emoji": "🌌", "sell_price": 47000,
+      "description": "Serpihan realitas garis waktu alternatif yang hancur. Mengembalikan kesadaran spiritual penuh.", 
+      "effects": { "heal_hp": 400000, "heal_mana": 600000 }
+    },
+    "nexus_gear": { 
+      "name": "Chrono Golem Nexus Gear", "type": "consumable", "emoji": "⚙️", "sell_price": 56000,
+      "description": "Roda gigi robot penjaga celah dimensi. Melepaskan sisa daya kuantum pengisi vitalitas mekanik.", 
+      "effects": { "heal_hp": 1000000, "heal_mana": 300000 }
+    },
+    "quantum_core_battery": { 
+      "name": "Quantum Core Battery", "type": "consumable", "emoji": "🔋", "sell_price": 68000,
+      "description": "Sel daya kuantum pengisi energi mesin waktu. Membanjiri sumur pikiran kombatan dengan mana tak terbatas.", 
+      "effects": { "heal_hp": 500000, "heal_mana": 1000000 }
+    },
+    "chronos_infinity_gear": { 
+      "name": "Chronos Infinity Gear", "type": "consumable", "emoji": "⚙️", "sell_price": 360000,
+      "description": "Roda gigi takdir kosmik Sang Penguasa Waktu. Mengembalikan kesehatan ke kondisi prima mutlak.", 
+      "effects": { "heal_hp": 5000000, "heal_mana": 1000000 }
+    },
+    "eternity_clock_hand": { 
+      "name": "Eternity Clock Hand", "type": "consumable", "emoji": "🗡️⏳", "sell_price": 450000,
+      "description": "Jarum jam abadi lini masa semesta. Mengisi seluruh kapasitas energi magis dan nyawa secara instan tanpa celah.", 
+      "effects": { "heal_hp": 2500000, "heal_mana": 2500000 }
+    }
+}

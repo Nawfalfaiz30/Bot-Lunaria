@@ -1,0 +1,62 @@
+{
+  "mobile_legends": { 
+    "name": "Mobile Legends: Bang Bang", 
+    "maxPlayers": 5, 
+    "icon": "📱",
+    "roles": ["Jungler", "Roamer", "Midlane", "Goldlane", "EXP Lane"]
+  },
+  "valorant": { 
+    "name": "Valorant", 
+    "maxPlayers": 5, 
+    "icon": "🔫",
+    "roles": ["Duelist", "Initiator", "Controller", "Sentinel", "Flex"]
+  },
+  "pubg_mobile": { 
+    "name": "PUBG Mobile", 
+    "maxPlayers": 4, 
+    "icon": "🪂",
+    "roles": ["Rusher", "Sniper", "Support", "IGL"]
+  },
+  "free_fire": { 
+    "name": "Free Fire", 
+    "maxPlayers": 4, 
+    "icon": "🔥",
+    "roles": ["Rusher", "Sniper", "Support", "Flanker"]
+  },
+  "genshin_impact": { 
+    "name": "Genshin Impact (Co-op)", 
+    "maxPlayers": 4, 
+    "icon": "🌟",
+    "roles": ["DPS", "Sub-DPS", "Healer", "Shield/Support"]
+  },
+  "minecraft": { 
+    "name": "Minecraft", 
+    "maxPlayers": 10, 
+    "icon": "⛏️",
+    "roles": ["Builder", "Miner", "Explorer", "Fighter"]
+  },
+  "roblox": { 
+    "name": "Roblox", 
+    "maxPlayers": 15, 
+    "icon": "🧱",
+    "roles": ["Casual", "Tryhard"]
+  },
+  "dota_2": { 
+    "name": "Dota 2", 
+    "maxPlayers": 5, 
+    "icon": "🧙‍♂️",
+    "roles": ["Hard Carry", "Mid", "Offlane", "Soft Support", "Hard Support"]
+  },
+  "cs_2": { 
+    "name": "Counter-Strike 2", 
+    "maxPlayers": 5, 
+    "icon": "💣",
+    "roles": ["Entry Fragger", "AWPer", "Support", "IGL", "Lurker"]
+  },
+  "apex_legends": { 
+    "name": "Apex Legends", 
+    "maxPlayers": 3, 
+    "icon": "🏃‍♂️",
+    "roles": ["Assault", "Skirmisher", "Recon", "Controller", "Support"]
+  }
+}

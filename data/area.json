@@ -1,0 +1,167 @@
+{
+  "area_1": {
+    "name": "Whispering Woods",
+    "emoji": "🌲",
+    "required_level": 1,
+    "description": "Hutan tenang yang dipenuhi suara bisikan angin. Tempat yang cocok untuk petualang pemula memulai perjalanannya.",
+      "gathering_available": {
+      "chop": "oak_wood",
+      "mine": "copper_ore",
+      "fish": "carp"
+    }
+  },
+  "area_2": {
+    "name": "Crystal Caves",
+    "emoji": "💎",
+    "required_level": 5,
+    "description": "Gua bawah tanah yang berkilau karena formasi kristal mentah. Berhati-hatilah dengan makhluk yang bersembunyi di kegelapan.",
+    "gathering_available": {
+      "chop": "birch_wood",
+      "mine": "iron_ore",
+      "fish": "trout"
+    }
+  },
+  "area_3": {
+    "name": "Crimson Valley",
+    "emoji": "🍂",
+    "required_level": 12,
+    "description": "Lembah dengan tanah berwarna merah bata dan dedaunan yang selalu berguguran. Aroma pertarungan sangat pekat di sini.",
+    "gathering_available": {
+      "chop": "pine_wood",
+      "mine": "coal_ore",
+      "fish": "salmon"
+    }
+  },
+  "area_4": {
+    "name": "Sunken Shallows",
+    "emoji": "🌊",
+    "required_level": 20,
+    "description": "Reruntuhan kota kuno yang tenggelam di pesisir pantai. Udara di sini lembap dan dipenuhi energi magis air.",
+    "gathering_available": {
+      "chop": "mangrove_wood",
+      "mine": "silver_ore",
+      "fish": "catfish"
+    }
+  },
+  "area_5": {
+    "name": "Scorched Desert",
+    "emoji": "🏜️",
+    "required_level": 30,
+    "description": "Lautan pasir tak berujung dengan suhu ekstrem. Hanya petualang dengan stamina kuat yang bisa bertahan di bawah terik matahari.",
+    "gathering_available": {
+      "chop": "cactus_bark",
+      "mine": "gold_ore",
+      "fish": "sand_eel"
+    }
+  },
+  "area_6": {
+    "name": "Frozen Tundra",
+    "emoji": "❄️",
+    "required_level": 42,
+    "description": "Dataran es abadi di mana badai salju tidak pernah berhenti. Mengharuskan pertahanan fisik yang kuat agar tubuh tidak membeku.",
+    "gathering_available": {
+      "chop": "frost_wood",
+      "mine": "mithril_ore",
+      "fish": "ice_fish"
+    }
+  },
+  "area_7": {
+    "name": "Misty Highlands",
+    "emoji": "⛰️",
+    "required_level": 55,
+    "description": "Pegunungan tinggi yang diselimuti kabut tebal teka-teki. Jarak pandang sangat terbatas, meningkatkan risiko penyergapan.",
+    "gathering_available": {
+      "chop": "maple_wood",
+      "mine": "platinum_ore",
+      "fish": "rainbow_trout"
+    }
+  },
+  "area_8": {
+    "name": "Obsidian Crags",
+    "emoji": "🌋",
+    "required_level": 70,
+    "description": "Wilayah vulkanik aktif yang dikelilingi oleh bebatuan hitam obsidian keras dan aliran lava panas membara.",
+    "gathering_available": {
+      "chop": "charred_wood",
+      "mine": "obsidian_shard",
+      "fish": "lava_magma_fish"
+    }
+  },
+  "area_9": {
+    "name": "Celestial Peaks",
+    "emoji": "✨",
+    "required_level": 85,
+    "description": "Puncak gunung tertinggi yang menembus awan, mendekati wilayah para dewa. Dipenuhi oleh energi spiritual murni.",
+    "gathering_available": {
+      "chop": "yggdrasil_branch",
+      "mine": "titanium_ore",
+      "fish": "sky_ray"
+    }
+  },
+  "area_10": {
+    "name": "Shadow Abyss",
+    "emoji": "👁️",
+    "required_level": 100,
+    "description": "Jurang kedalaman tak berdasar di mana cahaya tidak pernah sampai. Tempat bersarangnya iblis purba yang mengerikan.",
+    "gathering_available": {
+      "chop": "abyssal_stalk",
+      "mine": "dark_matter_ore",
+      "fish": "void_aberration"
+    }
+  },
+  "area_11": {
+    "name": "Eldritch Ruins",
+    "emoji": "🏛️",
+    "required_level": 120,
+    "description": "Sisa-sisa peradaban terlarang yang dipenuhi arsitektur aneh berdistorsi. Ruang dan waktu terasa tidak stabil di sini.",
+    "gathering_available": {
+      "chop": "warped_stem",
+      "mine": "ancient_debris",
+      "fish": "eldritch_squid"
+    }
+  },
+  "area_12": {
+    "name": "Aetherial Gardens",
+    "emoji": "🌸",
+    "required_level": 145,
+    "description": "Taman melayang di dimensi lain yang dipenuhi bunga-bunga kristal abadi. Keindahannya menyimpan bahaya ilusi yang mematikan.",
+    "gathering_available": {
+      "chop": "aether_wood",
+      "mine": "lumen_crystal",
+      "fish": "angel_fish"
+    }
+  },
+  "area_13": {
+    "name": "Void Rift",
+    "emoji": "🌀",
+    "required_level": 175,
+    "description": "Retakan dimensi kehampaan. Di sini, material dasar dari realitas terkoyak dan dijaga oleh monster kosmik.",
+    "gathering_available": {
+      "chop": "void_tendril",
+      "mine": "cosmic_dust",
+      "fish": "nebula_whale"
+    }
+  },
+  "area_14": {
+    "name": "Dragon's Sanctum",
+    "emoji": "🐉",
+    "required_level": 210,
+    "description": "Kuil suci kuno tempat peristirahatan para naga purba penjaga keseimbangan dunia Lunaria.",
+    "gathering_available": {
+      "chop": "dragon_bone_wood",
+      "mine": "draconium_ore",
+      "fish": "dragon_carp"
+    }
+  },
+  "area_15": {
+    "name": "Chrono Nexus",
+    "emoji": "⏳",
+    "required_level": 250,
+    "description": "Pusat dari segala lini masa dan takdir. Tempat ujian terakhir bagi para petualang sebelum melompati waktu (Timetravel).",
+    "gathering_available": {
+      "chop": "eternal_log",
+      "mine": "chronos_quartz",
+      "fish": "time_weaver"
+    }
+  }
+}

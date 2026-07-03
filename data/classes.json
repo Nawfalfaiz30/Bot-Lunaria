@@ -1,0 +1,283 @@
+{
+  "warrior": {
+    "name": "Warrior",
+    "emoji": "⚔️",
+    "description": "Petarung jarak dekat yang tangguh dengan fokus pada pertahanan fisik dan vitalitas tinggi.",
+    "base_attributes": { "str": 15, "agi": 8, "int": 5, "vit": 18 },
+    "growth_per_level": { "str": 2.5, "agi": 1.0, "int": 0.5, "vit": 3.0 },
+    "skills": [
+      {
+        "id": "shield_bash",
+        "name": "Shield Bash",
+        "mana_cost": 20,
+        "max_uses": 5,
+        "scaling_stat": "vit",
+        "multiplier": 3.0,
+        "buff_effect": {
+          "statTarget": "def_pct",
+          "value": 0.15,
+          "type": "percent"
+        },
+        "description": "Menghantam musuh dengan perisai baja. Menghasilkan damage sebesar (VIT * 3) dan memicu buff peningkatan DEF sebesar 15%."
+      },
+      {
+        "id": "iron_will",
+        "name": "Iron Will",
+        "mana_cost": 15,
+        "max_uses": 3,
+        "scaling_stat": "vit",
+        "multiplier": 1.1,
+        "buff_effect": {
+          "statTarget": "def_pct",
+          "value": 0.30,
+          "type": "percent"
+        },
+        "description": "Membangkitkan fokus mental lini depan. Menghasilkan damage dasar (VIT * 1.1) dan memicu buff peningkatan total DEF sebesar 30%."
+      },
+      {
+        "id": "whirlwind_slash",
+        "name": "Whirlwind Slash",
+        "mana_cost": 25,
+        "max_uses": 4,
+        "scaling_stat": "str",
+        "multiplier": 4.0,
+        "buff_effect": null,
+        "description": "Putaran pedang raksasa maut yang menyapu pertahanan monster. Menghasilkan damage fisik murni sebesar (STR * 4)."
+      },
+      {
+        "id": "juggernaut_charge",
+        "name": "Juggernaut Charge",
+        "mana_cost": 30,
+        "max_uses": 3,
+        "scaling_stat": "str",
+        "multiplier": 5.5,
+        "buff_effect": null,
+        "description": "Menerjang monster dengan berat armor. Menghasilkan damage penghancur pelindung sebesar (STR * 5.5)."
+      }
+    ]
+  },
+  "elf": {
+    "name": "Elf",
+    "emoji": "🍃",
+    "description": "Makhluk suci pelindung alam yang seimbang, ahli dalam sihir penyembuhan dan memiliki kelincahan alami.",
+    "base_attributes": { "str": 9, "agi": 14, "int": 14, "vit": 11 },
+    "growth_per_level": { "str": 1.2, "agi": 2.2, "int": 2.2, "vit": 1.4 },
+    "skills": [
+      {
+        "id": "natures_grace",
+        "name": "Nature's Grace",
+        "mana_cost": 25,
+        "max_uses": 4,
+        "scaling_stat": "int",
+        "multiplier": 5.0,
+        "buff_effect": null,
+        "description": "Memanggil tetesan air suci pohon kehidupan. Menghasilkan damage magis alam sebesar (INT * 5)."
+      },
+      {
+        "id": "solar_flare",
+        "name": "Solar Flare",
+        "mana_cost": 20,
+        "max_uses": 5,
+        "scaling_stat": "int",
+        "multiplier": 4.5,
+        "buff_effect": null,
+        "description": "Menembakkan pilar cahaya matahari suci Lunaria. Menghasilkan damage sihir panas sebesar (INT * 4.5)."
+      },
+      {
+        "id": "faerie_shield",
+        "name": "Faerie Shield",
+        "mana_cost": 30,
+        "max_uses": 3,
+        "scaling_stat": "int",
+        "multiplier": 1.1,
+        "buff_effect": {
+          "statTarget": "def_pct",
+          "value": 0.25,
+          "type": "percent"
+        },
+        "description": "Bantuan tameng magis dari kawanan peri hutan. Menghasilkan damage dasar (INT * 1.1) dan memicu buff meningkatkan DEF sebesar 25%."
+      },
+      {
+        "id": "spirit_infusion",
+        "name": "Spirit Infusion",
+        "mana_cost": 10,
+        "max_uses": 4,
+        "scaling_stat": "int",
+        "multiplier": 2.0,
+        "buff_effect": {
+          "statTarget": "agi",
+          "value": 15,
+          "type": "flat"
+        },
+        "description": "Menyatu dengan roh angin sepoi. Menghasilkan damage (INT * 2) dan memicu buff tambahan atribut +15 AGI."
+      }
+    ]
+  },
+  "archer": {
+    "name": "Archer",
+    "emoji": "🏹",
+    "description": "Penembak jitu jarak jauh dengan akurasi dan kecepatan tinggi, mampu menghabisi musuh sebelum mendekat.",
+    "base_attributes": { "str": 12, "agi": 18, "int": 6, "vit": 10 },
+    "growth_per_level": { "str": 1.8, "agi": 3.2, "int": 0.6, "vit": 1.4 },
+    "skills": [
+      {
+        "id": "arrow_rain",
+        "name": "Arrow Rain",
+        "mana_cost": 15,
+        "max_uses": 5,
+        "scaling_stat": "agi",
+        "multiplier": 3.5,
+        "buff_effect": null,
+        "description": "Melepaskan rentetan anak panah dari langit. Menghasilkan damage fisik jarak jauh sebesar (AGI * 3.5)."
+      },
+      {
+        "id": "piercing_shot",
+        "name": "Piercing Shot",
+        "mana_cost": 20,
+        "max_uses": 4,
+        "scaling_stat": "agi",
+        "multiplier": 5.0,
+        "buff_effect": null,
+        "description": "Tembakan sniper panah berputar penghancur armor. Menghasilkan damage tembus pertahanan sebesar (AGI * 5)."
+      },
+      {
+        "id": "eagle_eye",
+        "name": "Eagle Eye",
+        "mana_cost": 10,
+        "max_uses": 3,
+        "scaling_stat": "agi",
+        "multiplier": 1.1,
+        "buff_effect": {
+          "statTarget": "atk_pct",
+          "value": 0.20,
+          "type": "percent"
+        },
+        "description": "Menajamkan penglihatan berburu. Menghasilkan damage dasar (AGI * 1.1) dan memicu buff meningkatkan total daya rusak ATK sebesar 20%."
+      },
+      {
+        "id": "windwalk",
+        "name": "Windwalk",
+        "mana_cost": 25,
+        "max_uses": 3,
+        "scaling_stat": "agi",
+        "multiplier": 1.1,
+        "buff_effect": {
+          "statTarget": "agi",
+          "value": 25,
+          "type": "flat"
+        },
+        "description": "Meringankan pergerakan kaki secepat tiupan badai. Menghasilkan damage dasar (AGI * 1.1) dan memicu buff tambahan atribut +25 AGI."
+      }
+    ]
+  },
+  "mage": {
+    "name": "Mage",
+    "emoji": "🔮",
+    "description": "Pengendali elemen sihir destruktif. Memiliki kapasitas Mana dan daya hancur luar biasa, namun pertahanan fisiknya sangat rapuh.",
+    "base_attributes": { "str": 4, "agi": 7, "int": 20, "vit": 8 },
+    "growth_per_level": { "str": 0.4, "agi": 1.2, "int": 3.8, "vit": 1.0 },
+    "skills": [
+      {
+        "id": "meteor_strike",
+        "name": "Meteor Strike",
+        "mana_cost": 35,
+        "max_uses": 3,
+        "scaling_stat": "int",
+        "multiplier": 7.0,
+        "buff_effect": null,
+        "description": "Memanggil meteor berapi dari retakan atmosfer. Menghasilkan damage sihir kosmik masif sebesar (INT * 7)."
+      },
+      {
+        "id": "frost_nova",
+        "name": "Frost Nova",
+        "mana_cost": 20,
+        "max_uses": 4,
+        "scaling_stat": "int",
+        "multiplier": 3.5,
+        "buff_effect": null,
+        "description": "Ledakan pusaran es yang membekukan pergerakan monster. Menghasilkan damage es sebesar (INT * 3.5)."
+      },
+      {
+        "id": "mana_shield",
+        "name": "Mana Shield",
+        "mana_cost": 30,
+        "max_uses": 3,
+        "scaling_stat": "int",
+        "multiplier": 1.1,
+        "buff_effect": {
+          "statTarget": "def_pct",
+          "value": 0.35,
+          "type": "percent"
+        },
+        "description": "Memadatkan sirkulasi energi magis menjadi pelindung. Menghasilkan damage dasar (INT * 1.1) dan memicu buff meningkatkan total DEF sebesar 35%."
+      },
+      {
+        "id": "chain_lightning",
+        "name": "Chain Lightning",
+        "mana_cost": 25,
+        "max_uses": 5,
+        "scaling_stat": "int",
+        "multiplier": 4.8,
+        "buff_effect": null,
+        "description": "Semburan kilatan petir berantai bertegangan tinggi. Menghasilkan damage listrik kejut sebesar (INT * 4.8)."
+      }
+    ]
+  },
+  "assassin": {
+    "name": "Assassin",
+    "emoji": "🗡️",
+    "description": "Master bayangan yang bergerak cepat dan mematikan. Berfokus pada serangan kritikal bertubi-tubi untuk mengakhiri pertarungan dengan instan.",
+    "base_attributes": { "str": 14, "agi": 19, "int": 4, "vit": 9 },
+    "growth_per_level": { "str": 2.2, "agi": 3.5, "int": 0.4, "vit": 1.2 },
+    "skills": [
+      {
+        "id": "shadow_strike",
+        "name": "Shadow Strike",
+        "mana_cost": 18,
+        "max_uses": 5,
+        "scaling_stat": "agi",
+        "multiplier": 5.5,
+        "buff_effect": null,
+        "description": "Menyerang kilat dari titik buta kegelapan. Menghasilkan damage fisik tusukan fatal sebesar (AGI * 5.5)."
+      },
+      {
+        "id": "toxic_blade",
+        "name": "Toxic Blade",
+        "mana_cost": 15,
+        "max_uses": 4,
+        "scaling_stat": "agi",
+        "multiplier": 3.0,
+        "buff_effect": {
+          "statTarget": "atk_pct",
+          "value": 0.15,
+          "type": "percent"
+        },
+        "description": "Melumuri belati dengan racun ular Abyss. Menghasilkan damage tebasan (AGI * 3) dan memicu buff menaikkan ATK sebesar 15%."
+      },
+      {
+        "id": "smoke_bomb",
+        "name": "Smoke Bomb",
+        "mana_cost": 25,
+        "max_uses": 3,
+        "scaling_stat": "agi",
+        "multiplier": 1.1,
+        "buff_effect": {
+          "statTarget": "agi",
+          "value": 30,
+          "type": "flat"
+        },
+        "description": "Melempar bom asap ninja untuk mengacaukan pandangan musuh. Menghasilkan damage dasar (AGI * 1.1) dan memicu buff tambahan atribut kelincahan +30 AGI."
+      },
+      {
+        "id": "phantom_execute",
+        "name": "Phantom Execution",
+        "mana_cost": 40,
+        "max_uses": 2,
+        "scaling_stat": "agi",
+        "multiplier": 8.0,
+        "buff_effect": null,
+        "description": "Jurus pamungkas pemenggal urat leher monster. Menghasilkan kerusakan eksekusi mutlak sebesar (AGI * 8)."
+      }
+    ]
+  }
+}

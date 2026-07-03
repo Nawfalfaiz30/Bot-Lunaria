@@ -1,0 +1,205 @@
+{
+  "potion_hp_small": {
+    "item_id": "potion_hp_small",
+    "category": "consumable",
+    "buy_price": 125
+  },
+  "potion_hp_medium": {
+    "item_id": "potion_hp_medium",
+    "category": "consumable",
+    "buy_price": 500
+  },
+  "potion_hp_large": {
+    "item_id": "potion_hp_large",
+    "category": "consumable",
+    "buy_price": 1000
+  },
+  "potion_mana_small": {
+    "item_id": "potion_mana_small",
+    "category": "consumable",
+    "buy_price": 750
+  },
+  "potion_mana_large": {
+    "item_id": "potion_mana_large",
+    "category": "consumable",
+    "buy_price": 2000   
+  },
+  "potion_hybrid_medium": {
+    "item_id": "potion_hybrid_medium",
+    "category": "consumable",
+    "buy_price": 1500
+  },
+  "roasted_wild_meat": {
+    "item_id": "roasted_wild_meat",
+    "category": "consumable",
+    "buy_price": 375
+  },
+  "golden_apple": {
+    "item_id": "golden_apple",
+    "category": "consumable",
+    "buy_price": 5500
+  },
+  "elixir_god_omega": {
+    "item_id": "elixir_god_omega",
+    "category": "consumable",
+    "buy_price": 52500
+  },
+  "potion_berserk_tier3": {
+    "item_id": "potion_berserk_tier3",
+    "category": "consumable",
+    "buy_price": 20000
+  },
+
+  "old_fishing_rod": {
+    "item_id": "old_fishing_rod",
+    "category": "tool",
+    "buy_price": 150
+  },
+  "reinforced_fishing_rod": {
+    "item_id": "reinforced_fishing_rod",
+    "category": "tool",
+    "buy_price": 20000
+  },
+  "epic_fishing_rod": {
+    "item_id": "epic_fishing_rod",
+    "category": "tool",
+    "buy_price": 15000
+  },
+  "poseidon_fishing_rod": {
+    "item_id": "poseidon_fishing_rod",
+    "category": "tool",
+    "buy_price": 75000
+  },
+  "nebula_fishing_rod": {
+    "item_id": "nebula_fishing_rod",
+    "category": "tool",
+    "buy_price": 100000
+  },
+  "rusty_pickaxe": {
+    "item_id": "rusty_pickaxe",
+    "category": "tool",
+    "buy_price": 150
+  },
+  "heavy_iron_pickaxe": {
+    "item_id": "heavy_iron_pickaxe",
+    "category": "tool",
+    "buy_price": 2000
+  },
+  "geologist_pickaxe": {
+    "item_id": "geologist_pickaxe",
+    "category": "tool",
+    "buy_price": 15000
+  },
+  "dwarven_demolisher": {
+    "item_id": "dwarven_demolisher",
+    "category": "tool",
+    "buy_price": 75000
+  },
+  "cosmic_void_pickaxe": {
+    "item_id": "cosmic_void_pickaxe",
+    "category": "tool",
+    "buy_price": 95000
+  },
+  "worn_axe": {
+    "item_id": "worn_axe",
+    "category": "tool",
+    "buy_price": 150
+  },
+  "steel_lumber_axe": {
+    "item_id": "steel_lumber_axe",
+    "category": "tool",
+    "buy_price": 2000
+  },
+  "druid_leaf_axe": {
+    "item_id": "druid_leaf_axe",
+    "category": "tool",
+    "buy_price": 15000
+  },
+  "yggdrasil_feller": {
+    "item_id": "yggdrasil_feller",
+    "category": "tool",
+    "buy_price": 75000
+  },
+  "infinity_eclipse_axe": {
+    "item_id": "infinity_eclipse_axe",
+    "category": "tool",
+    "buy_price": 12500
+  },
+
+  "novice_sword": {
+    "item_id": "novice_sword",
+    "category": "weapon",
+    "buy_price": 300
+  },
+  "knight_greatsword": {
+    "item_id": "knight_greatsword",
+    "category": "weapon",
+    "buy_price": 7500
+  },
+  "shadow_dagger": {
+    "item_id": "shadow_dagger",
+    "category": "weapon",
+    "buy_price": 25000
+  },
+  "elven_composite_bow": {
+    "item_id": "elven_composite_bow",
+    "category": "weapon",
+    "buy_price": 40000
+  },
+  "archmage_nexus_staff": {
+    "item_id": "archmage_nexus_staff",
+    "category": "weapon",
+    "buy_price": 99000
+  },
+  "vanguard_lance": {
+    "item_id": "vanguard_lance",
+    "category": "weapon",
+    "buy_price": 12500 
+  },
+  "assassin_stiletto": {
+    "item_id": "assassin_stiletto",
+    "category": "weapon",
+    "buy_price": 18000  
+  },
+  "phoenix_flame_bow": {
+    "item_id": "phoenix_flame_bow",
+    "category": "weapon",
+    "buy_price": 125000
+  },
+  "ragnarok_blade": {
+    "item_id": "ragnarok_blade",
+    "category": "weapon",
+    "buy_price": 235000
+  },
+  "chronos_nexus_staff": {
+    "item_id": "chronos_nexus_staff",
+    "category": "weapon",
+    "buy_price": 210000
+  },
+
+  "cloth_tunic": {
+    "item_id": "cloth_tunic",
+    "category": "armor",
+    "buy_price": 250
+  },
+  "reinforced_leather": {
+    "item_id": "reinforced_leather",
+    "category": "armor",
+    "buy_price": 3500
+  },
+  "iron_plate_mail": {
+    "item_id": "iron_plate_mail",
+    "category": "armor",
+    "buy_price": 18000
+  },
+  "crystal_paladin_armor": {
+    "item_id": "crystal_paladin_armor",
+    "category": "armor",
+    "buy_price": 65000
+  },
+  "dragon_scale_plate": {
+    "item_id": "dragon_scale_plate",
+    "category": "armor",
+    "buy_price": 180000
+  }
+}
