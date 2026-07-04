@@ -5,14 +5,13 @@ const { EmbedBuilder } = require('discord.js');
 const logger = require('../helpers/logger');
 
 module.exports = (client) => {
-    // Berjalan otomatis setiap hari pukul 22:55 WIB
+    // Eksekusi jam 22:55 WIB mutlak
     cron.schedule('0 6 * * *', async () => {
-        logger.info('[CRON JOB] Memancarkan pembaruan visual koran anime premium...');
+        logger.info('[CRON JOB] Memancarkan pembaruan visual koran anime...');
         try {
             const guilds = await GuildSettings.find({ animeChannel: { $ne: null } });
             if (guilds.length === 0) return;
 
-            // Mengambil daftar yang sudah terfilter otomatis oleh helper baru (24 Jam Rolling murni)
             const scheduleList = await animeTrackerHelper.getRolling24HourSchedule();
             if (scheduleList.length === 0) {
                 logger.info('[CRON JOB] Tidak ada jadwal penayangan anime aktif dalam 24 jam ke depan.');
@@ -21,7 +20,6 @@ module.exports = (client) => {
 
             const sekarang = new Date();
 
-            // Desain Baru: Cyber-Grid Dashboard (Compact & Modern)
             const embedDashboard = new EmbedBuilder()
                 .setTitle('⚡ LUNARIA ANIME DAILY')
                 .setDescription(
@@ -38,7 +36,6 @@ module.exports = (client) => {
             let chunkId = 1;
 
             scheduleList.forEach((anime) => {
-                // Tampilan Box-Card Hemat Karakter
                 const itemBlock = 
                     `▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n` +
                     `📺 **${anime.title.toUpperCase()}**\n` +
@@ -47,21 +44,20 @@ module.exports = (client) => {
                     `├ 📊 **Info:** ⭐ \`${anime.score}\` • 🏢 \`${anime.studio}\`\n` +
                     `└ 🎭 **Genre:** _${anime.genres}_\n\n`;
 
-                // PERBAIKAN LOGIKA: Jika field penuh, buat field baru tanpa nama/judul tambahan
+                // Pecah belah ke field baru jika kepanjangan (Batas aman 950 huruf per field discord)
                 if ((fieldTeks + itemBlock).length > 950) {
                     embedDashboard.addFields({ 
-                        // Hanya field pertama yang diberi nama, selanjutnya dikasih string kosong agar bersih
                         name: chunkId === 1 ? '\n📅 LIST ANIME YANG TAYANG' : '\u200B', 
                         value: fieldTeks 
                     });
-                    fieldTeks = itemBlock; // Reset teks untuk field berikutnya
+                    fieldTeks = itemBlock;
                     chunkId++;
                 } else {
                     fieldTeks += itemBlock;
                 }
             });
 
-            // Masukkan sisa list anime yang terakhir
+            // Sisa text terakhir yang belum dimasukkan
             if (fieldTeks) {
                 embedDashboard.addFields({ 
                     name: chunkId === 1 ? '\n📅 LIST ANIME YANG TAYANG' : '\u200B', 
@@ -69,7 +65,6 @@ module.exports = (client) => {
                 });
             }
 
-            // Sebarkan pesan ke seluruh server target
             for (const server of guilds) {
                 const channel = await client.channels.fetch(server.animeChannel).catch(() => null);
                 if (channel && channel.isTextBased()) {
