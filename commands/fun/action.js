@@ -22,18 +22,50 @@ module.exports = {
         ),
 
     async execute(interaction) {
-        const actionType = interaction.options.getString('jenis');
-        const target = interaction.options.getUser('target');
-        const author = interaction.user;
+        // Deteksi apakah dijalankan lewat Slash Command atau Prefix Command
+        const isInteraction = !interaction.author;
+
+        let actionType;
+        let target;
+        let author;
+
+        if (isInteraction) {
+            // Jalur jika dipanggil via Slash Command
+            actionType = interaction.options.getString('jenis');
+            target = interaction.options.getUser('target');
+            author = interaction.user;
+        } else {
+            // Jalur jika dipanggil via Prefix Command (Teks Biasa)
+            author = interaction.author;
+            target = interaction.mentions.users.first();
+
+            // Ekstrak jenis aksi dengan mencari kata kunci di dalam isi chat
+            const words = interaction.content.toLowerCase().split(/ +/);
+            actionType = words.find(w => ['hug', 'kiss', 'slap', 'pat'].includes(w));
+        }
+
+        // Validasi input khusus untuk Prefix Command agar tidak memicu error terpisah
+        if (!isInteraction) {
+            if (!actionType) {
+                return interaction.reply({ 
+                    content: '⚠️ Jenis aksi tidak valid atau tidak ditemukan! Pilih salah satu: `hug`, `kiss`, `slap`, atau `pat`.\nContoh penggunaan: `!action hug @User`' 
+                });
+            }
+            if (!target) {
+                return interaction.reply({ 
+                    content: '⚠️ Kamu harus menyebutkan (mention) pengguna yang ingin dijadikan target!\nContoh penggunaan: `!action hug @User`' 
+                });
+            }
+        }
 
         if (target.id === author.id) {
             return interaction.reply({ 
                 content: 'Kamu tidak bisa melakukan aksi ini ke dirimu sendiri! Carilah orang lain untuk diajak bermain. 🥺', 
-                ephemeral: true 
+                ephemeral: isInteraction 
             });
         }
 
-        // Database URL GIF Anime (Bisa disesuaikan dengan koleksimu)
+        // Database URL GIF Anime
         const gifs = {
             hug: [
                 'https://media.tenor.com/kCZjvhOe4iIAAAAC/anime-hug.gif',
@@ -77,6 +109,7 @@ module.exports = {
             .setColor(colors[actionType])
             .setTimestamp();
 
+        // Mengirimkan embed secara aman berdasarkan tipe perintah
         await interaction.reply({ embeds: [embed] });
     }
 };

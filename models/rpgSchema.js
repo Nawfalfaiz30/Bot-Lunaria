@@ -5,9 +5,9 @@ const rpgSchema = new mongoose.Schema({
   class: { type: String, default: null },
   level: { type: Number, default: 1 },
   xp: { type: Number, default: 0 },
-  gold: { type: Number, default: 0 }, // Tetap Number agar pembukuan matematika lancar
-  hp: { type: Number, default: 100 },
-  mana: { type: Number, default: 20 },
+  gold: { type: Number, default: 5000 }, // Tetap Number agar pembukuan matematika lancar
+  hp: { type: Number, default: 160 },
+  mana: { type: Number, default: 45 },
   current_area: { type: Number, default: 1 },
   max_area: { type: Number, default: 1 },
   timetravel_count: { type: Number, default: 0 },

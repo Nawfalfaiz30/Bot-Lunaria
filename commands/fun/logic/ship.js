@@ -1,10 +1,38 @@
 const { EmbedBuilder } = require('discord.js');
 
 module.exports = async (interaction) => {
-    const u1 = interaction.options.getUser('user1');
-    const u2 = interaction.options.getUser('user2') || interaction.user;
+    // Deteksi apakah ini Slash Command (Interaction) atau Prefix Command (Message)
+    const isInteraction = !interaction.author; 
 
-    if (u1.id === u2.id) return interaction.reply({ content: 'Kamu tidak bisa memasangkan dirimu sendiri!', ephemeral: true });
+    let u1, u2;
+
+    if (isInteraction) {
+        // Jalur jika dipanggil via Slash Command
+        u1 = interaction.options.getUser('user1');
+        u2 = interaction.options.getUser('user2') || interaction.user;
+    } else {
+        // Jalur jika dipanggil via Prefix Command (Mengambil dari Mention chat)
+        const mentions = interaction.mentions.users;
+        u1 = mentions.first();
+        u2 = mentions.at(1) || interaction.author;
+    }
+
+    // Validasi jika user pertama tidak ditemukan (misal user lupa mention di prefix command)
+    if (!u1) {
+        const errorContent = '⚠️ Kamu harus menyebutkan (mention) minimal satu user! Contoh: `!ship @User`';
+        if (isInteraction) {
+            return interaction.reply({ content: errorContent, ephemeral: true });
+        } else {
+            return interaction.reply({ content: errorContent });
+        }
+    }
+
+    if (u1.id === u2.id) {
+        return interaction.reply({ 
+            content: 'Kamu tidak bisa memasangkan dirimu sendiri!', 
+            ephemeral: isInteraction 
+        });
+    }
 
     const targetPercentage = Math.floor(Math.random() * 101);
     let bar = '⬛'.repeat(10);
@@ -21,5 +49,14 @@ module.exports = async (interaction) => {
         .setDescription(`Mengecek kecocokan antara **${u1.username}** & **${u2.username}**...\n\n**${targetPercentage}%**\n${bar}\n\n*${comment}*`)
         .setColor(targetPercentage > 50 ? '#F04A93' : '#4F545C');
 
-    await interaction.reply({ embeds: [embed] });
+    // Mengirim pesan secara aman sesuai jenis command
+    if (isInteraction) {
+        if (interaction.replied || interaction.deferred) {
+            await interaction.followUp({ embeds: [embed] });
+        } else {
+            await interaction.reply({ embeds: [embed] });
+        }
+    } else {
+        await interaction.reply({ embeds: [embed] });
+    }
 };

@@ -12,6 +12,7 @@ const GuildSettings = require('../../models/guildSchema');
 const TicketDB = require('../../models/ticketSchema');
 const ConfessBanDB = require('../../models/confessBanSchema');
 const SecurityDB = require('../../models/securitySchema'); // Integrasi model keamanan
+const MabarDB = require('../../models/mabarSessionSchema'); // Tambahan model Mabar
 
 module.exports = {
     name: 'interactionCreate',
@@ -60,13 +61,58 @@ module.exports = {
         // 2. PENANGANAN INTERAKSI TOMBOL (BUTTONS)
         // ==========================================
         else if (interaction.isButton()) {
-            const { customId } = interaction;
+            const { customId, message } = interaction;
 
             try {
                 // ------------------------------------------
+                // 🎮 [SISTEM MABAR]: PROSES GABUNG & BATAL MABAR
+                // ------------------------------------------
+                if (customId === 'mabar_join' || customId === 'mabar_leave') {
+                    // Langsung kunci interaksi agar tidak memicu "Interaction Failed"
+                    await interaction.deferUpdate();
+
+                    // Cari sesi mabar aktif di database berdasarkan ID pesan tempat tombol berada
+                    const session = await MabarDB.findOne({ messageId: message.id, guildId: guild.id });
+                    if (!session) return; 
+
+                    if (customId === 'mabar_join') {
+                        // Gabung ke party jika belum terdaftar DAN slot masih tersedia
+                        if (!session.players.includes(userExecutor.id) && session.players.length < session.maxPlayers) {
+                            session.players.push(userExecutor.id);
+                            await session.save();
+                        }
+                    } else if (customId === 'mabar_leave') {
+                        // Keluar dari party (Host tidak boleh keluar lewat tombol, harus pakai /mabar bubar atau !bubar)
+                        if (session.players.includes(userExecutor.id) && session.hostId !== userExecutor.id) {
+                            session.players = session.players.filter(id => id !== userExecutor.id);
+                            await session.save();
+                        }
+                    }
+
+                    // Perbarui tampilan Embed pesan mabar secara real-time
+                    const originalEmbed = EmbedBuilder.from(message.embeds[0]);
+                    
+                    // Buat ulang daftar mention player terbaru
+                    const playerMentions = session.players.map((id, index) => {
+                        return `${index + 1}. <@${id}> ${id === session.hostId ? '👑 (Host)' : ''}`;
+                    }).join('\n');
+
+                    // Update deskripsi embed dengan daftar party yang baru
+                    originalEmbed.setDescription(
+                        `**Host:** <@${session.hostId}>\n` +
+                        `**Game:** ${session.gameName}\n` +
+                        `**Slot Dicari:** ${session.maxPlayers - 1} Orang\n\n` +
+                        `**👥 Anggota Party (${session.players.length}/${session.maxPlayers}):**\n${playerMentions}`
+                    );
+
+                    // Edit pesan asli agar tombolnya sinkron dengan database
+                    return await message.edit({ embeds: [originalEmbed] });
+                }
+
+                // ------------------------------------------
                 // 🛡️ [SISTEM VERIFIKASI]: PROSES AKTIVASI ROLE MEMBER
                 // ------------------------------------------
-                if (customId === 'verify_member_btn') {
+                else if (customId === 'verify_member_btn') {
                     await interaction.deferReply({ flags: [MessageFlags.Ephemeral] });
 
                     const securityData = await SecurityDB.findOne({ guildId: guild.id });

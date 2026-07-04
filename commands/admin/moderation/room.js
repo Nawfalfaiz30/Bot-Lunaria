@@ -62,12 +62,16 @@ module.exports = {
         const isInteraction = context.options !== undefined;
         const userExecutor = isInteraction ? context.user : context.author;
 
+        // Helper respons yang sudah diamankan dari ancaman crash pesan terhapus (Error 50035)
         const sendResponse = async (options) => {
-            if (!isInteraction && options.flags) delete options.flags;
+            if (!isInteraction) {
+                if (options.flags) delete options.flags;
+                options.failIfNotExists = false; // Jaminan anti-crash jika pesan pemicu sudah dihapus/hilang
+            }
             return await context.reply(options);
         };
 
-        // --- 🛠️ FIX LOGIKA RESOLUSI SUBCOMMAND (ANTI-BUG SPASI & ALIAS) ---
+        // --- 🛠️ RESOLUSI SUBCOMMAND ---
         let subcommand = '';
         if (isInteraction) {
             subcommand = context.options.getSubcommand();
@@ -76,11 +80,9 @@ module.exports = {
             const firstToken = tokens[0] || '';
             const secondToken = tokens[1] || '';
 
-            // 1. Cek apakah kata kedua adalah alias/subcommand langsung (Contoh: ln lock, ln sm 10)
             if (aliasMap[secondToken]) {
                 subcommand = aliasMap[secondToken];
             } 
-            // 2. Cek apakah kata pertama berakhiran alias (Contoh: lnlock, lnsm)
             else {
                 const sortedAliases = Object.keys(aliasMap).sort((a, b) => b.length - a.length);
                 for (const alias of sortedAliases) {
@@ -91,7 +93,6 @@ module.exports = {
                 }
             }
 
-            // 3. Cadangan jika dipanggil lewat nama utama (Contoh: ln room slowmode 10, ln room sm 10)
             if (!subcommand && args && args[0]) {
                 const possibleSub = args[0].toLowerCase();
                 if (aliasMap[possibleSub]) {
@@ -103,14 +104,13 @@ module.exports = {
                 }
             }
 
-            // Validasi final kelayakan subcommand
             const validSubcommands = ['lock', 'unlock', 'nuke', 'purge', 'slowmode', 'vmute', 'vunmute'];
             if (!subcommand || !validSubcommands.includes(subcommand)) {
                 return sendResponse({ embeds: [embed.error(userExecutor, 'Gagal Perintah', 'Subcommand tidak valid atau tidak ditemukan.\nOpsi: `lock`, `unlock`, `nuke`, `purge`, `slowmode`, `vmute`, `vunmute`')] });
             }
         }
 
-        // --- PENGECEKAN HAK AKSES PERMISSION (Mode Teks Prefix) ---
+        // --- PENGECEKAN HAK AKSES PERMISSION ---
         if (!isInteraction) {
             let reqPerm = null;
             let permName = '';
@@ -130,7 +130,6 @@ module.exports = {
         // --- CASE 1: LOCK ---
         if (subcommand === 'lock') {
             try {
-                // Cek status saat ini apakah channel sudah dikunci
                 const currentOverwrite = context.channel.permissionOverwrites.cache.get(everyoneRole.id);
                 if (currentOverwrite && currentOverwrite.deny.has(PermissionFlagsBits.SendMessages)) {
                     return await sendResponse({ embeds: [embed.error(userExecutor, '🔒 Channel Sudah Terkunci', 'Channel ini sudah dalam kondisi terkunci sebelumnya.')] });
@@ -146,7 +145,6 @@ module.exports = {
         // --- CASE 2: UNLOCK ---
         if (subcommand === 'unlock') {
             try {
-                // Cek status saat ini apakah channel sudah terbuka/tidak dikunci
                 const currentOverwrite = context.channel.permissionOverwrites.cache.get(everyoneRole.id);
                 if (!currentOverwrite || !currentOverwrite.deny.has(PermissionFlagsBits.SendMessages)) {
                     return await sendResponse({ embeds: [embed.error(userExecutor, '🔓 Channel Sudah Terbuka', 'Channel ini sudah dalam kondisi terbuka atau memang tidak sedang dikunci.')] });

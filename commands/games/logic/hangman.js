@@ -1,12 +1,17 @@
 const { EmbedBuilder } = require('discord.js');
 
 module.exports = async (interaction) => {
-    // Bank kata bertema RPG/Game (bisa kamu perluas sesukamu)
+    // Ambil data user secara aman (mendukung Slash Command maupun Prefix/Message Command)
+    const targetUser = interaction.user || interaction.author;
+    if (!targetUser) return; // Proteksi jika tidak ada user valid yang terdeteksi
+    const userId = targetUser.id;
+
+    // Bank kata bertema RPG/Game
     const wordList = [
-    'NARUTO', 'ONEPIECE', 'BLEACH', 'SHINIGAMI', 'SAITAMA',
-    'SHINGEKI', 'SUKUNA', 'GOJO', 'OTAKU', 'KAIJU',
-    'TSUNDERE', 'SHONEN', 'ISEKAI', 'CHIDORI', 'RASENGAN',
-    'SHARINGAN', 'KAMEHAMEHA', 'ZORO', 'SHIBUYA', 'AKATSUKI'
+        'NARUTO', 'ONEPIECE', 'BLEACH', 'SHINIGAMI', 'SAITAMA',
+        'SHINGEKI', 'SUKUNA', 'GOJO', 'OTAKU', 'KAIJU',
+        'TSUNDERE', 'SHONEN', 'ISEKAI', 'CHIDORI', 'RASENGAN',
+        'SHARINGAN', 'KAMEHAMEHA', 'ZORO', 'SHIBUYA', 'AKATSUKI'
     ];
     const secretWord = wordList[Math.floor(Math.random() * wordList.length)];
     let guessedLetters = [];
@@ -23,10 +28,17 @@ module.exports = async (interaction) => {
             .setFooter({ text: 'Ketik satu huruf di room chat ini untuk menebak!' });
     };
 
-    await interaction.reply({ embeds: [getStatusEmbed()] });
+    // Mengirim respons awal secara aman
+    let initialMessage;
+    if (interaction.replied || interaction.deferred) {
+        initialMessage = await interaction.followUp({ embeds: [getStatusEmbed()], fetchReply: true });
+    } else {
+        initialMessage = await interaction.reply({ embeds: [getStatusEmbed()], fetchReply: true });
+    }
 
     // Kolektor pesan untuk menangkap ketikan huruf dari si pengguna
-    const filter = m => m.author.id === interaction.user.id && m.content.length === 1 && /[a-zA-Z]/.test(m.content);
+    // Ditambahkan pengecekan menyeluruh (m?.author?.id) untuk mencegah crash "undefined"
+    const filter = m => m && m.author?.id === userId && m.content?.length === 1 && /[a-zA-Z]/.test(m.content);
     const collector = interaction.channel.createMessageCollector({ filter, time: 120000 }); // batas waktu 2 menit
 
     collector.on('collect', async m => {
@@ -51,7 +63,11 @@ module.exports = async (interaction) => {
                 .setColor('#57F287')
                 .setDescription(`Kamu berhasil menyelamatkan om Hangman!\nKata yang benar adalah: **${secretWord}**`);
             
-            await interaction.editReply({ embeds: [winEmbed] });
+            if (interaction.editReply) {
+                await interaction.editReply({ embeds: [winEmbed] });
+            } else {
+                await initialMessage.edit({ embeds: [winEmbed] });
+            }
             return collector.stop();
         }
 
@@ -61,11 +77,19 @@ module.exports = async (interaction) => {
                 .setColor('#ED4245')
                 .setDescription(`Nyawa habis! Gantungannya terpasang...\nKata asli yang tersembunyi: **${secretWord}**`);
             
-            await interaction.editReply({ embeds: [loseEmbed] });
+            if (interaction.editReply) {
+                await interaction.editReply({ embeds: [loseEmbed] });
+            } else {
+                await initialMessage.edit({ embeds: [loseEmbed] });
+            }
             return collector.stop();
         }
 
         // Update papan status embed setiap tebakan baru masuk
-        await interaction.editReply({ embeds: [getStatusEmbed()] });
+        if (interaction.editReply) {
+            await interaction.editReply({ embeds: [getStatusEmbed()] });
+        } else {
+            await initialMessage.edit({ embeds: [getStatusEmbed()] });
+        }
     });
 };

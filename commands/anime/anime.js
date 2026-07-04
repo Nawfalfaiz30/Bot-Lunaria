@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, MessageFlags } = require('discord.js');
 const logger = require('../../helpers/logger');
 
 module.exports = {
@@ -45,39 +45,46 @@ module.exports = {
         const isInteraction = context.options !== undefined;
         const author = isInteraction ? context.user : context.author;
 
-        // --- DETEKSI SUBCOMMAND & PARSING STATE (Hybrid Mode) ---
+        // --- PARSING INTEGRASI SUBCOMMAND & TEKS QUERY (SISTEM BARU) ---
         let subcommand = '';
         let textQuery = '';
 
         if (isInteraction) {
-            subcommand = context.options.getSubcommand();
+            subcommand = context.options.getSubcommand(false);
+            if (!subcommand) {
+                return context.reply({ 
+                    content: '⚠️ Silakan pilih salah satu sub-command yang tersedia!', 
+                    flags: [MessageFlags.Ephemeral] 
+                });
+            }
             if (subcommand === 'info' || subcommand === 'manga') textQuery = context.options.getString('judul');
             else if (subcommand === 'search') textQuery = context.options.getString('keyword');
             else if (subcommand === 'character') textQuery = context.options.getString('nama');
         } else {
-            const commandCalled = context.content.split(' ')[0].slice(client.prefix?.length || 1).toLowerCase();
-            
-            if (['anime', 'carianime'].includes(commandCalled)) {
-                subcommand = (commandCalled === 'anime' && args[0] === 'info') ? (args.shift(), 'info') : 'info';
-            } else if (['animenews', 'animeupdates', 'infonime'].includes(commandCalled) || (commandCalled === 'anime' && args[0] === 'news')) {
-                subcommand = 'news'; if (commandCalled === 'anime') args.shift();
-            } else if (['animesearch', 'listanime', 'nimesearch'].includes(commandCalled) || (commandCalled === 'anime' && args[0] === 'search')) {
-                subcommand = 'search'; if (commandCalled === 'anime') args.shift();
-            } else if (['character', 'char', 'charasearch'].includes(commandCalled) || (commandCalled === 'anime' && args[0] === 'character')) {
-                subcommand = 'character'; if (commandCalled === 'anime') args.shift();
-            } else if (['manga', 'carimanga', 'komik'].includes(commandCalled) || (commandCalled === 'anime' && args[0] === 'manga')) {
-                subcommand = 'manga'; if (commandCalled === 'anime') args.shift();
-            } else if (['quote', 'animequote', 'katamutiara'].includes(commandCalled) || (commandCalled === 'anime' && args[0] === 'quote')) {
-                subcommand = 'quote'; if (commandCalled === 'anime') args.shift();
-            } else if (['recommend', 'animerandom', 'rekomendasi'].includes(commandCalled) || (commandCalled === 'anime' && args[0] === 'recommend')) {
-                subcommand = 'recommend'; if (commandCalled === 'anime') args.shift();
+            // Logika baru untuk Prefix Command: Membaca argumen pertama secara presisi
+            const firstArg = args[0]?.toLowerCase();
+            const validSubcommands = ['info', 'news', 'search', 'character', 'manga', 'quote', 'recommend'];
+
+            if (validSubcommands.includes(firstArg)) {
+                subcommand = firstArg;
+                args.shift(); // Buang nama subcommand agar tidak ikut masuk ke textQuery pencarian API
+                textQuery = args.join(' ');
             } else {
-                subcommand = 'info';
+                // Deteksi otomatis berdasarkan alias yang digunakan saat memanggil perintah
+                const fullContent = context.content.toLowerCase();
+                if (fullContent.includes('animesearch') || fullContent.includes('listanime') || fullContent.includes('nimesearch')) subcommand = 'search';
+                else if (fullContent.includes('animenews') || fullContent.includes('animeupdates')) subcommand = 'news';
+                else if (fullContent.includes('character') || fullContent.includes('char') || fullContent.includes('charasearch')) subcommand = 'character';
+                else if (fullContent.includes('manga') || fullContent.includes('carimanga') || fullContent.includes('komik')) subcommand = 'manga';
+                else if (fullContent.includes('quote') || fullContent.includes('animequote') || fullContent.includes('katamutiara')) subcommand = 'quote';
+                else if (fullContent.includes('recommend') || fullContent.includes('animerandom') || fullContent.includes('rekomendasi')) subcommand = 'recommend';
+                else subcommand = 'info'; // Default fallback teraman
+                
+                textQuery = args.join(' ');
             }
-            textQuery = args.join(' ');
         }
 
-        // --- VALIDASI INPUT ---
+        // --- VALIDASI AKHIR INPUT ---
         if (['info', 'search', 'character', 'manga'].includes(subcommand) && !textQuery) {
             const missingText = {
                 info: 'Harap berikan judul anime yang ingin dicari!',
@@ -85,13 +92,13 @@ module.exports = {
                 character: 'Masukkan nama karakter yang ingin dicari!',
                 manga: 'Masukkan judul manga yang dicari!'
             };
-            return context.reply({ content: missingText[subcommand], ephemeral: true });
+            return context.reply({ content: missingText[subcommand], flags: isInteraction ? [MessageFlags.Ephemeral] : [] });
         }
 
         if (context.deferReply) await context.deferReply();
 
         try {
-            // --- CASE 1: INFO (ANIME DETAIL) ---
+            // --- CASE 1: INFO (ANIME DETAIL VIEW) ---
             if (subcommand === 'info') {
                 const response = await fetch(`https://api.jikan.moe/v4/anime?q=${encodeURIComponent(textQuery)}&limit=1`);
                 const resData = await response.json();
@@ -144,7 +151,7 @@ module.exports = {
                 return isInteraction ? await context.editReply({ embeds: [newsEmbed] }) : await context.reply({ embeds: [newsEmbed] });
             }
 
-            // --- CASE 3: SEARCH (LIST OF MATCHES) ---
+            // --- CASE 3: SEARCH (LIST MATCHES VIEW) ---
             if (subcommand === 'search') {
                 const response = await fetch(`https://api.jikan.moe/v4/anime?q=${encodeURIComponent(textQuery)}&limit=5`);
                 const resData = await response.json();

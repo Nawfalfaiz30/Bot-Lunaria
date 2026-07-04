@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
+const { SlashCommandBuilder, EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle, MessageFlags } = require('discord.js');
 const MabarDB = require('../../models/mabarSessionSchema');
 const ProfileDB = require('../../models/playerProfileSchema');
 const embed = require('../../helpers/embed');
@@ -67,9 +67,9 @@ module.exports = {
         const isInteraction = context.options !== undefined;
         const userExecutor = isInteraction ? context.user : context.author;
 
-        // Helper untuk mempermudah pengiriman respon balasan
+        // Helper untuk mempermudah pengiriman respon balasan dengan sistem Flags terbaru
         const sendResponse = async (options) => {
-            if (!isInteraction) delete options.ephemeral;
+            if (!isInteraction) delete options.flags;
             return await context.reply(options);
         };
 
@@ -117,7 +117,7 @@ module.exports = {
                 const existingSession = await MabarDB.findOne({ hostId: userExecutor.id, guildId: context.guild.id });
                 if (existingSession) {
                     const errEmbed = [embed.error(userExecutor, 'Sesi Sedang Berjalan', 'Anda sudah memiliki sesi mabar yang aktif!')];
-                    if (isInteraction) return context.reply({ embeds: errEmbed, ephemeral: true });
+                    if (isInteraction) return context.reply({ embeds: errEmbed, flags: [MessageFlags.Ephemeral] });
                     return context.reply({ embeds: errEmbed });
                 }
 
@@ -133,7 +133,9 @@ module.exports = {
 
                 let message;
                 if (isInteraction) {
-                    message = await context.reply({ content: '@here Ada yang ngajak mabar nih!', embeds: [mabarEmbed], components: [row], fetchReply: true });
+                    // Menggunakan metode fetch terpisah untuk menghindari warning deprecation fetchReply
+                    await context.reply({ content: '@here Ada yang ngajak mabar nih!', embeds: [mabarEmbed], components: [row] });
+                    message = await context.fetchReply();
                 } else {
                     message = await context.reply({ content: '@here Ada yang ngajak mabar nih!', embeds: [mabarEmbed], components: [row] });
                 }
@@ -151,7 +153,7 @@ module.exports = {
             } catch (error) {
                 logger.error(`[AJAK ERROR] Gagal membuat sesi mabar oleh ${userExecutor.tag}`, error);
                 const errSys = [embed.error(userExecutor, 'Error', 'Terjadi kesalahan sistem saat membuat sesi mabar.')];
-                if (isInteraction) return context.reply({ embeds: errSys, ephemeral: true });
+                if (isInteraction) return context.reply({ embeds: errSys, flags: [MessageFlags.Ephemeral] });
                 return context.reply({ embeds: errSys });
             }
         }
@@ -161,7 +163,7 @@ module.exports = {
             try {
                 const session = await MabarDB.findOne({ hostId: userExecutor.id, guildId: context.guild.id });
                 if (!session) {
-                    return sendResponse({ embeds: [embed.error(userExecutor, 'Gagal', 'Anda tidak memiliki sesi mabar yang aktif saat ini.')], ephemeral: true });
+                    return sendResponse({ embeds: [embed.error(userExecutor, 'Gagal', 'Anda tidak memiliki sesi mabar yang aktif saat ini.')], flags: [MessageFlags.Ephemeral] });
                 }
 
                 await MabarDB.findOneAndDelete({ hostId: userExecutor.id, guildId: context.guild.id });
@@ -189,7 +191,7 @@ module.exports = {
                 await sendResponse({ embeds: [embed.success(userExecutor, 'Mabar Bubar', `Sesi mabar **${session.gameName}** telah berhasil ditutup dan dibubarkan.`)] });
             } catch (error) {
                 logger.error(`[BUBAR ERROR] Gagal membubarkan mabar oleh ${userExecutor.tag}`, error);
-                await sendResponse({ embeds: [embed.error(userExecutor, 'Error', 'Gagal membubarkan sesi mabar dari database.')], ephemeral: true });
+                await sendResponse({ embeds: [embed.error(userExecutor, 'Error', 'Gagal membubarkan sesi mabar dari database.')], flags: [MessageFlags.Ephemeral] });
             }
         }
 
@@ -200,7 +202,7 @@ module.exports = {
                 if (!session) {
                     return sendResponse({ 
                         embeds: [embed.error(userExecutor, 'Tidak Ada Sesi', `Anda sedang tidak memiliki sesi mabar yang aktif. Buat dulu dengan \`${isInteraction ? '/mabar ajak' : '!ajak'}\`.`)], 
-                        ephemeral: true 
+                        flags: [MessageFlags.Ephemeral] 
                     });
                 }
 
@@ -221,7 +223,7 @@ module.exports = {
                 await sendResponse({ embeds: [partyEmbed] });
             } catch (error) {
                 logger.error(`[PARTY ERROR] Gagal mengecek party ${userExecutor.tag}`, error);
-                await sendResponse({ embeds: [embed.error(userExecutor, 'Error', 'Terjadi kesalahan saat memuat status party.')], ephemeral: true });
+                await sendResponse({ embeds: [embed.error(userExecutor, 'Error', 'Terjadi kesalahan saat memuat status party.')], flags: [MessageFlags.Ephemeral] });
             }
         }
 
@@ -237,7 +239,7 @@ module.exports = {
             try {
                 const profile = await ProfileDB.findOne({ userId: target.id });
                 if (!profile) {
-                    return sendResponse({ content: `❌ ${target.id === userExecutor.id ? 'Anda' : 'User tersebut'} belum mengatur profil gaming mereka.`, ephemeral: true });
+                    return sendResponse({ content: `❌ ${target.id === userExecutor.id ? 'Anda' : 'User tersebut'} belum mengatur profil gaming mereka.`, flags: [MessageFlags.Ephemeral] });
                 }
 
                 const profileEmbed = new EmbedBuilder()
@@ -253,7 +255,7 @@ module.exports = {
 
                 await sendResponse({ embeds: [profileEmbed] });
             } catch (error) {
-                await sendResponse({ content: 'Gagal memuat profil gaming dari database.', ephemeral: true });
+                await sendResponse({ content: 'Gagal memuat profil gaming dari database.', flags: [MessageFlags.Ephemeral] });
             }
         }
 
@@ -293,7 +295,7 @@ module.exports = {
                 if (splitArgs.length < 4) {
                     return sendResponse({ 
                         embeds: [embed.error(userExecutor, 'Format Salah', 'Gunakan tanda pembatas \`|\` untuk memisahkan 4 kolom data.\nFormat: \`!setprofile [IGN] | [Game] | [Platform] | [Rank]\`')],
-                        ephemeral: true 
+                        flags: [MessageFlags.Ephemeral] 
                     });
                 }
                 ign = splitArgs[0].trim();
@@ -308,9 +310,9 @@ module.exports = {
                     { ign, favoriteGame: game, platform, rank },
                     { upsert: true, new: true }
                 );
-                await sendResponse({ embeds: [embed.success(userExecutor, 'Profil Diperbarui', 'Profil gaming Anda berhasil disimpan!')], ephemeral: true });
+                await sendResponse({ embeds: [embed.success(userExecutor, 'Profil Diperbarui', 'Profil gaming Anda berhasil disimpan!')], flags: [MessageFlags.Ephemeral] });
             } catch (error) {
-                await sendResponse({ embeds: [embed.error(userExecutor, 'Error', 'Gagal menyimpan data profil ke database.')], ephemeral: true });
+                await sendResponse({ embeds: [embed.error(userExecutor, 'Error', 'Gagal menyimpan data profil ke database.')], flags: [MessageFlags.Ephemeral] });
             }
         }
 
@@ -331,7 +333,7 @@ module.exports = {
 
                 await sendResponse({ embeds: [statsEmbed] });
             } catch (error) {
-                await sendResponse({ content: 'Gagal memuat statistik mabar dari database.', ephemeral: true });
+                await sendResponse({ content: 'Gagal memuat statistik mabar dari database.', flags: [MessageFlags.Ephemeral] });
             }
         }
     }
