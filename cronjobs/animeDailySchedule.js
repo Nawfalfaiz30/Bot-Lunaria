@@ -36,16 +36,19 @@ module.exports = (client) => {
             let chunkId = 1;
 
             scheduleList.forEach((anime) => {
+                // Potong nama genre jika terlalu panjang agar tidak melampaui limit Discord
+                const cleanGenres = anime.genres.length > 50 ? anime.genres.substring(0, 47) + '...' : anime.genres;
+
                 const itemBlock = 
                     `▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\n` +
                     `📺 **${anime.title.toUpperCase()}**\n` +
                     `├ 🕒 **Waktu:** \`${anime.airingTime} WIB\` (${anime.airingDate.split(',')[0]})\n` +
                     `├ 📣 **Status:** ${anime.countdown}\n` +
                     `├ 📊 **Info:** ⭐ \`${anime.score}\` • 🏢 \`${anime.studio}\`\n` +
-                    `└ 🎭 **Genre:** _${anime.genres}_\n\n`;
+                    `└ 🎭 **Genre:** _${cleanGenres}_\n\n`;
 
-                // Pecah belah ke field baru jika kepanjangan (Batas aman 950 huruf per field discord)
-                if ((fieldTeks + itemBlock).length > 950) {
+                // Batas aman diperketat jadi 900 huruf per field
+                if ((fieldTeks + itemBlock).length > 900) {
                     embedDashboard.addFields({ 
                         name: chunkId === 1 ? '\n📅 LIST ANIME YANG TAYANG' : '\u200B', 
                         value: fieldTeks 
@@ -57,7 +60,6 @@ module.exports = (client) => {
                 }
             });
 
-            // Sisa text terakhir yang belum dimasukkan
             if (fieldTeks) {
                 embedDashboard.addFields({ 
                     name: chunkId === 1 ? '\n📅 LIST ANIME YANG TAYANG' : '\u200B', 
@@ -68,7 +70,9 @@ module.exports = (client) => {
             for (const server of guilds) {
                 const channel = await client.channels.fetch(server.animeChannel).catch(() => null);
                 if (channel && channel.isTextBased()) {
-                    await channel.send({ embeds: [embedDashboard] });
+                    await channel.send({ embeds: [embedDashboard] }).catch(err => {
+                        logger.warn(`[BROADCAST WARN] Gagal kirim Daily Koran ke guild ${server.guildId}: ${err.message}`);
+                    });
                 }
             }
             logger.info('[CRON JOB] Sukses mendistribusikan visual koran tunggal.');
