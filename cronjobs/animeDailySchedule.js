@@ -6,7 +6,7 @@ const logger = require('../helpers/logger');
 
 module.exports = (client) => {
     // Eksekusi jam 22:55 WIB mutlak
-    cron.schedule('39 4 * * *', async () => {
+    cron.schedule('0 6 * * *', async () => {
         logger.info('[CRON JOB] Memancarkan pembaruan visual koran anime...');
         try {
             const guilds = await GuildSettings.find({ animeChannel: { $ne: null } });
