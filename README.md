@@ -91,24 +91,6 @@ Bot ini dirancang agar satu bot saja mampu menggantikan berbagai bot populer sep
 
 ---
 
-# 🖼 Preview
-
-<p align="center">
-
-<img src="./assets/dashboard.png" width="80%">
-
-</p>
-
-<p align="center">
-
-<img src="./assets/ticket.png" width="45%">
-
-<img src="./assets/music.png" width="45%">
-
-</p>
-
----
-
 # ⚡ Features
 
 ## 🛡 Moderation
@@ -233,7 +215,7 @@ Bot ini dirancang agar satu bot saja mampu menggantikan berbagai bot populer sep
 # 📥 Installation
 
 ```bash
-git clone https://github.com/Nawfalfaiz30/lunaria.git
+git clone https://github.com/Nawfalfaiz30/Bot-lunaria.git
 
 cd lunaria
 
