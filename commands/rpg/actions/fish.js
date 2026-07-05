@@ -35,10 +35,15 @@ module.exports = {
       });
     }
 
-    // 2. VALIDASI: Sistem Anti-Spam Cooldown (Durasi: 15 Detik)
-    const cooldownDoc = await Cooldown.findOne({ userId });
-    const cooldownDuration = 30000; // 15 detik waktu tunggu
-    const elapsed = Date.now() - cooldownDoc.fish.getTime();
+    // 2. VALIDASI: Sistem Anti-Spam Cooldown (Durasi: 30 Detik)
+    let cooldownDoc = await Cooldown.findOne({ userId });
+    if (!cooldownDoc) {
+      cooldownDoc = await Cooldown.create({ userId });
+    }
+
+    const cooldownDuration = 30000; 
+    const lastFish = cooldownDoc.fish ? cooldownDoc.fish.getTime() : 0;
+    const elapsed = Date.now() - lastFish;
 
     if (elapsed < cooldownDuration) {
       const timeLeft = Math.ceil((cooldownDuration - elapsed) / 1000);

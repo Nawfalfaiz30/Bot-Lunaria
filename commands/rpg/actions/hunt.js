@@ -54,9 +54,14 @@ module.exports = {
     }
 
     // 4. VALIDASI: Sistem Anti-Spam Cooldown Berburu (Durasi: 45 Detik)
-    const cooldownDoc = await Cooldown.findOne({ userId });
-    const cooldownDuration = 45000; 
-    const elapsed = Date.now() - cooldownDoc.hunt.getTime();
+    let cooldownDoc = await Cooldown.findOne({ userId });
+    if (!cooldownDoc) {
+      cooldownDoc = await Cooldown.create({ userId });
+    }
+
+    const cooldownDuration = 60000; 
+    const lastHunt = cooldownDoc.hunt ? cooldownDoc.hunt.getTime() : 0;
+    const elapsed = Date.now() - lastHunt;
 
     if (elapsed < cooldownDuration) {
       const timeLeft = Math.ceil((cooldownDuration - elapsed) / 1000);

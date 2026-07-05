@@ -50,10 +50,15 @@ module.exports = {
     const playerCombat = liveStats.combatStats;
     const skill = liveStats.activeSkillInfo;
     
-    // 4. VALIDASI: Sistem Anti-Spam Cooldown Dungeon (Durasi: 5 Menit)[cite: 12]
-    const cooldownDoc = await Cooldown.findOne({ userId });
-    const cooldownDuration = 300000; 
-    const elapsed = Date.now() - cooldownDoc.dungeon.getTime();
+    // 4. VALIDASI: Sistem Anti-Spam Cooldown Dungeon (Durasi: 5 Menit)
+    let cooldownDoc = await Cooldown.findOne({ userId });
+    if (!cooldownDoc) {
+      cooldownDoc = await Cooldown.create({ userId });
+    }
+
+    const cooldownDuration = 36000000; 
+    const lastDungeon = cooldownDoc.dungeon ? cooldownDoc.dungeon.getTime() : 0;
+    const elapsed = Date.now() - lastDungeon;
 
     if (elapsed < cooldownDuration) {
       const timeLeft = Math.ceil((cooldownDuration - elapsed) / 1000);
@@ -64,7 +69,6 @@ module.exports = {
         ephemeral: true 
       });
     }
-
     // ==========================================
     // INITIALISASI DATA BOS BERDASARKAN AREA[cite: 12]
     // ==========================================

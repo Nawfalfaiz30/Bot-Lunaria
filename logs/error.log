@@ -1954,3 +1954,18 @@ Detail: SyntaxError: Unexpected token 'T', "This reque"... is not valid JSON
     at async consumeBody (node:internal/deps/undici/undici:5878:7)
     at async Object.execute (D:\Lunaria_New 2\commands\anime\gallery.js:63:26)
     at async Object.execute (D:\Lunaria_New 2\events\discord\messageCreate.js:235:13)
+[2026-07-05 18:22:08] [ERROR] [COMMAND ERROR] hunt:
+Detail: TypeError: Cannot read properties of null (reading 'hunt')
+    at Object.execute (D:\Lunaria_New 2\commands\rpg\actions\hunt.js:59:46)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Object.execute (D:\Lunaria_New 2\events\discord\messageCreate.js:235:13)
+[2026-07-05 18:22:34] [ERROR] [COMMAND ERROR] boss:
+Detail: TypeError: Cannot read properties of null (reading 'dungeon')
+    at Object.execute (D:\Lunaria_New 2\commands\rpg\actions\dungeon.js:56:46)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Object.execute (D:\Lunaria_New 2\events\discord\messageCreate.js:235:13)
+[2026-07-05 18:22:48] [ERROR] [INTERACTION ERROR HANDLER]
+Detail: TypeError: Cannot read properties of null (reading 'hunt')
+    at Object.execute (D:\Lunaria_New 2\commands\rpg\actions\hunt.js:59:46)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Object.execute (D:\Lunaria_New 2\events\discord\interactionCreate.js:54:17)

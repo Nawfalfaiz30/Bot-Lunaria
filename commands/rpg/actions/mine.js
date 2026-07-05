@@ -36,9 +36,14 @@ module.exports = {
     }
 
     // 2. VALIDASI: Sistem Anti-Spam Cooldown (Durasi: 15 Detik)
-    const cooldownDoc = await Cooldown.findOne({ userId });
-    const cooldownDuration = 15000; 
-    const elapsed = Date.now() - cooldownDoc.mine.getTime();
+    let cooldownDoc = await Cooldown.findOne({ userId });
+    if (!cooldownDoc) {
+      cooldownDoc = await Cooldown.create({ userId });
+    }
+
+    const cooldownDuration = 300000; 
+    const lastMine = cooldownDoc.mine ? cooldownDoc.mine.getTime() : 0;
+    const elapsed = Date.now() - lastMine;
 
     if (elapsed < cooldownDuration) {
       const timeLeft = Math.ceil((cooldownDuration - elapsed) / 1000);
