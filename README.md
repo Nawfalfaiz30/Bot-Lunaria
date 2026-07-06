@@ -14,19 +14,6 @@
 Ultimate All-in-One Discord Bot built for modern communities.
 </p>
 
-<p align="center">
-
-![Version](https://img.shields.io/github/package-json/v/Nawfalfaiz30/lunaria?style=for-the-badge\&color=7c3aed)
-
-![Stars](https://img.shields.io/github/stars/Nawfalfaiz30/lunaria?style=for-the-badge)
-
-![Forks](https://img.shields.io/github/forks/Nawfalfaiz30/lunaria?style=for-the-badge)
-
-![Issues](https://img.shields.io/github/issues/Nawfalfaiz30/lunaria?style=for-the-badge)
-
-![License](https://img.shields.io/github/license/Nawfalfaiz30/lunaria?style=for-the-badge)
-
-</p>
 
 <p align="center">
 
