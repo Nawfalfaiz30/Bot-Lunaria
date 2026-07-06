@@ -4421,3 +4421,27 @@
 [2026-07-05 18:36:23] [INFO] ✅ Cron Job Berhasil Dimuat: animeDailySchedule.js
 [2026-07-05 18:36:23] [INFO] ✅ Cron Job Berhasil Dimuat: giveawayCheck.js
 [2026-07-05 18:36:23] [INFO] ✅ Cron Job Berhasil Dimuat: mabarTimeout.js
+[2026-07-06 17:30:28] [SUCCESS] [SISTEM] DisTube Music Helper berhasil diinisialisasi.
+[2026-07-06 17:30:29] [SUCCESS] Berhasil memuat 79 Commands & 0 Aliases.
+[2026-07-06 17:30:29] [SUCCESS] Berhasil memuat 79 Slash Commands ke dalam memori Client.
+[2026-07-06 17:30:29] [SUCCESS] Berhasil memuat 17 Events (Discord & DisTube).
+[2026-07-06 17:30:29] [SUCCESS] Berhasil terhubung ke MongoDB Database.
+[2026-07-06 17:30:31] [INFO] ⚙️  Memuat sistem otomatisasi (Cron Jobs)...
+[2026-07-06 17:30:31] [SUCCESS] [ONLINE] Login sukses sebagai Lunaria#6661!
+[2026-07-06 17:30:31] [INFO] ✅ Cron Job Berhasil Dimuat: animeAiringNotify.js
+[2026-07-06 17:30:31] [INFO] ✅ Cron Job Berhasil Dimuat: animeDailySchedule.js
+[2026-07-06 17:30:31] [INFO] ✅ Cron Job Berhasil Dimuat: giveawayCheck.js
+[2026-07-06 17:30:31] [INFO] ✅ Cron Job Berhasil Dimuat: mabarTimeout.js
+[2026-07-06 17:31:00] [INFO] [ANIME TRACKER] Menarik data besar-besaran (All Airing + Upcoming)...
+[2026-07-06 17:34:36] [SUCCESS] [SISTEM] DisTube Music Helper berhasil diinisialisasi.
+[2026-07-06 17:34:36] [SUCCESS] Berhasil memuat 79 Commands & 0 Aliases.
+[2026-07-06 17:34:36] [SUCCESS] Berhasil memuat 17 Events (Discord & DisTube).
+[2026-07-06 17:34:36] [SUCCESS] Berhasil memuat 79 Slash Commands ke dalam memori Client.
+[2026-07-06 17:34:36] [SUCCESS] Berhasil terhubung ke MongoDB Database.
+[2026-07-06 17:34:38] [SUCCESS] [ONLINE] Login sukses sebagai Lunaria#6661!
+[2026-07-06 17:34:38] [INFO] ⚙️  Memuat sistem otomatisasi (Cron Jobs)...
+[2026-07-06 17:34:38] [INFO] ✅ Cron Job Berhasil Dimuat: animeDailySchedule.js
+[2026-07-06 17:34:38] [INFO] ✅ Cron Job Berhasil Dimuat: animeAiringNotify.js
+[2026-07-06 17:34:38] [INFO] ✅ Cron Job Berhasil Dimuat: giveawayCheck.js
+[2026-07-06 17:34:38] [INFO] ✅ Cron Job Berhasil Dimuat: mabarTimeout.js
+[2026-07-06 17:35:00] [INFO] [ANIME TRACKER] Menarik data besar-besaran (All Airing + Upcoming)...

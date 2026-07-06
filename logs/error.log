@@ -1969,3 +1969,28 @@ Detail: TypeError: Cannot read properties of null (reading 'hunt')
     at Object.execute (D:\Lunaria_New 2\commands\rpg\actions\hunt.js:59:46)
     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
     at async Object.execute (D:\Lunaria_New 2\events\discord\interactionCreate.js:54:17)
+[2026-07-06 17:30:47] [ERROR] [COMMAND ERROR] fun:
+Detail: DiscordAPIError[50035]: Invalid Form Body
+components[0].components[0].label[BASE_TYPE_REQUIRED]: This field is required
+components[0].components[2].label[BASE_TYPE_REQUIRED]: This field is required
+    at handleErrors (D:\Lunaria_New 2\node_modules\@discordjs\rest\dist\index.js:762:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async SequentialHandler.runRequest (D:\Lunaria_New 2\node_modules\@discordjs\rest\dist\index.js:1163:23)
+    at async SequentialHandler.queueRequest (D:\Lunaria_New 2\node_modules\@discordjs\rest\dist\index.js:994:14)
+    at async _REST.request (D:\Lunaria_New 2\node_modules\@discordjs\rest\dist\index.js:1307:22)
+    at async TextChannel.send (D:\Lunaria_New 2\node_modules\discord.js\src\structures\interfaces\TextBasedChannel.js:195:15)
+    at async module.exports (D:\Lunaria_New 2\commands\fun\logic\snake.js:65:17)
+    at async Object.execute (D:\Lunaria_New 2\commands\fun\fun.js:82:27)
+    at async Object.execute (D:\Lunaria_New 2\events\discord\messageCreate.js:235:13)
+[2026-07-06 17:35:59] [ERROR] [COMMAND ERROR] fun:
+Detail: TypeError: Cannot read properties of undefined (reading 'getString')
+    at module.exports (D:\Lunaria_New 2\commands\fun\logic\rps.js:4:44)
+    at Object.execute (D:\Lunaria_New 2\commands\fun\fun.js:80:31)
+    at Object.execute (D:\Lunaria_New 2\events\discord\messageCreate.js:235:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-07-06 17:36:53] [ERROR] [COMMAND ERROR] fun:
+Detail: TypeError: Cannot read properties of undefined (reading 'getString')
+    at module.exports (D:\Lunaria_New 2\commands\fun\logic\eightball.js:4:42)
+    at Object.execute (D:\Lunaria_New 2\commands\fun\fun.js:83:33)
+    at Object.execute (D:\Lunaria_New 2\events\discord\messageCreate.js:235:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)

@@ -43,9 +43,9 @@ module.exports = async (context) => {
     const getButtons = () => {
         return [
             new ActionRowBuilder().addComponents(
-                new ButtonBuilder().setCustomId('snake_none1').setLabel(' ').setStyle(ButtonStyle.Secondary).setDisabled(true),
+                new ButtonBuilder().setCustomId('snake_none1').setLabel('\u200b').setStyle(ButtonStyle.Secondary).setDisabled(true),
                 new ButtonBuilder().setCustomId('snake_UP').setLabel('🔼').setStyle(ButtonStyle.Primary),
-                new ButtonBuilder().setCustomId('snake_none2').setLabel(' ').setStyle(ButtonStyle.Secondary).setDisabled(true)
+                new ButtonBuilder().setCustomId('snake_none2').setLabel('\u200b').setStyle(ButtonStyle.Secondary).setDisabled(true)
             ),
             new ActionRowBuilder().addComponents(
                 new ButtonBuilder().setCustomId('snake_LEFT').setLabel('◀️').setStyle(ButtonStyle.Primary),
@@ -62,16 +62,20 @@ module.exports = async (context) => {
         .addFields({ name: '🍎 Skor Kamu', value: `\`${score}\` poin` })
         .setFooter({ text: 'Klik tombol di bawah untuk mengubah arah ular!' });
 
-    const msg = await context.reply({ embeds: [embed], components: getButtons(), fetchReply: true });
+    let msg;
+    if (context.options !== undefined) {
+        await context.reply({ embeds: [embed], components: getButtons() });
+        msg = await context.fetchReply();
+    } else {
+        msg = await context.reply({ embeds: [embed], components: getButtons() });
+    }
 
     const filter = i => i.customId.startsWith('snake_') && i.user.id === author.id;
     const collector = context.channel.createMessageComponentCollector({ filter, time: 60000 });
 
-    // Loop otomatis pergerakan ular setiap tombol ditekan
     collector.on('collect', async i => {
         const nextDir = i.customId.split('_')[1];
         
-        // Mencegah ular putar balik 180 derajat langsung mati
         if (nextDir === 'UP' && direction !== 'DOWN') direction = 'UP';
         if (nextDir === 'DOWN' && direction !== 'UP') direction = 'DOWN';
         if (nextDir === 'LEFT' && direction !== 'RIGHT') direction = 'LEFT';
@@ -79,28 +83,24 @@ module.exports = async (context) => {
 
         await i.deferUpdate();
 
-        // Hitung koordinat kepala baru
         const head = { ...snake[0] };
         if (direction === 'UP') head.y--;
         if (direction === 'DOWN') head.y++;
         if (direction === 'LEFT') head.x--;
         if (direction === 'RIGHT') head.x++;
 
-        // Cek Game Over (Tabrak Tembok atau Badan Sendiri)
         if (head.x < 0 || head.x >= width || head.y < 0 || head.y >= height || snake.some(s => s.x === head.x && s.y === head.y)) {
             collector.stop('dead');
             return;
         }
 
-        // Masukkan kepala ular baru
         snake.unshift(head);
 
-        // Cek jika ular makan apel
         if (head.x === apple.x && head.y === apple.y) {
             score++;
             generateApple();
         } else {
-            snake.pop(); // Potong buntut jika tidak makan apel
+            snake.pop();
         }
 
         const gameEmbed = new EmbedBuilder()
@@ -109,7 +109,7 @@ module.exports = async (context) => {
             .setColor('#57F287')
             .addFields({ name: '🍎 Skor Kamu', value: `\`${score}\` poin` });
 
-        if (context.options) {
+        if (context.options !== undefined) {
             await context.editReply({ embeds: [gameEmbed] });
         } else {
             await msg.edit({ embeds: [gameEmbed] });
@@ -122,13 +122,12 @@ module.exports = async (context) => {
             .setDescription(`Ular kamu mati menabrak rintangan!\n\n**Skor Akhir:** \`${score}\` Apel 🍎`)
             .setColor('#ED4245');
 
-        // Nonaktifkan semua tombol
         const disabledRows = getButtons().map(row => {
             row.components.forEach(btn => btn.setDisabled(true));
             return row;
         });
 
-        if (context.options) {
+        if (context.options !== undefined) {
             await context.editReply({ embeds: [gameOverEmbed], components: disabledRows });
         } else {
             await msg.edit({ embeds: [gameOverEmbed], components: disabledRows });
