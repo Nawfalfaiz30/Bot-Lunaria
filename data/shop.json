@@ -39,13 +39,13 @@
     "category": "consumable",
     "buy_price": 5500
   },
-  "elixir_god_omega": {
-    "item_id": "elixir_god_omega",
+  "goddess_tears_omega": {
+    "item_id": "goddess_tears_omega",
     "category": "consumable",
     "buy_price": 52500
   },
-  "potion_berserk_tier3": {
-    "item_id": "potion_berserk_tier3",
+  "potion_berserk": {
+    "item_id": "potion_berserk",
     "category": "consumable",
     "buy_price": 20000
   },
@@ -60,18 +60,18 @@
     "category": "tool",
     "buy_price": 20000
   },
-  "epic_fishing_rod": {
-    "item_id": "epic_fishing_rod",
+  "mermaid_whisper_rod": {
+    "item_id": "mermaid_whisper_rod",
     "category": "tool",
     "buy_price": 15000
   },
-  "poseidon_fishing_rod": {
-    "item_id": "poseidon_fishing_rod",
+  "leviathan_tide_rod": {
+    "item_id": "leviathan_tide_rod",
     "category": "tool",
     "buy_price": 75000
   },
-  "nebula_fishing_rod": {
-    "item_id": "nebula_fishing_rod",
+  "yggdrasil_reel_rod": {
+    "item_id": "yggdrasil_reel_rod",
     "category": "tool",
     "buy_price": 100000
   },
@@ -85,8 +85,8 @@
     "category": "tool",
     "buy_price": 2000
   },
-  "geologist_pickaxe": {
-    "item_id": "geologist_pickaxe",
+  "crystal_vein_pickaxe": {
+    "item_id": "crystal_vein_pickaxe",
     "category": "tool",
     "buy_price": 15000
   },
@@ -95,8 +95,8 @@
     "category": "tool",
     "buy_price": 75000
   },
-  "cosmic_void_pickaxe": {
-    "item_id": "cosmic_void_pickaxe",
+  "orichalcum_breaker": {
+    "item_id": "orichalcum_breaker",
     "category": "tool",
     "buy_price": 95000
   },
@@ -120,8 +120,8 @@
     "category": "tool",
     "buy_price": 75000
   },
-  "infinity_eclipse_axe": {
-    "item_id": "infinity_eclipse_axe",
+  "genesis_world_axe": {
+    "item_id": "genesis_world_axe",
     "category": "tool",
     "buy_price": 12500
   },
@@ -146,8 +146,8 @@
     "category": "weapon",
     "buy_price": 40000
   },
-  "archmage_nexus_staff": {
-    "item_id": "archmage_nexus_staff",
+  "sage_mana_staff": {
+    "item_id": "sage_mana_staff",
     "category": "weapon",
     "buy_price": 99000
   },
@@ -156,8 +156,8 @@
     "category": "weapon",
     "buy_price": 12500 
   },
-  "assassin_stiletto": {
-    "item_id": "assassin_stiletto",
+  "viper_stiletto": {
+    "item_id": "viper_stiletto",
     "category": "weapon",
     "buy_price": 18000  
   },
@@ -166,13 +166,13 @@
     "category": "weapon",
     "buy_price": 125000
   },
-  "ragnarok_blade": {
-    "item_id": "ragnarok_blade",
+  "demon_slayer_blade": {
+    "item_id": "demon_slayer_blade",
     "category": "weapon",
     "buy_price": 235000
   },
-  "chronos_nexus_staff": {
-    "item_id": "chronos_nexus_staff",
+  "hero_excalibur_staff": {
+    "item_id": "hero_excalibur_staff",
     "category": "weapon",
     "buy_price": 210000
   },
@@ -192,8 +192,8 @@
     "category": "armor",
     "buy_price": 18000
   },
-  "crystal_paladin_armor": {
-    "item_id": "crystal_paladin_armor",
+  "paladin_mana_armor": {
+    "item_id": "paladin_mana_armor",
     "category": "armor",
     "buy_price": 65000
   },

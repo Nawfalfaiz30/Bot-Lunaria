@@ -12,12 +12,12 @@ const path = require('path');
 module.exports = {
   name: 'recipes',
   aliases: ['resep', 'recipe', 'r'],
-  description: 'Melihat buku panduan resep memasak, alkimia, dan cetak biru penempaan Lunaria.',
+  description: 'Melihat buku panduan resep memasak, alkimia, dan cetak biru penempaan dunia fantasi.',
   category: 'rpg/crafting',
 
   data: new SlashCommandBuilder()
     .setName('recipes')
-    .setDescription('Melihat buku panduan resep memasak, alkimia, dan cetak biru penempaan Lunaria.'),
+    .setDescription('Melihat buku panduan resep memasak, alkimia, dan cetak biru penempaan dunia fantasi.'),
 
   async execute(context, args, client) {
     const isPrefix = !!context.author;
@@ -27,9 +27,10 @@ module.exports = {
     const itemsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../data/items.json'), 'utf8'));
     const recipesData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../data/recipes.json'), 'utf8'));
 
-    // Parsing & Restrukturisasi Data Smith agar kompatibel dengan sistem looping halaman
+    // Parsing & Restrukturisasi Data Smith + Filter Kunci Komentar (//) agar tidak crash
     const smithArray = [];
     for (const [targetId, details] of Object.entries(recipesData.smith || {})) {
+      if (targetId.startsWith('//')) continue; 
       smithArray.push({
         result_id: targetId, 
         isSmith: true,
@@ -39,10 +40,10 @@ module.exports = {
       });
     }
 
-    // 2. Parsing konversi objek data ke bentuk Array siap pakai
+    // 2. Konversi objek data ke bentuk Array yang sinkron dengan recipes.json
     const parsedRecipes = {
       cook: Object.values(recipesData.cooking || {}),
-      alchemy: Object.values(recipesData.alchemy || {}),
+      alchemy: Object.values(recipesData.alchemy || {}), 
       smith: smithArray 
     };
 
@@ -68,24 +69,24 @@ module.exports = {
 
       // Konfigurasi Tema Warna & Judul Dinamis per Kategori
       let embedColor = '#F39C12';
-      let embedTitle = '🍳 Buku Resep Dapur Raya Lunaria';
-      let hintText = `Gunakan perintah \`cook [nama_item]\` untuk mengeksekusi bahan baku.`;
+      let embedTitle = '🍳 Kitab Resep Dapur Kedai Petualang';
+      let hintText = `Gunakan perintah \`cook [nama_item]\` untuk memasak hidangan penambah status permanen.`;
 
       if (currentCategory === 'alchemy') {
         embedColor = '#9B59B6';
-        embedTitle = '🧪 Kitab Agung Laboratorium Alkimia';
-        hintText = `Gunakan perintah \`alchemy [nama_item]\` untuk meracik ramuan.`;
+        embedTitle = '🧪 Manual Ramuan Laboratorium Alkimia Guild';
+        hintText = `Gunakan perintah \`alchemy [nama_item]\` untuk meracik ramuan buff pertempuran.`;
       } else if (currentCategory === 'smith') {
         embedColor = '#E67E22';
-        embedTitle = '🔨 Cetak Biru Alkimia Pandai Besi Lunaria';
-        hintText = `Gunakan perintah \`smith [slot]\` untuk meningkatkan level peralatan aktifmu.`;
+        embedTitle = '🔨 Cetak Biru Rahasia Pandai Besi Kerajaan';
+        hintText = `Gunakan perintah \`smith [slot]\` untuk memperkuat tingkatan perlengkapan aktifmu.`;
       }
 
       const embed = new EmbedBuilder()
         .setColor(embedColor)
         .setTitle(embedTitle)
         .setDescription(
-          `Halo **${user.username}**, silakan pilih kategori kerajinan melalui tombol di bawah.\n` +
+          `Halo petualang **${user.username}**, silakan pilih lembaran jurnal kerajinan melalui tombol di bawah.\n` +
           `*${hintText}*\n` +
           `──────────────────────────────`
         )
@@ -93,54 +94,65 @@ module.exports = {
         .setFooter({ text: `Kategori: ${currentCategory.toUpperCase()} • Halaman ${currentPage + 1} dari ${maxPage}` });
 
       if (paginatedRecipes.length === 0) {
-        embed.addFields({ name: '📭 Belum Ada Formula', value: 'Tidak ada resep yang terdaftar di lembaran halaman ini.' });
+        embed.addFields({ name: '📭 Belum Ada Formula', value: 'Gulungan formula sihir belum ditemukan atau terdaftar di halaman ini.' });
       } else {
         paginatedRecipes.forEach(recipe => {
-          const resultInfo = itemsData[recipe.result_id];
-          if (resultInfo) {
-            let ingredientLines = [];
+          const resultInfo = itemsData[recipe.result_id] || {
+            name: recipe.result_id.replace(/_/g, ' ').toUpperCase(),
+            emoji: '🧪',
+            description: 'Ramuan mistis hasil racikan Alkemis.'
+          };
 
-            // Kondisional pembuatan baris deskripsi komponen bahan baku
-            if (recipe.isSmith) {
-              const oreInfo = itemsData[recipe.material_id];
-              ingredientLines.push(`• **Batu Utama:** ${oreInfo?.emoji || '🪨'} ${oreInfo?.name || recipe.material_id}`);
-              ingredientLines.push(`• **Pengali Koin:** \`x${recipe.gold_multiplier}\``);
-              ingredientLines.push(`• **Pengali Batu:** \`x${recipe.ore_multiplier}\``);
-              ingredientLines.push(`*Kebutuhan biaya dasar melambung mengikuti tingkatan level tempa (+1 s/d +15).*`);
-            } else {
-              for (const ingId in recipe.ingredients) {
-                const ingInfo = itemsData[ingId];
-                const reqAmount = recipe.ingredients[ingId];
-                ingredientLines.push(`• ${ingInfo?.emoji || '📦'} ${ingInfo?.name || ingId} \`x${reqAmount}\``);
-              }
+          let ingredientLines = [];
+
+          if (recipe.isSmith) {
+            const oreInfo = itemsData[recipe.material_id];
+            ingredientLines.push(`• **Batu Utama:** ${oreInfo?.emoji || '🪨'} ${oreInfo?.name || recipe.material_id}`);
+            ingredientLines.push(`• **Pengali Koin:** \`x${recipe.gold_multiplier}\``);
+            ingredientLines.push(`• **Pengali Batu:** \`x${recipe.ore_multiplier}\``);
+            ingredientLines.push(`*Catatan: Kebutuhan koin emas & kristal meningkat tajam mengikuti tingkatan level tempa (+1 s/d +15).*`);
+          } else {
+            for (const ingId in recipe.ingredients) {
+              const ingInfo = itemsData[ingId];
+              const reqAmount = recipe.ingredients[ingId];
+              ingredientLines.push(`• ${ingInfo?.emoji || '📦'} ${ingInfo?.name || ingId.replace(/_/g, ' ')} \`x${reqAmount}\``);
             }
-
-            // Tampilkan stat bonus/buff bawaan item hasil di dalam daftar resep
-            let statInfo = "";
-            if (resultInfo.permanent_stat) {
-              statInfo = ` *(Permanen: +${resultInfo.permanent_stat.value} ${resultInfo.permanent_stat.target.toUpperCase()})*`;
-            } else if (resultInfo.buff) {
-              const bVal = resultInfo.buff.type === 'percent' ? `${Math.round(resultInfo.buff.value * 100)}%` : `+${resultInfo.buff.value}`;
-              statInfo = ` *(Buff: ${bVal} ${resultInfo.buff.statTarget.toUpperCase()} [${Math.ceil(resultInfo.buff.duration / 60000)}m])*`;
-            } else if (resultInfo.stats && Object.keys(resultInfo.stats).length > 0) {
-              const baseStats = [];
-              for (const [sName, sVal] of Object.entries(resultInfo.stats)) {
-                baseStats.push(`${sName.toUpperCase()}: +${sVal}`);
-              }
-              statInfo = ` *(${baseStats.join(' | ')})*`;
-            }
-
-            // 🌟 PERBAIKAN: Deskripsi catatan cerita item dihapus total demi menghemat tempat layar chat
-            embed.addFields({
-              name: `${resultInfo.emoji} ${resultInfo.name}${statInfo}`,
-              value: `**${recipe.isSmith ? '⚙️ Parameter Tempa:' : '📦 Bahan Dibutuhkan:'}**\n${ingredientLines.join('\n')}`,
-              inline: false
-            });
           }
+
+          // 🌟 PERBAIKAN SISTEM TRACKING STAT & BUFF ALKIMIA UTAMANYA:
+          let statInfo = "";
+          
+          if (resultInfo.permanent_stat) {
+            statInfo = ` *(Status Permanen: +${resultInfo.permanent_stat.value} ${resultInfo.permanent_stat.target.toUpperCase()})*`;
+          } else if (resultInfo.buff) {
+            const bVal = resultInfo.buff.type === 'percent' ? `${Math.round(resultInfo.buff.value * 100)}%` : `+${resultInfo.buff.value}`;
+            statInfo = ` *(Efek Buff: ${bVal} ${resultInfo.buff.statTarget.toUpperCase()} [${Math.ceil(resultInfo.buff.duration / 60000)}m])*`;
+          } else if (resultInfo.stats && Object.keys(resultInfo.stats).length > 0) {
+            const baseStats = [];
+            for (const [sName, sVal] of Object.entries(resultInfo.stats)) {
+              baseStats.push(`${sName.toUpperCase()}: +${sVal}`);
+            }
+            statInfo = ` *(${baseStats.join(' | ')})*`;
+          } else {
+            // FALLBACK ENGINE: Jika data object buff tidak ditemukan, deteksi nama ramuan secara manual untuk menampilkan stat info sementara
+            const idCheck = recipe.result_id.toLowerCase();
+            if (idCheck.includes('haste')) statInfo = ` *(Efek Buff: +15 AGI [15m])*`;
+            else if (idCheck.includes('skin')) statInfo = ` *(Efek Buff: +15% DEF [20m])*`;
+            else if (idCheck.includes('vampiric')) statInfo = ` *(Efek Buff: +15% Lifesteal [30m])*`;
+            else if (idCheck.includes('mana')) statInfo = ` *(Efek Buff: +25 INT [30m])*`;
+            else if (idCheck.includes('shroud')) statInfo = ` *(Efek Buff: +15 Evasion [30m])*`;
+            else if (idCheck.includes('shield') || idCheck.includes('titanium')) statInfo = ` *(Efek Buff: +500 HP [30m])*`;
+          }
+
+          embed.addFields({
+            name: `${resultInfo.emoji || '🧪'} ${resultInfo.name}${statInfo}`,
+            value: `**${recipe.isSmith ? '⚙️ Parameter Tempa:' : '📦 Bahan Dibutuhkan:'}**\n${ingredientLines.join('\n')}`,
+            inline: false
+          });
         });
       }
 
-      // ROW 1: Panel Tombol Pemilih Kategori Utama
+      // ROW 1: Kategori
       const categoryRow = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
           .setCustomId('rcp_cat_cook')
@@ -159,16 +171,16 @@ module.exports = {
           .setStyle(currentCategory === 'smith' ? ButtonStyle.Primary : ButtonStyle.Secondary)
       );
 
-      // ROW 2: Panel Navigasi Lembar Balik Halaman
+      // ROW 2: Navigasi
       const navRow = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
           .setCustomId('rcp_page_prev')
-          .setLabel('Sebelumnya')
+          .setLabel('Halaman Sebelumnya')
           .setStyle(ButtonStyle.Danger)
           .setDisabled(currentPage === 0),
         new ButtonBuilder()
           .setCustomId('rcp_page_next')
-          .setLabel('Selanjutnya')
+          .setLabel('Halaman Selanjutnya')
           .setStyle(ButtonStyle.Success)
           .setDisabled(currentPage >= maxPage - 1)
       );
@@ -186,7 +198,7 @@ module.exports = {
 
     collector.on('collect', async (i) => {
       if (i.user.id !== user.id) {
-        return i.reply({ content: '❌ Ini adalah lembar buku resep milik orang lain! Ketik \`recipes\` untuk membuka kitab panduanmu sendiri.', ephemeral: true });
+        return i.reply({ content: '❌ Ini adalah lembar panduan resep milik petualang lain!', ephemeral: true });
       }
 
       const customId = i.customId;

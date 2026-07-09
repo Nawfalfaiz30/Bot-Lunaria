@@ -1,167 +1,167 @@
 {
   "area_1": {
-    "name": "Whispering Woods",
-    "emoji": "🌲",
+    "name": "Town of Beginnings: Outskirts",
+    "emoji": "🌾",
     "required_level": 1,
-    "description": "Hutan tenang yang dipenuhi suara bisikan angin. Tempat yang cocok untuk petualang pemula memulai perjalanannya.",
-      "gathering_available": {
-      "chop": "oak_wood",
-      "mine": "copper_ore",
-      "fish": "carp"
+    "description": "Padang rumput aman di luar gerbang kota. Tempat para petualang baru belajar mengayunkan pedang dan berburu Slime atau Horned Rabbit.",
+    "gathering_available": {
+      "chop": "plain_twigs",
+      "mine": "flint_stone",
+      "fish": "pond_tadpole"
     }
   },
   "area_2": {
-    "name": "Crystal Caves",
-    "emoji": "💎",
+    "name": "Goblin Hideout Forest",
+    "emoji": "👺",
     "required_level": 5,
-    "description": "Gua bawah tanah yang berkilau karena formasi kristal mentah. Berhati-hatilah dengan makhluk yang bersembunyi di kegelapan.",
+    "description": "Hutan pinggiran yang mulai berbahaya karena menjadi markas kawanan Goblin pencuri. Amankan pasokan logistik warga desa di sini.",
     "gathering_available": {
-      "chop": "birch_wood",
-      "mine": "iron_ore",
-      "fish": "trout"
+      "chop": "wild_oak_wood",
+      "mine": "rusty_iron_ore",
+      "fish": "river_perch"
     }
   },
   "area_3": {
-    "name": "Crimson Valley",
-    "emoji": "🍂",
+    "name": "Grand Subterranean Mines",
+    "emoji": "⛏️",
     "required_level": 12,
-    "description": "Lembah dengan tanah berwarna merah bata dan dedaunan yang selalu berguguran. Aroma pertarungan sangat pekat di sini.",
+    "description": "Bekas tambang kerajaan yang ditinggalkan dan kini dikuasai oleh Kobold Miners dan Earth Golem. Kaya akan material besi berkualitas.",
     "gathering_available": {
-      "chop": "pine_wood",
-      "mine": "coal_ore",
-      "fish": "salmon"
+      "chop": "braced_timber",
+      "mine": "pure_iron_ore",
+      "fish": "blind_cave_fish"
     }
   },
   "area_4": {
-    "name": "Sunken Shallows",
-    "emoji": "🌊",
+    "name": "Spiders' Silk Den",
+    "emoji": "🕸️",
     "required_level": 20,
-    "description": "Reruntuhan kota kuno yang tenggelam di pesisir pantai. Udara di sini lembap dan dipenuhi energi magis air.",
+    "description": "Gua lembap yang dipenuhi jaring laba-laba raksasa setinggi manusia. Sangat beracun, bersiaplah membawa ramuan penawar (Antidote).",
     "gathering_available": {
-      "chop": "mangrove_wood",
-      "mine": "silver_ore",
-      "fish": "catfish"
+      "chop": "mushy_stalk",
+      "mine": "sulfur_deposit",
+      "fish": "venomous_leech"
     }
   },
   "area_5": {
-    "name": "Scorched Desert",
-    "emoji": "🏜️",
+    "name": "Orc Territory Wetlands",
+    "emoji": "🐗",
     "required_level": 30,
-    "description": "Lautan pasir tak berujung dengan suhu ekstrem. Hanya petualang dengan stamina kuat yang bisa bertahan di bawah terik matahari.",
+    "description": "Rawa-rawa luas yang menjadi wilayah kekuasaan suku Orc Warrior. Fisik mereka sangat kuat, pastikan strategi tim Anda sudah matang.",
     "gathering_available": {
-      "chop": "cactus_bark",
-      "mine": "gold_ore",
-      "fish": "sand_eel"
+      "chop": "mangrove_root",
+      "mine": "bog_bronze_ore",
+      "fish": "mud_catfish"
     }
   },
   "area_6": {
-    "name": "Frozen Tundra",
-    "emoji": "❄️",
+    "name": "Beastman Savannah",
+    "emoji": "🐾",
     "required_level": 42,
-    "description": "Dataran es abadi di mana badai salju tidak pernah berhenti. Mengharuskan pertahanan fisik yang kuat agar tubuh tidak membeku.",
+    "description": "Dataran tinggi tempat tinggal suku manusia setengah binatang yang tangguh. Tempat terbaik untuk menguji kecepatan bertarung Anda.",
     "gathering_available": {
-      "chop": "frost_wood",
-      "mine": "mithril_ore",
-      "fish": "ice_fish"
+      "chop": "savannah_bark",
+      "mine": "silver_ore",
+      "fish": "striped_bass"
     }
   },
   "area_7": {
-    "name": "Misty Highlands",
-    "emoji": "⛰️",
+    "name": "Lost Elven Woods",
+    "emoji": "🧝",
     "required_level": 55,
-    "description": "Pegunungan tinggi yang diselimuti kabut tebal teka-teki. Jarak pandang sangat terbatas, meningkatkan risiko penyergapan.",
+    "description": "Hutan kuno yang dilindungi oleh sihir ilusi para Elf. Hanya mereka yang berjiwa murni (atau berlevel tinggi) yang bisa menembus kabutnya.",
     "gathering_available": {
-      "chop": "maple_wood",
-      "mine": "platinum_ore",
-      "fish": "rainbow_trout"
+      "chop": "elder_birch_wood",
+      "mine": "mana_shard",
+      "fish": "silver_glowing_salmon"
     }
   },
   "area_8": {
-    "name": "Obsidian Crags",
-    "emoji": "🌋",
+    "name": "Undead Graveyard",
+    "emoji": "🪦",
     "required_level": 70,
-    "description": "Wilayah vulkanik aktif yang dikelilingi oleh bebatuan hitam obsidian keras dan aliran lava panas membara.",
+    "description": "Makam kuno para pahlawan yang terkutuk. Pada malam hari, tentara Skeleton dan Wraith berkeliaran mencari jiwa petualang hidup.",
     "gathering_available": {
-      "chop": "charred_wood",
-      "mine": "obsidian_shard",
-      "fish": "lava_magma_fish"
+      "chop": "rotted_coffin_plank",
+      "mine": "dark_steel_ore",
+      "fish": "bone_carp"
     }
   },
   "area_9": {
-    "name": "Celestial Peaks",
-    "emoji": "✨",
+    "name": "Wyvern Nest Peaks",
+    "emoji": "🦅",
     "required_level": 85,
-    "description": "Puncak gunung tertinggi yang menembus awan, mendekati wilayah para dewa. Dipenuhi oleh energi spiritual murni.",
+    "description": "Pegunungan curam tempat bersarangnya reptil bersayap, Wyvern. Hati-hati dengan serangan mendadak dari langit saat mendaki.",
     "gathering_available": {
-      "chop": "yggdrasil_branch",
-      "mine": "titanium_ore",
-      "fish": "sky_ray"
+      "chop": "mountain_pine_wood",
+      "mine": "gold_vein_ore",
+      "fish": "sky_soaring_trout"
     }
   },
   "area_10": {
-    "name": "Shadow Abyss",
-    "emoji": "👁️",
+    "name": "Labyrinth of the Minotaur",
+    "emoji": "🐂",
     "required_level": 100,
-    "description": "Jurang kedalaman tak berdasar di mana cahaya tidak pernah sampai. Tempat bersarangnya iblis purba yang mengerikan.",
+    "description": "Labirin batu raksasa bawah tanah yang membingungkan. Di tengahnya, seekor Minotaur raksasa siap menghancurkan siapa saja yang tersesat.",
     "gathering_available": {
-      "chop": "abyssal_stalk",
-      "mine": "dark_matter_ore",
-      "fish": "void_aberration"
+      "chop": "petrified_wood",
+      "mine": "mithril_ore",
+      "fish": "labyrinth_eel"
     }
   },
   "area_11": {
-    "name": "Eldritch Ruins",
-    "emoji": "🏛️",
+    "name": "Ancient Dragon Valley",
+    "emoji": "🐉",
     "required_level": 120,
-    "description": "Sisa-sisa peradaban terlarang yang dipenuhi arsitektur aneh berdistorsi. Ruang dan waktu terasa tidak stabil di sini.",
+    "description": "Lembah mistis yang dihuni oleh sisa-sisa ras Naga Purba. Atmosfer di sini dipenuhi oleh tekanan sihir (Dragon Aura) yang luar biasa berat.",
     "gathering_available": {
-      "chop": "warped_stem",
-      "mine": "ancient_debris",
-      "fish": "eldritch_squid"
+      "chop": "dragon_scale_bark",
+      "mine": "draconium_ore",
+      "fish": "fire_breathing_snapper"
     }
   },
   "area_12": {
-    "name": "Aetherial Gardens",
-    "emoji": "🌸",
+    "name": "Demon King's Border Wall",
+    "emoji": "🛡️",
     "required_level": 145,
-    "description": "Taman melayang di dimensi lain yang dipenuhi bunga-bunga kristal abadi. Keindahannya menyimpan bahaya ilusi yang mematikan.",
+    "description": "Benteng pertahanan terakhir umat manusia yang membatasi dunia luar dengan wilayah iblis. Pasukan garis depan berjuang mati-matian di sini.",
     "gathering_available": {
-      "chop": "aether_wood",
-      "mine": "lumen_crystal",
-      "fish": "angel_fish"
+      "chop": "ironwood_barricade",
+      "mine": "adamantite_ore",
+      "fish": "trench_pike"
     }
   },
   "area_13": {
-    "name": "Void Rift",
-    "emoji": "🌀",
+    "name": "Demon Imperial Capital",
+    "emoji": "🏰",
     "required_level": 175,
-    "description": "Retakan dimensi kehampaan. Di sini, material dasar dari realitas terkoyak dan dijaga oleh monster kosmik.",
+    "description": "Kota besar yang diselimuti kegelapan abadi, pusat kekuatan ras iblis. Dipenuhi oleh High Demon, Succubus, dan ksatria kegelapan.",
     "gathering_available": {
-      "chop": "void_tendril",
-      "mine": "cosmic_dust",
-      "fish": "nebula_whale"
+      "chop": "demonic_ash_wood",
+      "mine": "abyssal_crystal",
+      "fish": "blood_river_tilapia"
     }
   },
   "area_14": {
-    "name": "Dragon's Sanctum",
-    "emoji": "🐉",
+    "name": "Demon King's Throne Room",
+    "emoji": "👑",
     "required_level": 210,
-    "description": "Kuil suci kuno tempat peristirahatan para naga purba penjaga keseimbangan dunia Lunaria.",
+    "description": "Istana terdalam tempat sang Raja Iblis bertahta. Ruangan ini dipenuhi hawa membunuh dan energi sihir hitam terdahsyat di dunia.",
     "gathering_available": {
-      "chop": "dragon_bone_wood",
-      "mine": "draconium_ore",
-      "fish": "dragon_carp"
+      "chop": "cursed_ebony",
+      "mine": "orichalcum_ore",
+      "fish": "shadow_kraken_tentacle"
     }
   },
   "area_15": {
-    "name": "Chrono Nexus",
-    "emoji": "⏳",
+    "name": "The World Tree: Yggdrasil Top",
+    "emoji": "🌳",
     "required_level": 250,
-    "description": "Pusat dari segala lini masa dan takdir. Tempat ujian terakhir bagi para petualang sebelum melompati waktu (Timetravel).",
+    "description": "Puncak tertinggi pohon dunia setelah mengalahkan Raja Iblis. Gerbang menuju dimensi para dewa tempat petualang bisa melakukan Reinkarnasi/Ascension.",
     "gathering_available": {
-      "chop": "eternal_log",
-      "mine": "chronos_quartz",
-      "fish": "time_weaver"
+      "chop": "yggdrasil_divine_branch",
+      "mine": "gods_relic_shard",
+      "fish": "astral_koi"
     }
   }
 }

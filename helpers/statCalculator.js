@@ -135,10 +135,10 @@ function calculateStats(rpgDoc) {
   // =================================================================
   let maxHp = 100 + Math.round(attributes.vit * 12);
   let maxMana = 20 + Math.round(attributes.int * 5);
-  let atk = Math.round(attributes.str * 2 + attributes.agi * 0.5);
-  let def = Math.round(attributes.vit * 1.5);
-  let critRate = attributes.agi * 0.1; 
-  let evasionRate = attributes.agi * 0.05;
+  let atk = Math.round(attributes.str * 1.5 + attributes.agi * 0.5);
+  let def = Math.round(attributes.vit * 1.1);
+  let critRate = attributes.agi * 0.2; 
+  let evasionRate = attributes.agi * 0.1;
 
   // =================================================================
   // FASE 3: PENGGABUNGAN FLAT MODIFIERS (PERLENGKAPAN & RAMUAN)

@@ -2,7 +2,7 @@
   "warrior": {
     "name": "Warrior",
     "emoji": "⚔️",
-    "description": "Petarung jarak dekat yang tangguh dengan fokus pada pertahanan fisik dan vitalitas tinggi.",
+    "description": "Petarung jarak dekat garis depan Ordo Ksatria Kerajaan yang tangguh dengan fokus pada pertahanan fisik dan vitalitas tinggi.",
     "base_attributes": { "str": 15, "agi": 8, "int": 5, "vit": 18 },
     "growth_per_level": { "str": 2.5, "agi": 1.0, "int": 0.5, "vit": 3.0 },
     "skills": [
@@ -18,7 +18,7 @@
           "value": 0.15,
           "type": "percent"
         },
-        "description": "Menghantam musuh dengan perisai baja. Menghasilkan damage sebesar (VIT * 3) dan memicu buff peningkatan DEF sebesar 15%."
+        "description": "Menghantam musuh dengan perisai baja berat Guild. Menghasilkan damage sebesar (VIT * 3) dan memicu buff peningkatan DEF sebesar 15%."
       },
       {
         "id": "iron_will",
@@ -32,7 +32,7 @@
           "value": 0.30,
           "type": "percent"
         },
-        "description": "Membangkitkan fokus mental lini depan. Menghasilkan damage dasar (VIT * 1.1) dan memicu buff peningkatan total DEF sebesar 30%."
+        "description": "Membangkitkan fokus mental lini depan sang pelindung. Menghasilkan damage dasar (VIT * 1.1) dan memicu buff peningkatan total DEF sebesar 30%."
       },
       {
         "id": "whirlwind_slash",
@@ -52,14 +52,14 @@
         "scaling_stat": "str",
         "multiplier": 5.5,
         "buff_effect": null,
-        "description": "Menerjang monster dengan berat armor. Menghasilkan damage penghancur pelindung sebesar (STR * 5.5)."
+        "description": "Menerjang monster dengan berat armor pelat besi benteng. Menghasilkan damage penghancur pelindung sebesar (STR * 5.5)."
       }
     ]
   },
   "elf": {
-    "name": "Elf",
+    "name": "Elf Mage",
     "emoji": "🍃",
-    "description": "Makhluk suci pelindung alam yang seimbang, ahli dalam sihir penyembuhan dan memiliki kelincahan alami.",
+    "description": "Ras peri suci pelindung Hutan Kuno yang seimbang, ahli dalam sihir elementalis alam dan memiliki kelincahan alami.",
     "base_attributes": { "str": 9, "agi": 14, "int": 14, "vit": 11 },
     "growth_per_level": { "str": 1.2, "agi": 2.2, "int": 2.2, "vit": 1.4 },
     "skills": [
@@ -71,7 +71,7 @@
         "scaling_stat": "int",
         "multiplier": 5.0,
         "buff_effect": null,
-        "description": "Memanggil tetesan air suci pohon kehidupan. Menghasilkan damage magis alam sebesar (INT * 5)."
+        "description": "Memanggil tetesan air suci dari akar Pohon Dunia Yggdrasil. Menghasilkan damage magis alam sebesar (INT * 5)."
       },
       {
         "id": "solar_flare",
@@ -81,7 +81,7 @@
         "scaling_stat": "int",
         "multiplier": 4.5,
         "buff_effect": null,
-        "description": "Menembakkan pilar cahaya matahari suci Lunaria. Menghasilkan damage sihir panas sebesar (INT * 4.5)."
+        "description": "Menembakkan pilar cahaya matahari suci berkat Dewi Fantasi. Menghasilkan damage sihir panas sebesar (INT * 4.5)."
       },
       {
         "id": "faerie_shield",
@@ -95,7 +95,7 @@
           "value": 0.25,
           "type": "percent"
         },
-        "description": "Bantuan tameng magis dari kawanan peri hutan. Menghasilkan damage dasar (INT * 1.1) dan memicu buff meningkatkan DEF sebesar 25%."
+        "description": "Bantuan tameng magis dari kawanan peri kecil pelindung hutan. Menghasilkan damage dasar (INT * 1.1) dan memicu buff meningkatkan DEF sebesar 25%."
       },
       {
         "id": "spirit_infusion",
@@ -109,14 +109,14 @@
           "value": 15,
           "type": "flat"
         },
-        "description": "Menyatu dengan roh angin sepoi. Menghasilkan damage (INT * 2) dan memicu buff tambahan atribut +15 AGI."
+        "description": "Menyatu dengan roh sihir angin sepoi-sepoi. Menghasilkan damage (INT * 2) dan memicu buff tambahan atribut +15 AGI."
       }
     ]
   },
   "archer": {
     "name": "Archer",
     "emoji": "🏹",
-    "description": "Penembak jitu jarak jauh dengan akurasi dan kecepatan tinggi, mampu menghabisi musuh sebelum mendekat.",
+    "description": "Penembak jitu jarak jauh Guild Petualang dengan akurasi tinggi, mampu menghabisi kawanan Orc sebelum mendekat.",
     "base_attributes": { "str": 12, "agi": 18, "int": 6, "vit": 10 },
     "growth_per_level": { "str": 1.8, "agi": 3.2, "int": 0.6, "vit": 1.4 },
     "skills": [
@@ -128,7 +128,7 @@
         "scaling_stat": "agi",
         "multiplier": 3.5,
         "buff_effect": null,
-        "description": "Melepaskan rentetan anak panah dari langit. Menghasilkan damage fisik jarak jauh sebesar (AGI * 3.5)."
+        "description": "Melepaskan rentetan anak panah dari langit ke area pertempuran. Menghasilkan damage fisik jarak jauh sebesar (AGI * 3.5)."
       },
       {
         "id": "piercing_shot",
@@ -138,7 +138,7 @@
         "scaling_stat": "agi",
         "multiplier": 5.0,
         "buff_effect": null,
-        "description": "Tembakan sniper panah berputar penghancur armor. Menghasilkan damage tembus pertahanan sebesar (AGI * 5)."
+        "description": "Tembakan panah berputar penghancur armor monster. Menghasilkan damage tembus pertahanan sebesar (AGI * 5)."
       },
       {
         "id": "eagle_eye",
@@ -152,7 +152,7 @@
           "value": 0.20,
           "type": "percent"
         },
-        "description": "Menajamkan penglihatan berburu. Menghasilkan damage dasar (AGI * 1.1) dan memicu buff meningkatkan total daya rusak ATK sebesar 20%."
+        "description": "Menajamkan penglihatan berburu petualang senior. Menghasilkan damage dasar (AGI * 1.1) dan memicu buff meningkatkan total daya rusak ATK sebesar 20%."
       },
       {
         "id": "windwalk",
@@ -166,14 +166,14 @@
           "value": 25,
           "type": "flat"
         },
-        "description": "Meringankan pergerakan kaki secepat tiupan badai. Menghasilkan damage dasar (AGI * 1.1) dan memicu buff tambahan atribut +25 AGI."
+        "description": "Meringankan pergerakan kaki secepat berkah angin badai. Menghasilkan damage dasar (AGI * 1.1) dan memicu buff tambahan atribut +25 AGI."
       }
     ]
   },
   "mage": {
     "name": "Mage",
     "emoji": "🔮",
-    "description": "Pengendali elemen sihir destruktif. Memiliki kapasitas Mana dan daya hancur luar biasa, namun pertahanan fisiknya sangat rapuh.",
+    "description": "Penyihir agung pengendali mantra destruktif. Memiliki kapasitas Mana dan daya hancur luar biasa, namun pertahanan fisiknya sangat rapuh.",
     "base_attributes": { "str": 4, "agi": 7, "int": 20, "vit": 8 },
     "growth_per_level": { "str": 0.4, "agi": 1.2, "int": 3.8, "vit": 1.0 },
     "skills": [
@@ -185,7 +185,7 @@
         "scaling_stat": "int",
         "multiplier": 7.0,
         "buff_effect": null,
-        "description": "Memanggil meteor berapi dari retakan atmosfer. Menghasilkan damage sihir kosmik masif sebesar (INT * 7)."
+        "description": "Memanggil komet batu berapi dari langit sihir tertinggi. Menghasilkan damage sihir elemen api masif sebesar (INT * 7)."
       },
       {
         "id": "frost_nova",
@@ -195,7 +195,7 @@
         "scaling_stat": "int",
         "multiplier": 3.5,
         "buff_effect": null,
-        "description": "Ledakan pusaran es yang membekukan pergerakan monster. Menghasilkan damage es sebesar (INT * 3.5)."
+        "description": "Ledakan pusaran es yang membekukan kaki kawanan monster. Menghasilkan damage es sebesar (INT * 3.5)."
       },
       {
         "id": "mana_shield",
@@ -209,7 +209,7 @@
           "value": 0.35,
           "type": "percent"
         },
-        "description": "Memadatkan sirkulasi energi magis menjadi pelindung. Menghasilkan damage dasar (INT * 1.1) dan memicu buff meningkatkan total DEF sebesar 35%."
+        "description": "Memadatkan sirkulasi energi magis internal menjadi pelindung tak kasat mata. Menghasilkan damage dasar (INT * 1.1) dan memicu buff meningkatkan total DEF sebesar 35%."
       },
       {
         "id": "chain_lightning",
@@ -219,14 +219,14 @@
         "scaling_stat": "int",
         "multiplier": 4.8,
         "buff_effect": null,
-        "description": "Semburan kilatan petir berantai bertegangan tinggi. Menghasilkan damage listrik kejut sebesar (INT * 4.8)."
+        "description": "Semburan sihir petir berantai dari ujung tongkat sihir. Menghasilkan damage listrik kejut sebesar (INT * 4.8)."
       }
     ]
   },
   "assassin": {
     "name": "Assassin",
     "emoji": "🗡️",
-    "description": "Master bayangan yang bergerak cepat dan mematikan. Berfokus pada serangan kritikal bertubi-tubi untuk mengakhiri pertarungan dengan instan.",
+    "description": "Master bayangan Guild Gelap yang bergerak cepat dan mematikan. Berfokus pada serangan kritikal bertubi-tubi untuk mengeksekusi target secara instan.",
     "base_attributes": { "str": 14, "agi": 19, "int": 4, "vit": 9 },
     "growth_per_level": { "str": 2.2, "agi": 3.5, "int": 0.4, "vit": 1.2 },
     "skills": [
@@ -238,7 +238,7 @@
         "scaling_stat": "agi",
         "multiplier": 5.5,
         "buff_effect": null,
-        "description": "Menyerang kilat dari titik buta kegelapan. Menghasilkan damage fisik tusukan fatal sebesar (AGI * 5.5)."
+        "description": "Menyerang kilat dari titik buta kegelapan labirin. Menghasilkan damage fisik tusukan fatal sebesar (AGI * 5.5)."
       },
       {
         "id": "toxic_blade",
@@ -252,7 +252,7 @@
           "value": 0.15,
           "type": "percent"
         },
-        "description": "Melumuri belati dengan racun ular Abyss. Menghasilkan damage tebasan (AGI * 3) dan memicu buff menaikkan ATK sebesar 15%."
+        "description": "Melumuri bilah belati dengan racun ular purba wilayah rawa. Menghasilkan damage tebasan (AGI * 3) dan memicu buff menaikkan ATK sebesar 15%."
       },
       {
         "id": "smoke_bomb",
@@ -266,7 +266,7 @@
           "value": 30,
           "type": "flat"
         },
-        "description": "Melempar bom asap ninja untuk mengacaukan pandangan musuh. Menghasilkan damage dasar (AGI * 1.1) dan memicu buff tambahan atribut kelincahan +30 AGI."
+        "description": "Melempar bom taburan bubuk alkimia kabut untuk mengacaukan pandangan musuh. Menghasilkan damage dasar (AGI * 1.1) dan memicu buff tambahan atribut kelincahan +30 AGI."
       },
       {
         "id": "phantom_execute",
@@ -276,7 +276,7 @@
         "scaling_stat": "agi",
         "multiplier": 8.0,
         "buff_effect": null,
-        "description": "Jurus pamungkas pemenggal urat leher monster. Menghasilkan kerusakan eksekusi mutlak sebesar (AGI * 8)."
+        "description": "Jurus fatal pamungkas pemenggal urat leher target monster tingkat tinggi. Menghasilkan kerusakan eksekusi mutlak sebesar (AGI * 8)."
       }
     ]
   }

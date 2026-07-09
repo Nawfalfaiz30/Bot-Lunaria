@@ -6,22 +6,22 @@
     "description": "Meningkatkan jumlah ikan yang didapat sebesar +10%."
   },
   "fishing_epic_passive": {
-    "name": "Ocean Whisperer",
+    "name": "Mermaid's Whisper",
     "type": "fish_rare_chance",
     "value": 0.20,
     "description": "Meningkatkan peluang mendapatkan ikan langka sebesar +20%."
   },
   "fishing_mythic_passive": {
-    "name": "Poseidon's Blessing",
+    "name": "Leviathan's Blessing",
     "type": "fish_double_catch",
     "value": 0.15,
     "description": "Memberikan 15% peluang untuk menangkap dua ikan sekaligus."
   },
   "fishing_god_passive": {
-    "name": "Dimensional Pull",
+    "name": "Yggdrasil Torrent",
     "type": "fish_cosmic_chance",
     "value": 0.30,
-    "description": "Meningkatkan peluang memikat dan menarik makhluk mistis dari retakan dimensi sebesar +30%."
+    "description": "Meningkatkan peluang memikat dan menarik makhluk mistis dari perairan suci Pohon Dunia sebesar +30%."
   },
   "mining_common_passive": {
     "name": "Heavy Swing",
@@ -30,7 +30,7 @@
     "description": "Meningkatkan jumlah bijih mineral yang didapat sebesar +10%."
   },
   "mining_epic_passive": {
-    "name": "Geologist Sight",
+    "name": "Mana Vein Sight",
     "type": "mine_rare_chance",
     "value": 0.20,
     "description": "Meningkatkan peluang menemukan batu permata/mineral langka sebesar +20%."
@@ -42,10 +42,10 @@
     "description": "Memberikan 15% peluang untuk menggandakan hasil tambang."
   },
   "mining_god_passive": {
-    "name": "Void Obliteration",
+    "name": "Orichalcum Infusion",
     "type": "mine_cosmic_yield",
     "value": 0.30,
-    "description": "Menghancurkan formasi batu sekeras apa pun secara instan dan meningkatkan hasil tambang sebesar +30%."
+    "description": "Mengalirkan energi purba untuk menghancurkan batu terkeras secara instan dan meningkatkan hasil tambang sebesar +30%."
   },
   "chopping_common_passive": {
     "name": "Sharp Edge",
@@ -54,7 +54,7 @@
     "description": "Meningkatkan hasil tebangan kayu sebesar +10%."
   },
   "chopping_epic_passive": {
-    "name": "Lumberjack Rhythm",
+    "name": "Elven Woods Rhythm",
     "type": "chop_rare_chance",
     "value": 0.20,
     "description": "Meningkatkan peluang mendapatkan kayu langka/kuno sebesar +20%."
@@ -66,10 +66,10 @@
     "description": "Memberikan 15% peluang untuk tidak mengurangi HP/Stamina saat menebang."
   },
   "chopping_god_passive": {
-    "name": "Eclipse Singularity",
+    "name": "Goddess Genesis Strike",
     "type": "chop_cosmic_yield",
     "value": 0.30,
-    "description": "Menebang pohon purba dalam satu kedipan mata dan meningkatkan hasil tebangan sebesar +30%."
+    "description": "Mendapat berkah dewi untuk menebang pohon purba dalam sekejap dan meningkatkan hasil tebangan sebesar +30%."
   },
   "hunting_sharpness_1": {
     "name": "Razor Blade I",
@@ -102,7 +102,7 @@
     "description": "Meningkatkan total DEF sebesar +10% di Dungeon maupun Hunt."
   },
   "combat_scholar": {
-    "name": "Enlightenment",
+    "name": "Goddess Enlightenment",
     "type": "xp_gain_percent",
     "value": 0.05,
     "description": "Meningkatkan perolehan XP dari segala aktivitas RPG sebesar +5%."

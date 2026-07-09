@@ -8,7 +8,7 @@ const { processXPGain } = require('../../../helpers/rpgSystem');
 const fs = require('fs');
 const path = require('path');
 
-// Memuat data semesta Lunaria[cite: 12]
+// Memuat data semesta Isekai Lunaria
 const itemsData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../data/items.json'), 'utf8'));
 const areaData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../data/area.json'), 'utf8'));
 const monstersData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../data/monsters.json'), 'utf8'));
@@ -16,7 +16,7 @@ const monstersData = JSON.parse(fs.readFileSync(path.join(__dirname, '../../../d
 module.exports = {
   name: 'dungeon',
   aliases: ['d', 'boss', 'raid'],
-  description: 'Menantang Bos Penjaga Gerbang area menggunakan muatan skill aktif terpusat.',
+  description: 'Menantang Bos Penjaga Gerbang area menggunakan mantera sihir aktif terkuat.',
   category: 'rpg/actions',
 
   data: new SlashCommandBuilder()
@@ -28,29 +28,29 @@ module.exports = {
     const user = isPrefix ? context.author : context.user;
     const userId = user.id;
 
-    // 1. VALIDASI: Cek pendaftaran karakter[cite: 12]
+    // 1. VALIDASI: Cek status pendaftaran karakter
     const userRPG = await RPG.findOne({ userId });
     if (!userRPG) {
       return context.reply({ 
-        content: `❌ Kamu belum terdaftar! Ketik \`${isPrefix ? 'profile' : '/profile'}\` terlebih dahulu.`, 
+        content: `❌ Jiwamu belum terpanggil di dunia ini! Ketik \`${isPrefix ? 'profile' : '/profile'}\` terlebih dahulu untuk memulai reinkarnasi.`, 
         ephemeral: true 
       });
     }
 
-    // 2. VALIDASI: Cek kewajiban memegang Senjata (Weapon)[cite: 12]
+    // 2. VALIDASI: Cek kewajiban memegang Senjata
     if (!userRPG.equipment.weapon) {
       return context.reply({ 
-        content: `❌ Mustahil menantang Penguasa Dungeon dengan tangan kosong! Pasang senjatamu dahulu via perintah \`equip [id_senjata]\`.`, 
+        content: `❌ Mustahil menantang Penguasa Dungeon dengan tangan kosong! Pasang senjatamu dari Guild dahulu via perintah \`equip [id_senjata]\`.`, 
         ephemeral: true 
       });
     }
 
-    // 3. VALIDASI: Cek ambang batas HP minimal[cite: 12]
+    // 3. VALIDASI: Kalkulasi atribut pertempuran aktif
     const liveStats = calculateStats(userRPG);
     const playerCombat = liveStats.combatStats;
     const skill = liveStats.activeSkillInfo;
     
-    // 4. VALIDASI: Sistem Anti-Spam Cooldown Dungeon (Durasi: 5 Menit)
+    // 4. VALIDASI: Cooldown Dungeon
     let cooldownDoc = await Cooldown.findOne({ userId });
     if (!cooldownDoc) {
       cooldownDoc = await Cooldown.create({ userId });
@@ -65,13 +65,12 @@ module.exports = {
       const minutesLeft = Math.floor(timeLeft / 60);
       const secondsLeft = timeLeft % 60;
       return context.reply({ 
-        content: `⏳ Gerbang Dungeon masih terkunci segel magis. Tunggu **${minutesLeft}m ${secondsLeft}s** lagi sebelum segelnya terbuka kembali.`, 
+        content: `⏳ Gerbang Dungeon masih dikunci segel magis kuno. Tunggu **${minutesLeft}m ${secondsLeft}s** lagi sebelum energinya memudar kembali.`, 
         ephemeral: true 
       });
     }
-    // ==========================================
-    // INITIALISASI DATA BOS BERDASARKAN AREA[cite: 12]
-    // ==========================================
+
+    // INITIALISASI DATA BOS
     const currentAreaNumber = userRPG.current_area;
     const areaKey = `area_${currentAreaNumber}`;
 
@@ -79,14 +78,13 @@ module.exports = {
     const boss = areaMonstersData ? areaMonstersData.boss : null;
 
     if (!boss) {
-      return context.reply({ content: '❌ Tidak ditemukan Bos Penjaga di area ini.', ephemeral: true });
+      return context.reply({ content: '❌ Tidak ditemukan Bos Penjaga Labirin di wilayah ini.', ephemeral: true });
     }
 
-    // ==========================================
-    // ⚔️ ENGINES BOS FIGHT (NO ROUND LIMITS)[cite: 12]
-    // ==========================================
+    // ⚔️ ENGINE FIGHT
     let bossHp = boss.hp;
     let playerHpLoss = 0;
+    let initialMana = userRPG.mana;
     let battleLog = [];
     let turn = 0;
 
@@ -94,15 +92,14 @@ module.exports = {
       turn++;
       let pDmg = 0;
       
-      // A. Giliran Pemain Menyerang Bos[cite: 12]
+      // Giliran Pemain
       if (skill && userRPG.mana >= skill.mana_cost && userRPG.active_skill.uses_left > 0) {
         pDmg = Math.max(10, skill.calculated_damage - boss.def); 
         bossHp -= pDmg;
-        
         userRPG.mana -= skill.mana_cost; 
         userRPG.active_skill.uses_left--; 
         
-        battleLog.push(`🔮 **Ronde ${turn}:** Melepaskan jurus **[${skill.name}]**! Menghasilkan \`${pDmg}\` DMG ke **${boss.name}**. *(Kuota Sisa: ${userRPG.active_skill.uses_left}x)*`);
+        battleLog.push(`🔮 **Ronde ${turn}:** Merapalkan mantera agung **[${skill.name}]**! Menghasilkan \`${pDmg}\` DMG ke **${boss.name}**. *(Sisa HP Bos: ${bossHp > 0 ? bossHp : 0}/${boss.hp})*`);
 
         if (skill.buff_payload) {
           userRPG.buffs.push({
@@ -117,26 +114,25 @@ module.exports = {
         if (isCrit) pDmg = Math.round(pDmg * 1.5);
         
         bossHp -= pDmg;
-        battleLog.push(`⚔️ **Ronde ${turn}:** Kamu menyerang **${boss.name}** sebesar \`${pDmg}\` DMG.${isCrit ? ' 🔥 **[CRITICAL!]**' : ''} *(Sisa HP Bos: ${bossHp > 0 ? bossHp : 0}/${boss.hp})*`);
+        battleLog.push(`⚔️ **Ronde ${turn}:** Kamu menyerang **${boss.name}** sebesar \`${pDmg}\` DMG.${isCrit ? ' 🔥 **[TEBASAN VITAL!]**' : ''} *(Sisa HP Bos: ${bossHp > 0 ? bossHp : 0}/${boss.hp})*`);
       }
 
       if (bossHp <= 0) break;
 
-      // B. Giliran Bos Menyerang Balik Pemain[cite: 12]
+      // Giliran Bos
       const isEvaded = Math.random() * 100 <= playerCombat.evasionRate;
       if (isEvaded) {
-        battleLog.push(`💨 **Ronde ${turn}:** **${boss.name}** meluncurkan serangan mematikan, tetapi kamu berhasil berguling menghindar!`);
+        battleLog.push(`💨 **Ronde ${turn}:** **${boss.name}** menyerang, tetapi kelincahan kakimu berhasil menghindar!`);
       } else {
         let mDmg = Math.max(5, boss.atk - playerCombat.def); 
         playerHpLoss += mDmg;
-        battleLog.push(`💥 **Ronde ${turn}:** **${boss.name}** mengamuk dan menghantammu, mengakibatkan \`-${mDmg}\` HP.`);
+        battleLog.push(`💥 **Ronde ${turn}:** **${boss.name}** menghantam armor-mu, mengakibatkan \`-${mDmg}\` HP.`);
       }
     }
 
-    // ==========================================
-    // PENENTUAN EVALUASI & PROGRESI DATABASE[cite: 12]
-    // ==========================================
+    // EVALUASI AKHIR
     const isPlayerVictory = bossHp <= 0 && (userRPG.hp - playerHpLoss) > 0;
+    let totalManaUsed = initialMana - userRPG.mana;
     
     userRPG.hp = Math.max(0, userRPG.hp - playerHpLoss);
     userRPG.mana = Math.max(0, userRPG.mana);
@@ -146,26 +142,34 @@ module.exports = {
 
     const weaponInfo = itemsData[userRPG.equipment.weapon];
     const dungeonEmbed = new EmbedBuilder().setTimestamp();
+    const truncatedLog = battleLog.length > 12 ? `... *(pertukaran serangan pembuka terlewati)* ...\n` + battleLog.slice(-12).join('\n') : battleLog.join('\n');
 
-    const truncatedLog = battleLog.length > 12 ? `... *(beberapa ronde pembuka terlewati)* ...\n` + battleLog.slice(-12).join('\n') : battleLog.join('\n');
+    // Teks Ringkasan Evaluasi Pertempuran
+    const combatStatsSummary = `📊 **Statistik Pertempuran:**\n` +
+      `• Total Durasi: \`${turn}\` Ronde\n` +
+      `• HP Berkurang: \`-${playerHpLoss}\` HP\n` +
+      `• Mana Dikonsumsi: \`-${totalManaUsed}\` MP`;
 
     if (isPlayerVictory) {
       const rewards = determineMonsterLoot(boss.loot_table_id, liveStats);
       userRPG.gold += rewards.gold;
       
-      // 🌟 PERBAIKAN UTAMANYA: Katup Pengaman Kunci Maksimal Area 15 Terpasang Sempurna
       let areaUnlockString = '';
-      if (userRPG.max_area === userRPG.current_area) {
-        if (userRPG.max_area < 15) {
-          userRPG.max_area += 1;
-          areaUnlockString = `\n🔓 **GERBANG DUNIA BARU TERBUKA:** Kamu berhasil membuka **Area ${userRPG.max_area}**! Gunakan perintah \`move ${userRPG.max_area}\` untuk berpindah wilayah petualangan.`;
-        } else {
-          areaUnlockString = `\n🏆 **PETUALANG PARIPURNA:** Kamu telah menaklukkan gerbang Dungeon terakhir dan menghentikan kutukan distorsi waktu di semesta Lunaria!`;
-        }
-      }
 
-      // Pengaman global ekstra sebelum disimpan ke cloud MongoDB
-      userRPG.max_area = Math.min(15, userRPG.max_area);
+      if (currentAreaNumber === 15) {
+        userRPG.max_area = 15;
+        if (!userRPG.refine) userRPG.refine = {};
+        userRPG.refine.boss_15_cleared = true;
+        userRPG.markModified('refine'); 
+
+        areaUnlockString = `\n🏆 **PAHLAWAN PARIPURNA:** Kamu telah menaklukkan gerbang Dungeon terakhir di Puncak Yggdrasil! Segel menuju perintah \`incarnation\` kini telah terbuka sepenuhnya!`;
+      } else {
+        if (userRPG.max_area === currentAreaNumber) {
+          userRPG.max_area += 1;
+        }
+        userRPG.current_area = currentAreaNumber + 1;
+        areaUnlockString = `\n🔓 **GERBANG WILAYAH BARU TERBUKA:** Kamu otomatis dipindahkan ke **Area ${userRPG.current_area}**!`;
+      }
 
       const xpResult = processXPGain(userRPG, rewards.xp);
       await userRPG.save();
@@ -174,47 +178,39 @@ module.exports = {
         const userInv = await Inventory.findOne({ userId });
         rewards.items.forEach(dropItem => {
           const invItem = userInv.items.find(i => i.itemId === dropItem.itemId);
-          if (invItem) {
-            invItem.amount += dropItem.amount;
-          } else {
-            userInv.items.push({ itemId: dropItem.itemId, amount: dropItem.amount });
-          }
+          if (invItem) invItem.amount += dropItem.amount;
+          else userInv.items.push({ itemId: dropItem.itemId, amount: dropItem.amount });
         });
         await userInv.save();
       }
 
       dungeonEmbed.setColor('#2ECC71')
-        .setTitle(`👑 Kemenangan Legendaris: ${boss.name} Telah Tumbang!`)
-        .setAuthor({ name: `Dungeon Clearing Match: ${user.username}`, iconURL: user.displayAvatarURL({ dynamic: true }) })
+        .setTitle(`👑 Kemenangan Agung: Penguasa Labirin ${boss.name} Telah Tumbang!`)
+        .setAuthor({ name: `Dungeon Conquest: ${user.username}`, iconURL: user.displayAvatarURL({ dynamic: true }) })
         .setDescription(
-          `Pertempuran hidup mati menggunakan **${weaponInfo.name}** di jantung **Dungeon Area ${currentAreaNumber}**:\n\n` +
+          `Pertempuran menggunakan **${weaponInfo.name}** di dalam **Dungeon Area ${currentAreaNumber}**:\n\n` +
           `**📜 Jurnal Pertempuran:**\n${truncatedLog}\n\n` +
-          `🎁 **Rampasan armor & Harta Karun Dungeon:**\n` +
-          `📈 **Pengalaman Suci:** +\`${rewards.xp}\` XP\n` +
-          `💰 **Gold Diperoleh:** +\`${rewards.gold}\` Emas\n` +
-          `📦 **Artefak Drop:** ${rewards.items.length > 0 ? rewards.items.map(i => `${itemsData[i.itemId]?.emoji || '📦'} **${itemsData[i.itemId]?.name}** \`x${i.amount}\``).join(', ') : '*Tidak ada item jatuh*'}\n` +
+          `${combatStatsSummary}\n\n` +
+          `🎁 **Rampasan Harta Karun Dungeon:**\n` +
+          `📈 **Pengalaman:** +\`${rewards.xp}\` XP\n` +
+          `💰 **Gold:** +\`${rewards.gold}\` Emas\n` +
+          `📦 **Material:** ${rewards.items.length > 0 ? rewards.items.map(i => `${itemsData[i.itemId]?.emoji || '📦'} **${itemsData[i.itemId]?.name}** \`x${i.amount}\``).join(', ') : '*Tidak ada item*'}\n` +
           `${areaUnlockString}\n\n` +
-          `❤️ **Kondisi Pasca Pertempuran:** \`${userRPG.hp} / ${playerCombat.maxHp}\` HP | 💧 \`${userRPG.mana} / ${playerCombat.maxMana}\` MP`
+          `❤️ **Kondisi Sisa:** \`${userRPG.hp} / ${playerCombat.maxHp}\` HP | 💧 \`${userRPG.mana} / ${playerCombat.maxMana}\` MP`
         );
 
       if (xpResult.leveledUp) {
-        dungeonEmbed.addFields({ 
-          name: '🎉 LEVEL UP!', 
-          value: `Kekuatan jiwamu melompat tajam! Karaktermu kini berada di **Level ${xpResult.newLevel}**.` 
-        });
+        dungeonEmbed.addFields({ name: '🎉 LEVEL UP!', value: `Karaktermu kini berada di **Level ${xpResult.newLevel}**.` });
       }
 
     } else {
       await userRPG.save();
-
       dungeonEmbed.setColor('#E74C3C')
-        .setTitle(`💀 Kamu Tumbang Dihancurkan oleh ${boss.name}`)
-        .setAuthor({ name: `Dungeon Wipeout: ${user.username}`, iconURL: user.displayAvatarURL({ dynamic: true }) })
+        .setTitle(`💀 Kamu Tumbang di Tangan ${boss.name}`)
         .setDescription(
-          `**📜 Kronologi Kekalahan Tragis:**\n${truncatedLog}\n\n` +
-          `🚨 **Laporan Tim Medis Istana:**\n` +
-          `Kamu babak belur dihajar Bos Penjaga. Beruntung, berkah pelindung dewi malam aktif melindungi tabungan dompetmu dari denda rumah sakit!\n\n` +
-          `💡 *Saran: Pastikan kuota mantramu terisi penuh melalui perintah \`skills\` sebelum memasuki gerbang dungeon kembali!*`
+          `**📜 Kronologi Kekalahan:**\n${truncatedLog}\n\n` +
+          `${combatStatsSummary}\n\n` +
+          `🚨 Kamu diselamatkan oleh berkah Dewi Pencipta kembali ke kota tanpa denda koin.`
         );
     }
 

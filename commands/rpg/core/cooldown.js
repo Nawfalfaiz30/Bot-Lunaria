@@ -30,11 +30,11 @@ module.exports = {
     // =================================================================
     // Menyelaraskan dengan durasi di berkas hunt.js (45s) & dungeon.js (5m)
     const cooldownDurations = {
-      hunt: 45000,        // 45 Detik
-      dungeon: 300000,    // 5 Menit
-      fish: 180000,       // 3 Menit (Sesuaikan dengan berkas fish.js milikmu)
-      mine: 180000,       // 3 Menit (Sesuaikan dengan berkas mine.js milikmu)
-      chop: 180000,       // 3 Menit (Sesuaikan dengan berkas chop.js milikmu)
+      hunt: 60000,        // 45 Detik
+      dungeon: 36000000,    // 5 Menit
+      fish: 300000,       // 3 Menit (Sesuaikan dengan berkas fish.js milikmu)
+      mine: 300000,       // 3 Menit (Sesuaikan dengan berkas mine.js milikmu)
+      chop: 300000,       // 3 Menit (Sesuaikan dengan berkas chop.js milikmu)
       daily: 86400000,    // 24 Jam[cite: 15]
       weekly: 604800000   // 7 Hari[cite: 15]
     };

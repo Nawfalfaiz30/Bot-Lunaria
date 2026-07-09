@@ -1,346 +1,346 @@
 {
-  "// AREA 1 - WHISPERING WOODS": "=========================================",
+  "// AREA 1 - TOWN OF BEGINNINGS: OUTSKIRTS": "=========================================",
   "lt_slime": {
     "xp_min": 20, "xp_max": 35, "gold_min": 25, "gold_max": 45,
     "drops": [
       { "item_id": "slime_ball", "chance": 0.60, "min": 1, "max": 2 },
-      { "item_id": "acidic_mutate_gel", "chance": 0.10, "min": 1, "max": 1 }
+      { "item_id": "horned_rabbit_meat", "chance": 0.10, "min": 1, "max": 1 }
     ]
   },
-  "lt_goblin": {
+  "lt_goblin_scout": {
     "xp_min": 35, "xp_max": 55, "gold_min": 40, "gold_max": 60,
     "drops": [
       { "item_id": "goblin_ear", "chance": 0.55, "min": 1, "max": 1 },
-      { "item_id": "scout_stolen_ring", "chance": 0.12, "min": 1, "max": 1 }
+      { "item_id": "stolen_guild_badge", "chance": 0.12, "min": 1, "max": 1 }
     ]
   },
-  "lt_boss_area_1": {
+  "lt_boss_goblin_king": {
     "xp_min": 250, "xp_max": 250, "gold_min": 200, "gold_max": 200,
     "drops": [
       { "item_id": "goblin_king_crown", "chance": 1.00, "min": 1, "max": 1 },
-      { "item_id": "royal_goblin_scepter", "chance": 0.15, "min": 1, "max": 1 }
+      { "item_id": "goblin_shaman_staff", "chance": 0.15, "min": 1, "max": 1 }
     ]
   },
 
-  "// AREA 2 - CRYSTAL CAVES": "=========================================",
-  "lt_crystal_spider": {
+  "// AREA 2 - GOBLIN HIDEOUT FOREST": "=========================================",
+  "lt_cave_spider": {
     "xp_min": 75, "xp_max": 110, "gold_min": 55, "gold_max": 80,
     "drops": [
       { "item_id": "spider_fang", "chance": 0.50, "min": 1, "max": 2 },
-      { "item_id": "weaver_venom_sac", "chance": 0.10, "min": 1, "max": 1 }
+      { "item_id": "venom_sac", "chance": 0.10, "min": 1, "max": 1 }
     ]
   },
-  "lt_golem": {
+  "lt_earth_golem": {
     "xp_min": 100, "xp_max": 150, "gold_min": 70, "gold_max": 100,
     "drops": [
       { "item_id": "golem_core", "chance": 0.50, "min": 1, "max": 1 },
-      { "item_id": "resonating_rune_stone", "chance": 0.08, "min": 1, "max": 1 }
+      { "item_id": "kobold_rune_stone", "chance": 0.08, "min": 1, "max": 1 }
     ]
   },
-  "lt_boss_area_2": {
+  "lt_boss_iron_colossus": {
     "xp_min": 650, "xp_max": 650, "gold_min": 350, "gold_max": 350,
     "drops": [
       { "item_id": "colossus_heart", "chance": 1.00, "min": 1, "max": 1 },
-      { "item_id": "geode_matrix_crystal", "chance": 0.15, "min": 1, "max": 1 }
+      { "item_id": "dwarven_lost_artifact", "chance": 0.15, "min": 1, "max": 1 }
     ]
   },
 
-  "// AREA 3 - CRIMSON VALLEY": "=========================================",
-  "lt_wolf": {
+  "// AREA 3 - GRAND SUBTERRANEAN MINES": "=========================================",
+  "lt_kobold_miner": {
     "xp_min": 180, "xp_max": 240, "gold_min": 90, "gold_max": 130,
     "drops": [
-      { "item_id": "wolf_pelt", "chance": 0.55, "min": 1, "max": 2 },
-      { "item_id": "alpha_leader_fang", "chance": 0.08, "min": 1, "max": 1 }
+      { "item_id": "pure_iron_scrap", "chance": 0.55, "min": 1, "max": 2 },
+      { "item_id": "kobold_badge", "chance": 0.08, "min": 1, "max": 1 }
     ]
   },
-  "lt_cultist": {
+  "lt_mine_bat": {
     "xp_min": 230, "xp_max": 310, "gold_min": 110, "gold_max": 160,
     "drops": [
-      { "item_id": "cultist_hood", "chance": 0.50, "min": 1, "max": 1 },
-      { "item_id": "forbidden_blood_ritual", "chance": 0.12, "min": 1, "max": 1 }
+      { "item_id": "pure_iron_scrap", "chance": 0.50, "min": 1, "max": 1 },
+      { "item_id": "kobold_badge", "chance": 0.12, "min": 1, "max": 1 }
     ]
   },
-  "lt_boss_area_3": {
+  "lt_boss_crystal_golem": {
     "xp_min": 1500, "xp_max": 1500, "gold_min": 600, "gold_max": 600,
     "drops": [
-      { "item_id": "vampire_fang", "chance": 1.00, "min": 1, "max": 1 },
-      { "item_id": "pure_vampiric_blood", "chance": 0.15, "min": 1, "max": 1 }
+      { "item_id": "crystal_golem_shard", "chance": 1.00, "min": 1, "max": 1 },
+      { "item_id": "orc_lord_tusk", "chance": 0.15, "min": 1, "max": 1 }
     ]
   },
 
-  "// AREA 4 - SUNKEN SHALLOWS": "=========================================",
-  "lt_drowned": {
+  "// AREA 4 - SPIDERS' SILK DEN": "=========================================",
+  "lt_silk_spider": {
     "xp_min": 400, "xp_max": 520, "gold_min": 150, "gold_max": 220,
     "drops": [
-      { "item_id": "drowned_talisman", "chance": 0.50, "min": 1, "max": 1 },
-      { "item_id": "rusted_navy_insignia", "chance": 0.10, "min": 1, "max": 1 }
+      { "item_id": "spider_silk_web", "chance": 0.50, "min": 1, "max": 1 },
+      { "item_id": "poison_sting", "chance": 0.10, "min": 1, "max": 1 }
     ]
   },
-  "lt_eel": {
+  "lt_poison_beetle": {
     "xp_min": 500, "xp_max": 620, "gold_min": 180, "gold_max": 260,
     "drops": [
-      { "item_id": "eel_scale", "chance": 0.55, "min": 1, "max": 2 },
-      { "item_id": "bio_luminescent_gland", "chance": 0.12, "min": 1, "max": 1 }
+      { "item_id": "poison_sting", "chance": 0.55, "min": 1, "max": 2 },
+      { "item_id": "spider_silk_web", "chance": 0.12, "min": 1, "max": 1 }
     ]
   },
-  "lt_boss_area_4": {
+  "lt_boss_spider_queen": {
     "xp_min": 2800, "xp_max": 2800, "gold_min": 1100, "gold_max": 1100,
     "drops": [
-      { "item_id": "kraken_tentacle", "chance": 1.00, "min": 1, "max": 1 },
-      { "item_id": "abyssal_black_ink", "chance": 0.15, "min": 1, "max": 1 }
+      { "item_id": "spider_queen_egg", "chance": 1.00, "min": 1, "max": 1 },
+      { "item_id": "poison_sting", "chance": 0.15, "min": 1, "max": 1 }
     ]
   },
 
-  "// AREA 5 - SCORCHED DESERT": "=========================================",
-  "lt_desert": {
+  "// AREA 5 - ORC TERRITORY WETLANDS": "=========================================",
+  "lt_orc_warrior": {
     "xp_min": 800, "xp_max": 1050, "gold_min": 240, "gold_max": 340,
     "drops": [
-      { "item_id": "scorpion_stinger", "chance": 0.50, "min": 1, "max": 1 },
-      { "item_id": "neurotoxin_extract", "chance": 0.10, "min": 1, "max": 1 }
+      { "item_id": "orc_tooth", "chance": 0.50, "min": 1, "max": 1 },
+      { "item_id": "orc_leather", "chance": 0.10, "min": 1, "max": 1 }
     ]
   },
-  "lt_phantom": {
+  "lt_swamp_croc": {
     "xp_min": 1000, "xp_max": 1350, "gold_min": 290, "gold_max": 410,
     "drops": [
-      { "item_id": "phantom_dust", "chance": 0.55, "min": 1, "max": 2 },
-      { "item_id": "ancient_burial_urn", "chance": 0.08, "min": 1, "max": 1 }
+      { "item_id": "orc_leather", "chance": 0.55, "min": 1, "max": 2 },
+      { "item_id": "orc_tooth", "chance": 0.08, "min": 1, "max": 1 }
     ]
   },
-  "lt_boss_area_5": {
+  "lt_boss_orc_warlord": {
     "xp_min": 5500, "xp_max": 5500, "gold_min": 2000, "gold_max": 2000,
     "drops": [
-      { "item_id": "sphinx_eye", "chance": 1.00, "min": 1, "max": 1 },
-      { "item_id": "riddle_stone_tablet", "chance": 0.15, "min": 1, "max": 1 }
+      { "item_id": "orc_warlord_axe_shard", "chance": 1.00, "min": 1, "max": 1 },
+      { "item_id": "orc_lord_tusk", "chance": 0.15, "min": 1, "max": 1 }
     ]
   },
 
-  "// AREA 6 - FROZEN TUNDRA": "=========================================",
-  "lt_tundra": {
+  "// AREA 6 - BEASTMAN SAVANNAH": "=========================================",
+  "lt_beastman_hunter": {
     "xp_min": 1500, "xp_max": 2100, "gold_min": 380, "gold_max": 540,
     "drops": [
-      { "item_id": "wight_bone", "chance": 0.50, "min": 1, "max": 2 },
-      { "item_id": "permafrost_ice_shard", "chance": 0.10, "min": 1, "max": 2 }
+      { "item_id": "beastman_fur", "chance": 0.50, "min": 1, "max": 2 },
+      { "item_id": "beast_totem_carving", "chance": 0.10, "min": 1, "max": 2 }
     ]
   },
-  "lt_yeti": {
+  "lt_savannah_panther": {
     "xp_min": 1800, "xp_max": 2500, "gold_min": 460, "gold_max": 650,
     "drops": [
-      { "item_id": "yeti_fur", "chance": 0.50, "min": 1, "max": 2 },
-      { "item_id": "yeti_crushed_skull", "chance": 0.08, "min": 1, "max": 1 }
+      { "item_id": "beastman_fur", "chance": 0.50, "min": 1, "max": 2 },
+      { "item_id": "beast_totem_carving", "chance": 0.08, "min": 1, "max": 1 }
     ]
   },
-  "lt_boss_area_6": {
+  "lt_boss_beast_king": {
     "xp_min": 11000, "xp_max": 11000, "gold_min": 3400, "gold_max": 3400,
     "drops": [
-      { "item_id": "hydra_scale", "chance": 1.00, "min": 1, "max": 2 },
-      { "item_id": "frozen_hydra_brain", "chance": 0.15, "min": 1, "max": 1 }
+      { "item_id": "beast_king_claws", "chance": 1.00, "min": 1, "max": 2 },
+      { "item_id": "beast_totem_carving", "chance": 0.15, "min": 1, "max": 1 }
     ]
   },
 
-  "// AREA 7 - MISTY HIGHLANDS": "=========================================",
-  "lt_highlands": {
+  "// AREA 7 - LOST ELVEN WOODS": "=========================================",
+  "lt_rogue_elf": {
     "xp_min": 3100, "xp_max": 4300, "gold_min": 590, "gold_max": 840,
     "drops": [
-      { "item_id": "weaver_silk", "chance": 0.55, "min": 1, "max": 3 },
-      { "item_id": "steel_web_filament", "chance": 0.10, "min": 1, "max": 1 }
+      { "item_id": "elven_leaf_pendant", "chance": 0.55, "min": 1, "max": 3 },
+      { "item_id": "fairy_dust_vial", "chance": 0.10, "min": 1, "max": 1 }
     ]
   },
-  "lt_griffin": {
+  "lt_pixie_corrupted": {
     "xp_min": 3800, "xp_max": 5000, "gold_min": 700, "gold_max": 980,
     "drops": [
-      { "item_id": "griffin_feather", "chance": 0.55, "min": 1, "max": 2 },
-      { "item_id": "griffin_talon", "chance": 0.12, "min": 1, "max": 1 }
+      { "item_id": "fairy_dust_vial", "chance": 0.55, "min": 1, "max": 2 },
+      { "item_id": "elven_leaf_pendant", "chance": 0.12, "min": 1, "max": 1 }
     ]
   },
-  "lt_boss_area_7": {
+  "lt_boss_elven_elder": {
     "xp_min": 20000, "xp_max": 20000, "gold_min": 5500, "gold_max": 5500,
     "drops": [
-      { "item_id": "valkyrie_feather", "chance": 1.00, "min": 1, "max": 2 },
-      { "item_id": "broken_valkyrie_spear", "chance": 0.15, "min": 1, "max": 1 }
+      { "item_id": "elven_elder_grimoire", "chance": 1.00, "min": 1, "max": 2 },
+      { "item_id": "fairy_dust_vial", "chance": 0.15, "min": 1, "max": 1 }
     ]
   },
 
-  "// AREA 8 - OBSIDIAN CRAGS": "=========================================",
-  "lt_volcano": {
+  "// AREA 8 - UNDEAD GRAVEYARD": "=========================================",
+  "lt_skeleton": {
     "xp_min": 5500, "xp_max": 7500, "gold_min": 900, "gold_max": 1300,
     "drops": [
-      { "item_id": "magma_slime_core", "chance": 0.55, "min": 1, "max": 1 },
-      { "item_id": "condensed_sulfur_rock", "chance": 0.10, "min": 1, "max": 2 }
+      { "item_id": "skeleton_bone", "chance": 0.55, "min": 1, "max": 1 },
+      { "item_id": "wraith_essence_dust", "chance": 0.10, "min": 1, "max": 2 }
     ]
   },
-  "lt_hound": {
+  "lt_zombie": {
     "xp_min": 6800, "xp_max": 9200, "gold_min": 1100, "gold_max": 1600,
     "drops": [
-      { "item_id": "hellhound_fang", "chance": 0.55, "min": 1, "max": 2 },
-      { "item_id": "scorched_collar_chain", "chance": 0.12, "min": 1, "max": 1 }
+      { "item_id": "skeleton_bone", "chance": 0.55, "min": 1, "max": 2 },
+      { "item_id": "wraith_essence_dust", "chance": 0.12, "min": 1, "max": 1 }
     ]
   },
-  "lt_boss_area_8": {
+  "lt_boss_lich": {
     "xp_min": 38000, "xp_max": 38000, "gold_min": 9000, "gold_max": 9000,
     "drops": [
-      { "item_id": "efreet_heart", "chance": 1.00, "min": 1, "max": 1 },
-      { "item_id": "infernal_ember_eye", "chance": 0.15, "min": 1, "max": 1 }
+      { "item_id": "lich_crown_shard", "chance": 1.00, "min": 1, "max": 1 },
+      { "item_id": "wraith_essence_dust", "chance": 0.15, "min": 1, "max": 1 }
     ]
   },
 
-  "// AREA 9 - CELESTIAL PEAKS": "=========================================",
-  "lt_sky": {
+  "// AREA 9 - WYVERN NEST PEAKS": "=========================================",
+  "lt_mountain_wyvern": {
     "xp_min": 9500, "xp_max": 12500, "gold_min": 1400, "gold_max": 2100,
     "drops": [
-      { "item_id": "serpent_tooth", "chance": 0.55, "min": 1, "max": 2 },
-      { "item_id": "gale_force_membrane", "chance": 0.10, "min": 1, "max": 1 }
+      { "item_id": "wyvern_feather", "chance": 0.55, "min": 1, "max": 2 },
+      { "item_id": "wyvern_talon", "chance": 0.10, "min": 1, "max": 1 }
     ]
   },
-  "lt_cloud": {
+  "lt_cliff_gargoyle": {
     "xp_min": 11500, "xp_max": 15000, "gold_min": 1750, "gold_max": 2600,
     "drops": [
-      { "item_id": "archmage_scroll", "chance": 0.50, "min": 1, "max": 2 },
-      { "item_id": "astral_focus_lens", "chance": 0.08, "min": 1, "max": 1 }
+      { "item_id": "wyvern_talon", "chance": 0.50, "min": 1, "max": 2 },
+      { "item_id": "wyvern_feather", "chance": 0.08, "min": 1, "max": 1 }
     ]
   },
-  "lt_boss_area_9": {
+  "lt_boss_wyvern_emperor": {
     "xp_min": 65000, "xp_max": 65000, "gold_min": 15000, "gold_max": 15000,
     "drops": [
-      { "item_id": "zeus_lightning_shard", "chance": 1.00, "min": 1, "max": 2 },
-      { "item_id": "storm_god_thunderstone", "chance": 0.15, "min": 1, "max": 1 }
+      { "item_id": "wyvern_emperor_scale", "chance": 1.00, "min": 1, "max": 2 },
+      { "item_id": "wyvern_talon", "chance": 0.15, "min": 1, "max": 1 }
     ]
   },
 
-  "// AREA 10 - SHADOW ABYSS": "=========================================",
-  "lt_abyss": {
+  "// AREA 10 - LABYRINTH OF THE MINOTAUR": "=========================================",
+  "lt_maze_bull": {
     "xp_min": 18000, "xp_max": 23000, "gold_min": 2200, "gold_max": 3300,
     "drops": [
-      { "item_id": "watcher_lens", "chance": 0.55, "min": 1, "max": 1 },
-      { "item_id": "parasitic_shadow_larva", "chance": 0.10, "min": 1, "max": 1 }
+      { "item_id": "minotaur_horn", "chance": 0.55, "min": 1, "max": 1 },
+      { "item_id": "maze_brick_core", "chance": 0.10, "min": 1, "max": 1 }
     ]
   },
-  "lt_fiend": {
+  "lt_labyrinth_crawler": {
     "xp_min": 20000, "xp_max": 26000, "gold_min": 2800, "gold_max": 4200,
     "drops": [
-      { "item_id": "fiend_shadow", "chance": 0.55, "min": 1, "max": 2 },
-      { "item_id": "corrupted_soul_crystal", "chance": 0.12, "min": 1, "max": 1 }
+      { "item_id": "maze_brick_core", "chance": 0.55, "min": 1, "max": 2 },
+      { "item_id": "minotaur_horn", "chance": 0.12, "min": 1, "max": 1 }
     ]
   },
-  "lt_boss_area_10": {
+  "lt_boss_minotaur_king": {
     "xp_min": 100000, "xp_max": 100000, "gold_min": 25000, "gold_max": 25000,
     "drops": [
-      { "item_id": "demon_horn", "chance": 1.00, "min": 1, "max": 1 },
-      { "item_id": "apocalypse_demonic_seal", "chance": 0.15, "min": 1, "max": 1 }
+      { "item_id": "minotaur_king_axe", "chance": 1.00, "min": 1, "max": 1 },
+      { "item_id": "maze_brick_core", "chance": 0.15, "min": 1, "max": 1 }
     ]
   },
 
-  "// AREA 11 - ELDRITCH RUINS": "=========================================",
-  "lt_eldritch": {
+  "// AREA 11 - ANCIENT DRAGON VALLEY": "=========================================",
+  "lt_dragon_kin": {
     "xp_min": 32000, "xp_max": 40000, "gold_min": 3600, "gold_max": 5400,
     "drops": [
-      { "item_id": "eldritch_fluid", "chance": 0.55, "min": 1, "max": 2 },
-      { "item_id": "unholy_aberration_brain", "chance": 0.08, "min": 1, "max": 1 }
+      { "item_id": "dragon_scale", "chance": 0.55, "min": 1, "max": 2 },
+      { "item_id": "dragon_breath_sac", "chance": 0.08, "min": 1, "max": 1 }
     ]
   },
-  "lt_horror": {
+  "lt_valley_drake": {
     "xp_min": 38000, "xp_max": 50000, "gold_min": 4500, "gold_max": 6700,
     "drops": [
-      { "item_id": "horror_tentacle", "chance": 0.55, "min": 1, "max": 2 },
-      { "item_id": "void_slime_ooze", "chance": 0.10, "min": 1, "max": 2 }
+      { "item_id": "dragon_scale", "chance": 0.55, "min": 1, "max": 2 },
+      { "item_id": "dragon_breath_sac", "chance": 0.10, "min": 1, "max": 2 }
     ]
   },
-  "lt_boss_area_11": {
+  "lt_boss_dragon_god": {
     "xp_min": 190000, "xp_max": 190000, "gold_min": 42000, "gold_max": 42000,
     "drops": [
-      { "item_id": "madness_eye", "chance": 1.00, "min": 1, "max": 1 },
-      { "item_id": "cosmic_cthulhu_beak", "chance": 0.15, "min": 1, "max": 1 }
+      { "item_id": "ancient_dragon_heart", "chance": 1.00, "min": 1, "max": 1 },
+      { "item_id": "dragon_scale", "chance": 0.15, "min": 1, "max": 1 }
     ]
   },
 
-  "// AREA 12 - AETHERIAL GARDENS": "=========================================",
-  "lt_aether": {
+  "// AREA 12 - DEMON KING'S BORDER WALL": "=========================================",
+  "lt_border_imp": {
     "xp_min": 50000, "xp_max": 68000, "gold_min": 5800, "gold_max": 8600,
     "drops": [
-      { "item_id": "sprite_wing", "chance": 0.55, "min": 1, "max": 2 },
-      { "item_id": "divine_nectar_drop", "chance": 0.10, "min": 1, "max": 1 }
+      { "item_id": "demon_scout_horn", "chance": 0.55, "min": 1, "max": 2 },
+      { "item_id": "demon_insignia", "chance": 0.10, "min": 1, "max": 1 }
     ]
   },
-  "lt_pegasus": {
+  "lt_corrupted_soldier": {
     "xp_min": 60000, "xp_max": 80000, "gold_min": 7200, "gold_max": 10800,
     "drops": [
-      { "item_id": "pegasus_hoof", "chance": 0.55, "min": 1, "max": 1 },
-      { "item_id": "pure_unicorn_horn", "chance": 0.08, "min": 1, "max": 1 }
+      { "item_id": "demon_insignia", "chance": 0.55, "min": 1, "max": 1 },
+      { "item_id": "demon_scout_horn", "chance": 0.08, "min": 1, "max": 1 }
     ]
   },
-  "lt_boss_area_12": {
+  "lt_boss_demon_commander": {
     "xp_min": 280000, "xp_max": 280000, "gold_min": 70000, "gold_max": 70000,
     "drops": [
-      { "item_id": "seraphim_halo_shard", "chance": 1.00, "min": 1, "max": 1 },
-      { "item_id": "archangel_judgment_feather", "chance": 0.15, "min": 1, "max": 2 }
+      { "item_id": "demon_commander_seal", "chance": 1.00, "min": 1, "max": 1 },
+      { "item_id": "demon_insignia", "chance": 0.15, "min": 1, "max": 2 }
     ]
   },
 
-  "// AREA 13 - VOID RIFT": "=========================================",
-  "lt_void": {
+  "// AREA 13 - DEMON IMPERIAL CAPITAL": "=========================================",
+  "lt_high_demon": {
     "xp_min": 90000, "xp_max": 115000, "gold_min": 9500, "gold_max": 14000,
     "drops": [
-      { "item_id": "walker_core", "chance": 0.55, "min": 1, "max": 1 },
-      { "item_id": "anti_matter_particle", "chance": 0.08, "min": 1, "max": 1 }
+      { "item_id": "high_demon_wing", "chance": 0.55, "min": 1, "max": 1 },
+      { "item_id": "succubus_dust", "chance": 0.08, "min": 1, "max": 1 }
     ]
   },
-  "lt_wraith": {
+  "lt_succubus_guard": {
     "xp_min": 105000, "xp_max": 140000, "gold_min": 12000, "gold_max": 18000,
     "drops": [
-      { "item_id": "wraith_essence", "chance": 0.55, "min": 1, "max": 2 },
-      { "item_id": "dark_nebula_condensate", "chance": 0.10, "min": 1, "max": 1 }
+      { "item_id": "succubus_dust", "chance": 0.55, "min": 1, "max": 2 },
+      { "item_id": "high_demon_wing", "chance": 0.10, "min": 1, "max": 1 }
     ]
   },
-  "lt_boss_area_13": {
+  "lt_boss_demon_chancellor": {
     "xp_min": 520000, "xp_max": 520000, "gold_min": 120000, "gold_max": 120000,
     "drops": [
-      { "item_id": "singularity_fragment", "chance": 1.00, "min": 1, "max": 1 },
-      { "item_id": "event_horizon_core", "chance": 0.15, "min": 1, "max": 1 }
+      { "item_id": "demon_chancellor_tome", "chance": 1.00, "min": 1, "max": 1 },
+      { "item_id": "succubus_dust", "chance": 0.15, "min": 1, "max": 1 }
     ]
   },
 
-  "// AREA 14 - DRAGON'S SANCTUM": "=========================================",
-  "lt_dragonkin": {
+  "// AREA 14 - DEMON KING'S THRONE ROOM": "=========================================",
+  "lt_throne_knight": {
     "xp_min": 150000, "xp_max": 200000, "gold_min": 15000, "gold_max": 22000,
     "drops": [
-      { "item_id": "dragon_kin_blood", "chance": 0.55, "min": 1, "max": 2 },
-      { "item_id": "hardened_dragon_claw", "chance": 0.10, "min": 1, "max": 1 }
+      { "item_id": "throne_guard_spear", "chance": 0.55, "min": 1, "max": 2 },
+      { "item_id": "hellfire_orb", "chance": 0.10, "min": 1, "max": 1 }
     ]
   },
-  "lt_wyvern": {
+  "lt_infernal_wisp": {
     "xp_min": 190000, "xp_max": 250000, "gold_min": 19000, "gold_max": 28000,
     "drops": [
-      { "item_id": "wyvern_membrane", "chance": 0.50, "min": 1, "max": 2 },
-      { "item_id": "wyvern_tail_stinger", "chance": 0.08, "min": 1, "max": 1 }
+      { "item_id": "hellfire_orb", "chance": 0.50, "min": 1, "max": 2 },
+      { "item_id": "throne_guard_spear", "chance": 0.08, "min": 1, "max": 1 }
     ]
   },
-  "lt_boss_area_14": {
+  "lt_boss_demon_king": {
     "xp_min": 900000, "xp_max": 900000, "gold_min": 200000, "gold_max": 200000,
     "drops": [
-      { "item_id": "bahamut_calamity_scale", "chance": 1.00, "min": 1, "max": 1 },
-      { "item_id": "heart_of_the_dragon_emperor", "chance": 0.15, "min": 1, "max": 1 }
+      { "item_id": "demon_king_soul", "chance": 1.00, "min": 1, "max": 1 },
+      { "item_id": "hellfire_orb", "chance": 0.15, "min": 1, "max": 1 }
     ]
   },
 
-  "// AREA 15 - CHRONO NEXUS": "=========================================",
-  "lt_anomaly": {
+  "// AREA 15 - THE WORLD TREE: YGGDRASIL TOP": "=========================================",
+  "lt_yggdrasil_wisp": {
     "xp_min": 280000, "xp_max": 380000, "gold_min": 25000, "gold_max": 37000,
     "drops": [
-      { "item_id": "time_sand", "chance": 0.60, "min": 1, "max": 2 },
-      { "item_id": "paradox_timeline_rift", "chance": 0.10, "min": 1, "max": 1 }
+      { "item_id": "yggdrasil_sprite_dust", "chance": 0.60, "min": 1, "max": 2 },
+      { "item_id": "valkyrie_shield_crest", "chance": 0.10, "min": 1, "max": 1 }
     ]
   },
-  "lt_nexus_guard": {
+  "lt_valkyrie_scout": {
     "xp_min": 350000, "xp_max": 480000, "gold_min": 30000, "gold_max": 45000,
     "drops": [
-      { "item_id": "nexus_gear", "chance": 0.55, "min": 1, "max": 1 },
-      { "item_id": "quantum_core_battery", "chance": 0.08, "min": 1, "max": 1 }
+      { "item_id": "valkyrie_shield_crest", "chance": 0.55, "min": 1, "max": 1 },
+      { "item_id": "yggdrasil_sprite_dust", "chance": 0.08, "min": 1, "max": 1 }
     ]
   },
-  "lt_final_boss": {
+  "lt_final_boss_goddess": {
     "xp_min": 1600000, "xp_max": 1600000, "gold_min": 400000, "gold_max": 500000,
     "drops": [
-      { "item_id": "chronos_infinity_gear", "chance": 1.00, "min": 1, "max": 1 },
-      { "item_id": "eternity_clock_hand", "chance": 0.15, "min": 1, "max": 1 }
+      { "item_id": "goddess_ascension_feather", "chance": 1.00, "min": 1, "max": 1 },
+      { "item_id": "valkyrie_shield_crest", "chance": 0.50, "min": 1, "max": 1 }
     ]
   }
 }

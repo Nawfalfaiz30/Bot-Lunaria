@@ -1994,3 +1994,4 @@ Detail: TypeError: Cannot read properties of undefined (reading 'getString')
     at Object.execute (D:\Lunaria_New 2\commands\fun\fun.js:83:33)
     at Object.execute (D:\Lunaria_New 2\events\discord\messageCreate.js:235:27)
     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+[2026-07-09 18:01:58] [ERROR] [DUPLIKAT] Nama perintah /recipes di file 'recipes.js' sudah digunakan oleh file lain!

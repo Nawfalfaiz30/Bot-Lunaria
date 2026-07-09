@@ -37,7 +37,7 @@ module.exports = {
       });
     }
 
-    // 2. VALIDASI: Cek kewajiban memegang Senjata (Weapon)
+    // 2. VALIDASI: Cek kewajiban memegang Senjata
     if (!userRPG.equipment.weapon) {
       return context.reply({ 
         content: `❌ Kamu tidak bisa berburu monster dengan tangan kosong! Beli senjata di \`shop\` dan pasang dengan perintah \`equip [id_senjata]\`.`, 
@@ -53,7 +53,7 @@ module.exports = {
       });
     }
 
-    // 4. VALIDASI: Sistem Anti-Spam Cooldown Berburu (Durasi: 45 Detik)
+    // 4. VALIDASI: Anti-Spam Cooldown Berburu
     let cooldownDoc = await Cooldown.findOne({ userId });
     if (!cooldownDoc) {
       cooldownDoc = await Cooldown.create({ userId });
@@ -71,9 +71,7 @@ module.exports = {
       });
     }
 
-    // =================================================================
-    // 👾 INITIALISASI DATA MONSTER BERDASARKAN AREA
-    // =================================================================
+    // INITIALISASI DATA MONSTER
     const currentAreaNumber = userRPG.current_area;
     const areaKey = `area_${currentAreaNumber}`;
     const currentAreaInfo = areaData[areaKey];
@@ -97,6 +95,7 @@ module.exports = {
 
     let monsterHp = monster.hp;
     let playerHpLoss = 0;
+    let initialMana = userRPG.mana;
     let battleLog = [];
     let turn = 0;
 
@@ -108,11 +107,10 @@ module.exports = {
       if (skill && userRPG.mana >= skill.mana_cost && userRPG.active_skill.uses_left > 0) {
         pDmg = Math.max(5, skill.calculated_damage - monster.def); 
         monsterHp -= pDmg;
-        
         userRPG.mana -= skill.mana_cost; 
         userRPG.active_skill.uses_left--; 
         
-        battleLog.push(`🔮 **Ronde ${turn}:** Melepaskan jurus **[${skill.name}]**! Menghasilkan \`${pDmg}\` DMG. *(Sisa Kuota: ${userRPG.active_skill.uses_left}x)*`);
+        battleLog.push("🔮 **Ronde " + turn + ":** Melepaskan jurus **[" + skill.name + "]**! Menghasilkan `" + pDmg + "` DMG. *(Sisa HP Monster: " + (monsterHp > 0 ? monsterHp : 0) + ")*");
 
         if (skill.buff_payload) {
           userRPG.buffs.push({
@@ -125,17 +123,15 @@ module.exports = {
         const isCrit = Math.random() * 100 <= playerCombat.critRate;
         pDmg = Math.max(5, playerCombat.atk - monster.def); 
         
-        if (isCrit) {
-          pDmg = Math.round(pDmg * 1.5);
-        }
+        if (isCrit) pDmg = Math.round(pDmg * 1.5);
         
         monsterHp -= pDmg;
-        battleLog.push(`⚔️ **Ronde ${turn}:** Kamu menyerang **${monster.name}** sebesar \`${pDmg}\` DMG.${isCrit ? ' 💥 **CRITICAL!**' : ''} *(Sisa HP Monster: ${monsterHp > 0 ? monsterHp : 0})*`);
+        battleLog.push("⚔️ **Ronde " + turn + ":** Kamu menyerang **" + monster.name + "** sebesar `" + pDmg + "` DMG." + (isCrit ? ' 💥 **CRITICAL!**' : '') + " *(Sisa HP Monster: " + (monsterHp > 0 ? monsterHp : 0) + ")*");
       }
 
       if (monsterHp <= 0) break;
 
-      // B. Giliran Monster Menyerang Balik Pemain
+      // B. Giliran Monster Menyerang Balik
       const isEvaded = Math.random() * 100 <= playerCombat.evasionRate;
       if (isEvaded) {
         battleLog.push(`💨 **Ronde ${turn}:** **${monster.name}** mencoba menerkam, namun kamu berhasil melesat menghindar! \`[EVADE]\``);
@@ -146,10 +142,9 @@ module.exports = {
       }
     }
 
-    // ==========================================
     // PENENTUAN AKHIR EVALUASI PERTEMPURAN
-    // ==========================================
     const isPlayerVictory = monsterHp <= 0 && (userRPG.hp - playerHpLoss) > 0;
+    let totalManaUsed = initialMana - userRPG.mana;
     
     userRPG.hp = Math.max(0, userRPG.hp - playerHpLoss);
     userRPG.mana = Math.max(0, userRPG.mana); 
@@ -159,13 +154,18 @@ module.exports = {
 
     const weaponInfo = itemsData[userRPG.equipment.weapon];
     const huntEmbed = new EmbedBuilder().setTimestamp();
-
     const truncatedLog = battleLog.length > 12 ? `... *(beberapa ronde pembuka terlewati)* ...\n` + battleLog.slice(-12).join('\n') : battleLog.join('\n');
+
+    // Teks Ringkasan Evaluasi Pertempuran
+    const combatStatsSummary = `📊 **Statistik Pertempuran:**\n` +
+      `• Total Durasi: \`${turn}\` Ronde\n` +
+      `• HP Berkurang: \`-${playerHpLoss}\` HP\n` +
+      `• Mana Dikonsumsi: \`-${totalManaUsed}\` MP`;
 
     if (isPlayerVictory) {
       const rewards = determineMonsterLoot(monster.loot_table_id, liveStats);
-      
       userRPG.gold += rewards.gold;
+      
       const xpResult = processXPGain(userRPG, rewards.xp);
       await userRPG.save();
 
@@ -173,11 +173,8 @@ module.exports = {
         const userInv = await Inventory.findOne({ userId });
         rewards.items.forEach(dropItem => {
           const invItem = userInv.items.find(i => i.itemId === dropItem.itemId);
-          if (invItem) {
-            invItem.amount += dropItem.amount;
-          } else {
-            userInv.items.push({ itemId: dropItem.itemId, amount: dropItem.amount });
-          }
+          if (invItem) invItem.amount += dropItem.amount;
+          else userInv.items.push({ itemId: dropItem.itemId, amount: dropItem.amount });
         });
         await userInv.save();
       }
@@ -188,6 +185,7 @@ module.exports = {
         .setDescription(
           `Menggunakan ${weaponInfo.emoji} **${weaponInfo.name}** di wilayah **${currentAreaInfo?.emoji || '🧭'} ${currentAreaInfo?.name || `Area ${currentAreaNumber}`}**:\n\n` +
           `**📜 Ringkasan Aksi:**\n${truncatedLog}\n\n` +
+          `${combatStatsSummary}\n\n` +
           `🎁 **Hadiah Rampasan Perang:**\n` +
           `📈 **Pengalaman:** +\`${rewards.xp}\` XP\n` +
           `💰 **Koin Emas:** +\`${rewards.gold}\` Emas\n` +
@@ -203,17 +201,15 @@ module.exports = {
       }
 
     } else {
-      // 🌟 PERBAIKAN: Logika pemotongan denda 10% emas dihapus total
       await userRPG.save();
-
       huntEmbed.setColor('#E74C3C')
         .setTitle(`💀 Kamu Terkapar Dikalahkan oleh ${monster.name}`)
         .setAuthor({ name: `${user.username} disergap dari belakang!`, iconURL: user.displayAvatarURL({ dynamic: true }) })
         .setDescription(
           `**📜 Kronologi Kekalahan:**\n${truncatedLog}\n\n` +
+          `${combatStatsSummary}\n\n` +
           `🚨 **Status Evaluasi Darurat:**\n` +
-          `Darahmu telah habis! Kamu pingsan di medan tempur dan dievakuasi kembali ke kota dengan selamat.\n\n` +
-          `💡 *Gunakan perintah \`skills\` untuk memuat mantera aktif karakter sebelum menantang balik monster area ini!*`
+          `Darahmu telah habis! Kamu pingsan di medan tempur dan dievakuasi kembali ke kota dengan selamat.`
         );
     }
 
