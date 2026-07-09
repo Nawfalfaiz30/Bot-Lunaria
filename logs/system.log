@@ -4707,3 +4707,74 @@
 [2026-07-09 19:56:11] [INFO] ✅ Cron Job Berhasil Dimuat: animeDailySchedule.js
 [2026-07-09 19:56:11] [INFO] ✅ Cron Job Berhasil Dimuat: giveawayCheck.js
 [2026-07-09 19:56:11] [INFO] ✅ Cron Job Berhasil Dimuat: mabarTimeout.js
+[2026-07-10 02:21:09] [SUCCESS] [SISTEM] DisTube Music Helper berhasil diinisialisasi.
+[2026-07-10 02:21:11] [SUCCESS] Berhasil memuat 79 Commands & 0 Aliases.
+[2026-07-10 02:21:11] [SUCCESS] Berhasil memuat 79 Slash Commands ke dalam memori Client.
+[2026-07-10 02:21:11] [SUCCESS] Berhasil memuat 17 Events (Discord & DisTube).
+[2026-07-10 02:21:11] [SUCCESS] Berhasil terhubung ke MongoDB Database.
+[2026-07-10 02:21:13] [SUCCESS] [ONLINE] Login sukses sebagai Lunaria#6661!
+[2026-07-10 02:21:13] [INFO] ✅ Cron Job Berhasil Dimuat: animeAiringNotify.js
+[2026-07-10 02:21:13] [INFO] ⚙️  Memuat sistem otomatisasi (Cron Jobs)...
+[2026-07-10 02:21:13] [INFO] ✅ Cron Job Berhasil Dimuat: animeDailySchedule.js
+[2026-07-10 02:21:13] [INFO] ✅ Cron Job Berhasil Dimuat: giveawayCheck.js
+[2026-07-10 02:21:13] [INFO] ✅ Cron Job Berhasil Dimuat: mabarTimeout.js
+[2026-07-10 02:22:38] [SUCCESS] [SISTEM] DisTube Music Helper berhasil diinisialisasi.
+[2026-07-10 02:22:40] [SUCCESS] Berhasil memuat 79 Commands & 0 Aliases.
+[2026-07-10 02:22:40] [SUCCESS] Berhasil memuat 79 Slash Commands ke dalam memori Client.
+[2026-07-10 02:22:40] [SUCCESS] Berhasil memuat 17 Events (Discord & DisTube).
+[2026-07-10 02:22:40] [SUCCESS] Berhasil terhubung ke MongoDB Database.
+[2026-07-10 02:22:42] [SUCCESS] [ONLINE] Login sukses sebagai Lunaria#6661!
+[2026-07-10 02:22:42] [INFO] ⚙️  Memuat sistem otomatisasi (Cron Jobs)...
+[2026-07-10 02:22:42] [INFO] ✅ Cron Job Berhasil Dimuat: animeDailySchedule.js
+[2026-07-10 02:22:42] [INFO] ✅ Cron Job Berhasil Dimuat: animeAiringNotify.js
+[2026-07-10 02:22:42] [INFO] ✅ Cron Job Berhasil Dimuat: mabarTimeout.js
+[2026-07-10 02:22:42] [INFO] ✅ Cron Job Berhasil Dimuat: giveawayCheck.js
+[2026-07-10 02:23:00] [INFO] [ANIME TRACKER] Menarik data besar-besaran (All Airing + Upcoming)...
+[2026-07-10 02:30:53] [SUCCESS] [SISTEM] DisTube Music Helper berhasil diinisialisasi.
+[2026-07-10 02:30:53] [SUCCESS] Berhasil memuat 79 Commands & 0 Aliases.
+[2026-07-10 02:30:54] [SUCCESS] Berhasil memuat 17 Events (Discord & DisTube).
+[2026-07-10 02:30:53] [SUCCESS] Berhasil memuat 79 Slash Commands ke dalam memori Client.
+[2026-07-10 02:30:54] [SUCCESS] Berhasil terhubung ke MongoDB Database.
+[2026-07-10 02:30:55] [INFO] ⚙️  Memuat sistem otomatisasi (Cron Jobs)...
+[2026-07-10 02:30:55] [INFO] ✅ Cron Job Berhasil Dimuat: animeAiringNotify.js
+[2026-07-10 02:30:55] [INFO] ✅ Cron Job Berhasil Dimuat: animeDailySchedule.js
+[2026-07-10 02:30:55] [SUCCESS] [ONLINE] Login sukses sebagai Lunaria#6661!
+[2026-07-10 02:30:55] [INFO] ✅ Cron Job Berhasil Dimuat: mabarTimeout.js
+[2026-07-10 02:30:55] [INFO] ✅ Cron Job Berhasil Dimuat: giveawayCheck.js
+[2026-07-10 02:31:01] [INFO] [ANIME TRACKER] Menarik data besar-besaran (All Airing + Upcoming)...
+[2026-07-10 02:33:25] [SUCCESS] [SISTEM] DisTube Music Helper berhasil diinisialisasi.
+[2026-07-10 02:33:25] [SUCCESS] Berhasil memuat 79 Slash Commands ke dalam memori Client.
+[2026-07-10 02:33:25] [SUCCESS] Berhasil memuat 79 Commands & 0 Aliases.
+[2026-07-10 02:33:25] [SUCCESS] Berhasil memuat 17 Events (Discord & DisTube).
+[2026-07-10 02:33:26] [SUCCESS] Berhasil terhubung ke MongoDB Database.
+[2026-07-10 02:33:28] [INFO] ⚙️  Memuat sistem otomatisasi (Cron Jobs)...
+[2026-07-10 02:33:28] [SUCCESS] [ONLINE] Login sukses sebagai Lunaria#6661!
+[2026-07-10 02:33:28] [INFO] ✅ Cron Job Berhasil Dimuat: animeAiringNotify.js
+[2026-07-10 02:33:28] [INFO] ✅ Cron Job Berhasil Dimuat: animeDailySchedule.js
+[2026-07-10 02:33:28] [INFO] ✅ Cron Job Berhasil Dimuat: giveawayCheck.js
+[2026-07-10 02:33:28] [INFO] ✅ Cron Job Berhasil Dimuat: mabarTimeout.js
+[2026-07-10 02:34:00] [INFO] [ANIME TRACKER] Menarik data besar-besaran (All Airing + Upcoming)...
+[2026-07-10 02:34:08] [SUCCESS] [SISTEM] DisTube Music Helper berhasil diinisialisasi.
+[2026-07-10 02:34:08] [SUCCESS] Berhasil memuat 79 Commands & 0 Aliases.
+[2026-07-10 02:34:08] [SUCCESS] Berhasil memuat 17 Events (Discord & DisTube).
+[2026-07-10 02:34:08] [SUCCESS] Berhasil memuat 79 Slash Commands ke dalam memori Client.
+[2026-07-10 02:34:09] [SUCCESS] Berhasil terhubung ke MongoDB Database.
+[2026-07-10 02:34:10] [SUCCESS] [ONLINE] Login sukses sebagai Lunaria#6661!
+[2026-07-10 02:34:10] [INFO] ⚙️  Memuat sistem otomatisasi (Cron Jobs)...
+[2026-07-10 02:34:10] [INFO] ✅ Cron Job Berhasil Dimuat: animeDailySchedule.js
+[2026-07-10 02:34:10] [INFO] ✅ Cron Job Berhasil Dimuat: animeAiringNotify.js
+[2026-07-10 02:34:10] [INFO] ✅ Cron Job Berhasil Dimuat: giveawayCheck.js
+[2026-07-10 02:34:10] [INFO] ✅ Cron Job Berhasil Dimuat: mabarTimeout.js
+[2026-07-10 02:35:00] [INFO] [ANIME TRACKER] Menarik data besar-besaran (All Airing + Upcoming)...
+[2026-07-10 02:36:02] [SUCCESS] [SISTEM] DisTube Music Helper berhasil diinisialisasi.
+[2026-07-10 02:36:02] [SUCCESS] Berhasil memuat 79 Slash Commands ke dalam memori Client.
+[2026-07-10 02:36:02] [SUCCESS] Berhasil memuat 79 Commands & 0 Aliases.
+[2026-07-10 02:36:02] [SUCCESS] Berhasil memuat 17 Events (Discord & DisTube).
+[2026-07-10 02:36:02] [SUCCESS] Berhasil terhubung ke MongoDB Database.
+[2026-07-10 02:36:04] [SUCCESS] [ONLINE] Login sukses sebagai Lunaria#6661!
+[2026-07-10 02:36:04] [INFO] ⚙️  Memuat sistem otomatisasi (Cron Jobs)...
+[2026-07-10 02:36:04] [INFO] ✅ Cron Job Berhasil Dimuat: animeAiringNotify.js
+[2026-07-10 02:36:04] [INFO] ✅ Cron Job Berhasil Dimuat: animeDailySchedule.js
+[2026-07-10 02:36:04] [INFO] ✅ Cron Job Berhasil Dimuat: giveawayCheck.js
+[2026-07-10 02:36:04] [INFO] ✅ Cron Job Berhasil Dimuat: mabarTimeout.js
+[2026-07-10 02:37:00] [INFO] [ANIME TRACKER] Menarik data besar-besaran (All Airing + Upcoming)...

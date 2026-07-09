@@ -18,37 +18,31 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('mabar')
         .setDescription('Sistem Manajemen Mabar (Main Bareng) Lunaria')
-        // Subcommand: ajak
         .addSubcommand(sub =>
             sub.setName('ajak')
                 .setDescription('Membuka sesi Mabar baru.')
                 .addStringOption(opt => opt.setName('game').setDescription('Nama game yang ingin dimainkan').setRequired(true))
                 .addIntegerOption(opt => opt.setName('slot').setDescription('Jumlah orang yang dicari (1-10)').setRequired(true).setMinValue(1).setMaxValue(10))
         )
-        // Subcommand: bubar
         .addSubcommand(sub =>
             sub.setName('bubar')
                 .setDescription('Menutup dan membubarkan sesi Mabar Anda yang sedang aktif.')
         )
-        // Subcommand: party
         .addSubcommand(sub =>
             sub.setName('party')
                 .setDescription('Melihat siapa saja yang ada di dalam sesi Mabar Anda saat ini.')
         )
-        // Subcommand: profile
         .addSubcommand(sub =>
             sub.setName('profile')
                 .setDescription('Melihat profil gaming Anda atau member lain.')
                 .addUserOption(opt => opt.setName('target').setDescription('Member yang ingin dilihat profilnya'))
         )
-        // Subcommand: schedule
         .addSubcommand(sub =>
             sub.setName('schedule')
                 .setDescription('Mengumumkan jadwal mabar.')
                 .addStringOption(opt => opt.setName('waktu').setDescription('Contoh: Besok jam 19.00 WIB').setRequired(true))
                 .addStringOption(opt => opt.setName('game').setDescription('Game yang dimainkan').setRequired(true))
         )
-        // Subcommand: setprofile
         .addSubcommand(sub =>
             sub.setName('setprofile')
                 .setDescription('Mengatur profil gaming Anda.')
@@ -57,40 +51,72 @@ module.exports = {
                 .addStringOption(opt => opt.setName('platform').setDescription('Platform (PC/Mobile/PS/Xbox)').setRequired(true))
                 .addStringOption(opt => opt.setName('rank').setDescription('Rank saat ini').setRequired(true))
         )
-        // Subcommand: stats
         .addSubcommand(sub =>
             sub.setName('stats')
                 .setDescription('Melihat statistik mabar Anda.')
         ),
 
-    async execute(context, args, client) {
+    async execute(context, args = [], client) {
         const isInteraction = context.options !== undefined;
         const userExecutor = isInteraction ? context.user : context.author;
 
-        // Helper untuk mempermudah pengiriman respon balasan dengan sistem Flags terbaru
         const sendResponse = async (options) => {
             if (!isInteraction) delete options.flags;
             return await context.reply(options);
         };
 
-        // Deteksi aksi berdasarkan sub-command (Slash) atau kata kunci pemicu (Prefix)
         let action;
+        let commandArgs = [...args]; 
+
         if (isInteraction) {
             action = context.options.getSubcommand();
         } else {
-            const firstWord = context.content.trim().split(/ +/)[0].toLowerCase();
-            const cmdTrigger = firstWord.replace(/^[^a-zA-Z0-9]+/, ''); // Menghapus simbol prefix (!, ?, dll)
+            // DETEKSI PREFIX SECARA DINAMIS
+            const words = context.content.trim().split(/ +/);
+            
+            // Mengambil kata pertama (bisa berisi prefix + nama command, contoh: "lnmabar" atau "ln")
+            let firstWord = words[0].toLowerCase();
+            
+            // Tentukan list trigger yang valid
+            const mainTriggers = ['mabar', ...this.aliases];
+            
+            // Cari kata pemicu di dalam string kata pertama
+            let cmdTrigger = '';
+            for (const trigger of mainTriggers) {
+                if (firstWord.endsWith(trigger)) {
+                    cmdTrigger = trigger;
+                    break;
+                }
+            }
 
-            if (['mabar', 'ajak', 'main', 'mabarkuy'].includes(cmdTrigger)) action = 'ajak';
+            // Jika mengetik langsung aliasnya (misal: lnajak, lnmain, lnbubar)
+            if (['ajak', 'main', 'mabarkuy'].includes(cmdTrigger)) action = 'ajak';
             else if (['bubar', 'closemabar', 'cancelmabar', 'stopmabar'].includes(cmdTrigger)) action = 'bubar';
             else if (['party', 'cekparty', 'listmabar', 'members'].includes(cmdTrigger)) action = 'party';
             else if (['profile', 'gamingprofile', 'pgr'].includes(cmdTrigger)) action = 'profile';
             else if (['schedule', 'jadwal', 'setjadwal'].includes(cmdTrigger)) action = 'schedule';
             else if (['setprofile', 'setp', 'setprofilegaming', 'gantiprofile'].includes(cmdTrigger)) action = 'setprofile';
             else if (['stats', 'mabarstats', 'mystats'].includes(cmdTrigger)) action = 'stats';
+            
+            // Jika menggunakan command utama: ln mabar [subcommand] (misal: ln mabar ajak mlbb 4)
+            if (cmdTrigger === 'mabar' && commandArgs.length > 0) {
+                const subFirst = commandArgs[0].toLowerCase();
+                if (['ajak', 'main', 'mabarkuy'].includes(subFirst)) { action = 'ajak'; commandArgs.shift(); }
+                else if (['bubar', 'closemabar', 'cancelmabar', 'stopmabar'].includes(subFirst)) { action = 'bubar'; commandArgs.shift(); }
+                else if (['party', 'cekparty', 'listmabar', 'members'].includes(subFirst)) { action = 'party'; commandArgs.shift(); }
+                else if (['profile', 'gamingprofile', 'pgr'].includes(subFirst)) { action = 'profile'; commandArgs.shift(); }
+                else if (['schedule', 'jadwal', 'setjadwal'].includes(subFirst)) { action = 'schedule'; commandArgs.shift(); }
+                else if (['setprofile', 'setp', 'setprofilegaming', 'gantiprofile'].includes(subFirst)) { action = 'setprofile'; commandArgs.shift(); }
+                else if (['stats', 'mabarstats', 'mystats'].includes(subFirst)) { action = 'stats'; commandArgs.shift(); }
+            }
         }
 
-        if (!action) return;
+        if (!action) {
+            if (!isInteraction) {
+                return context.reply({ content: '❌ Perintah tidak dikenali. Gunakan: `ln mabar [ajak/bubar/party/profile/schedule/setprofile/stats]`' });
+            }
+            return;
+        }
 
         // ==========================================
         // FILTRASI LOGIK INPUT & EKSEKUSI MODUL
@@ -103,22 +129,21 @@ module.exports = {
                 game = context.options.getString('game');
                 slot = context.options.getInteger('slot');
             } else {
-                if (!args || args.length < 2) {
-                    return context.reply({ content: '❌ Format salah! Gunakan: \`!ajak [Nama Game] [Jumlah Slot]\`\nContoh: \`!ajak Mobile Legends 4\`' });
+                if (!commandArgs || commandArgs.length < 2) {
+                    return context.reply({ content: '❌ Format salah! Gunakan: `ln mabar ajak [Nama Game] [Jumlah Slot]`\nContoh: `ln mabar ajak Mobile Legends 4`' });
                 }
-                slot = parseInt(args[args.length - 1]);
+                slot = parseInt(commandArgs[commandArgs.length - 1]);
                 if (isNaN(slot) || slot < 1 || slot > 10) {
-                    return context.reply({ content: '❌ Angka slot harus diletakkan di paling akhir perintah antara 1 - 10!\nContoh: \`!ajak Valorant 4\`' });
+                    return context.reply({ content: '❌ Angka jumlah slot harus diletakkan di paling akhir perintah (antara 1 - 10)!\nContoh: `ln mabar ajak Valorant 4`' });
                 }
-                game = args.slice(0, -1).join(' ');
+                game = commandArgs.slice(0, -1).join(' ');
             }
 
             try {
                 const existingSession = await MabarDB.findOne({ hostId: userExecutor.id, guildId: context.guild.id });
                 if (existingSession) {
                     const errEmbed = [embed.error(userExecutor, 'Sesi Sedang Berjalan', 'Anda sudah memiliki sesi mabar yang aktif!')];
-                    if (isInteraction) return context.reply({ embeds: errEmbed, flags: [MessageFlags.Ephemeral] });
-                    return context.reply({ embeds: errEmbed });
+                    return isInteraction ? context.reply({ embeds: errEmbed, flags: [MessageFlags.Ephemeral] }) : context.reply({ embeds: errEmbed });
                 }
 
                 const mabarEmbed = new EmbedBuilder()
@@ -131,14 +156,8 @@ module.exports = {
                 const btnLeave = new ButtonBuilder().setCustomId('mabar_leave').setLabel('Batal Ikut').setStyle(ButtonStyle.Danger);
                 const row = new ActionRowBuilder().addComponents(btnJoin, btnLeave);
 
-                let message;
-                if (isInteraction) {
-                    // Menggunakan metode fetch terpisah untuk menghindari warning deprecation fetchReply
-                    await context.reply({ content: '@here Ada yang ngajak mabar nih!', embeds: [mabarEmbed], components: [row] });
-                    message = await context.fetchReply();
-                } else {
-                    message = await context.reply({ content: '@here Ada yang ngajak mabar nih!', embeds: [mabarEmbed], components: [row] });
-                }
+                await context.reply({ content: '@here Ada yang ngajak mabar nih!', embeds: [mabarEmbed], components: [row] });
+                const message = isInteraction ? await context.fetchReply() : await context.channel.messages.fetch({ limit: 1 }).then(m => m.first());
 
                 const newSession = new MabarDB({
                     guildId: context.guild.id,
@@ -153,8 +172,7 @@ module.exports = {
             } catch (error) {
                 logger.error(`[AJAK ERROR] Gagal membuat sesi mabar oleh ${userExecutor.tag}`, error);
                 const errSys = [embed.error(userExecutor, 'Error', 'Terjadi kesalahan sistem saat membuat sesi mabar.')];
-                if (isInteraction) return context.reply({ embeds: errSys, flags: [MessageFlags.Ephemeral] });
-                return context.reply({ embeds: errSys });
+                return isInteraction ? context.reply({ embeds: errSys, flags: [MessageFlags.Ephemeral] }) : context.reply({ embeds: errSys });
             }
         }
 
@@ -174,8 +192,8 @@ module.exports = {
                         const originalMessage = await channel.messages.fetch(session.messageId);
                         if (originalMessage) {
                             const originalEmbed = originalMessage.embeds[0];
-                            const disabledRow = originalMessage.components[0].toJSON();
-                            disabledRow.components.forEach(btn => btn.disabled = true);
+                            const disabledRow = ActionRowBuilder.from(originalMessage.components[0]);
+                            disabledRow.components.forEach(btn => btn.setDisabled(true));
 
                             await originalMessage.edit({ 
                                 content: `~~${originalMessage.content}~~ (Mabar telah dibubarkan)`,
@@ -185,7 +203,7 @@ module.exports = {
                         }
                     }
                 } catch (err) {
-                    logger.error(`[BUBAR] Pesan ajakan asli tidak ditemukan, mengabaikan edit tombol.`);
+                    logger.error(`[BUBAR] Pesan ajakan asli tidak ditemukan atau gagal diedit.`);
                 }
 
                 await sendResponse({ embeds: [embed.success(userExecutor, 'Mabar Bubar', `Sesi mabar **${session.gameName}** telah berhasil ditutup dan dibubarkan.`)] });
@@ -201,7 +219,7 @@ module.exports = {
                 const session = await MabarDB.findOne({ hostId: userExecutor.id, guildId: context.guild.id });
                 if (!session) {
                     return sendResponse({ 
-                        embeds: [embed.error(userExecutor, 'Tidak Ada Sesi', `Anda sedang tidak memiliki sesi mabar yang aktif. Buat dulu dengan \`${isInteraction ? '/mabar ajak' : '!ajak'}\`.`)], 
+                        embeds: [embed.error(userExecutor, 'Tidak Ada Sesi', `Anda sedang tidak memiliki sesi mabar yang aktif. Buat dulu dengan \`${isInteraction ? '/mabar ajak' : 'ln mabar ajak'}\`.`)], 
                         flags: [MessageFlags.Ephemeral] 
                     });
                 }
@@ -218,7 +236,7 @@ module.exports = {
                         { name: 'Kapasitas', value: `${session.players.length} / ${session.maxPlayers} Orang`, inline: true },
                         { name: 'Daftar Anggota', value: playerList, inline: false }
                     )
-                    .setFooter({ text: `Gunakan ${isInteraction ? '/mabar bubar' : '!bubar'} jika ingin menutup room party ini.` });
+                    .setFooter({ text: `Gunakan ${isInteraction ? '/mabar bubar' : 'ln mabar bubar'} jika ingin menutup room party ini.` });
 
                 await sendResponse({ embeds: [partyEmbed] });
             } catch (error) {
@@ -233,7 +251,7 @@ module.exports = {
             if (isInteraction) {
                 target = context.options.getUser('target') || context.user;
             } else {
-                target = context.mentions.users.first() || (args && args[0] ? await client.users.fetch(args[0]).catch(() => null) : null) || context.author;
+                target = context.mentions.users.first() || (commandArgs && commandArgs[0] ? await client.users.fetch(commandArgs[0]).catch(() => null) : null) || context.author;
             }
 
             try {
@@ -266,10 +284,10 @@ module.exports = {
                 waktu = context.options.getString('waktu');
                 game = context.options.getString('game');
             } else {
-                const joinedArgs = args.join(' ');
+                const joinedArgs = commandArgs.join(' ');
                 const splitArgs = joinedArgs.split('|');
                 if (splitArgs.length < 2) {
-                    return context.reply({ content: '❌ Format salah! Gunakan tanda garis tegak \`|\` sebagai pemisah.\nFormat: \`!schedule [Nama Game] | [Waktu]\`' });
+                    return context.reply({ content: '❌ Format salah! Gunakan tanda garis tegak `|` sebagai pemisah.\nFormat: `ln mabar schedule [Nama Game] | [Waktu]`' });
                 }
                 game = splitArgs[0].trim();
                 waktu = splitArgs[1].trim();
@@ -290,11 +308,11 @@ module.exports = {
                 platform = context.options.getString('platform');
                 rank = context.options.getString('rank');
             } else {
-                const joinedArgs = args.join(' ');
+                const joinedArgs = commandArgs.join(' ');
                 const splitArgs = joinedArgs.split('|');
                 if (splitArgs.length < 4) {
                     return sendResponse({ 
-                        embeds: [embed.error(userExecutor, 'Format Salah', 'Gunakan tanda pembatas \`|\` untuk memisahkan 4 kolom data.\nFormat: \`!setprofile [IGN] | [Game] | [Platform] | [Rank]\`')],
+                        embeds: [embed.error(userExecutor, 'Format Salah', 'Gunakan tanda pembatas `|` untuk memisahkan 4 kolom data.\nFormat: `ln mabar setprofile [IGN] | [Game] | [Platform] | [Rank]`')],
                         flags: [MessageFlags.Ephemeral] 
                     });
                 }
